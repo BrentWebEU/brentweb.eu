@@ -1,0 +1,40 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/* Import Styles */
+@import './variables.css';
+@import './reset.css';
+@import './base.css';
+@import './layout.css';
+@import './animations.css';
+@import './utilities.css';
+
+/* Component styles */
+@import './components/dialog.css';
+@import './components/hero.css';
+@import './components/nav.css';
+@import './components/rolling-link.css';
+@import './components/cursor.css';
+@import './components/marquee.css';
+@import './components/card.css';
+@import './components/project-dialog.css';
+@import './components/about.css';
+@import './components/experience.css';
+@import './components/form.css';
+@import './components/footer.css';
+@import './components/console.css';
+@import './components/network-monitor.css';
+@import './components/toaster.css';
+@import './components/intro.css';
+@import './components/exploration-map.css';
+@import './components/section.css';
+@import './components/theme-toggle.css';
+@import './components/language-switcher.css';
+@import './components/blog.css';
+@import './components/admin.css';
+@import './components/cookie-consent.css';
+@import './global-animations.css';

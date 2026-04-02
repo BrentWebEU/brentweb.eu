@@ -1,0 +1,193 @@
+/* Exploration Map Component Styles */
+
+.exploration-map {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  background: hsl(var(--card) / 0.5);
+  border-radius: var(--radius-md);
+  font-family: var(--font-terminal);
+}
+
+.exploration-map__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.exploration-map__title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-foreground);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.exploration-map__progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.exploration-map__progress-label {
+  color: var(--color-muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.exploration-map__progress-count {
+  color: var(--color-foreground);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-mono);
+}
+
+.exploration-map__progress-bar {
+  height: 4px;
+  background: hsl(var(--muted));
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-top: var(--space-1);
+}
+
+.exploration-map__progress-fill {
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    hsl(var(--primary)),
+    hsl(var(--primary) / 0.7)
+  );
+  transition: width 0.3s var(--ease-out);
+  border-radius: 9999px;
+}
+
+.exploration-map__nodes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.exploration-map__node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: hsl(var(--card) / 0.3);
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.exploration-map__node::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    hsl(var(--primary) / 0.1) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.exploration-map__node:hover::before {
+  opacity: 1;
+}
+
+.exploration-map__node--discovered {
+  border-color: hsl(var(--primary) / 0.5);
+  background: hsl(var(--card) / 0.6);
+}
+
+.exploration-map__node--discovered .exploration-map__node-icon {
+  color: hsl(var(--primary));
+}
+
+.exploration-map__node--locked {
+  opacity: 0.5;
+  border-color: var(--color-border);
+}
+
+.exploration-map__node--locked .exploration-map__node-icon {
+  color: var(--color-muted-foreground);
+}
+
+.exploration-map__node-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.exploration-map__node--discovered:hover .exploration-map__node-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.exploration-map__node-label {
+  font-size: var(--text-xs);
+  color: var(--color-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  font-weight: var(--font-weight-medium);
+}
+
+.exploration-map__node--locked .exploration-map__node-label {
+  color: var(--color-muted-foreground);
+}
+
+.exploration-map__hint,
+.exploration-map__complete {
+  font-size: var(--text-xs);
+  text-align: center;
+  margin: 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted-foreground);
+  font-style: italic;
+}
+
+.exploration-map__complete {
+  color: hsl(var(--primary));
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Unlock animation */
+@keyframes node-unlock {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.exploration-map__node--discovered {
+  animation: node-unlock 0.5s var(--ease-out);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .exploration-map__node--discovered {
+    animation: none;
+  }
+
+  .exploration-map__node-icon,
+  .exploration-map__progress-fill {
+    transition: none;
+  }
+}

@@ -1,0 +1,271 @@
+/* Network Monitor Styles */
+
+.network-monitor-toggle {
+  position: fixed;
+  bottom: 5rem;
+  right: var(--space-4);
+  z-index: 40;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-normal) var(--ease-out);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+}
+
+.network-monitor-toggle-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.network-monitor-toggle-badge {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  font-size: var(--text-xs);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.network-monitor {
+  position: fixed;
+  bottom: 5rem;
+  right: var(--space-4);
+  z-index: 40;
+  width: 100%;
+  max-width: 28rem;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-dialog);
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.network-monitor__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.network-monitor__header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.network-monitor__header-icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-primary);
+}
+
+.network-monitor__header-title {
+  font-size: var(--text-sm);
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-semibold);
+}
+
+.network-monitor__header-status {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.network-monitor__header-status-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.network-monitor__header-status-icon--online {
+  color: hsl(142, 76%, 36%);
+}
+
+.network-monitor__header-status-icon--offline {
+  color: hsl(0, 84%, 60%);
+}
+
+.network-monitor__header-status-text {
+  font-size: var(--text-xs);
+  color: var(--color-muted-foreground);
+}
+
+.network-monitor__header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.network-monitor__header-button {
+  padding: 0.375rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  border-radius: var(--radius-sm);
+}
+
+.network-monitor__header-button-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.network-monitor__header-close {
+  padding: var(--space-1);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out);
+  font-size: 1.125rem;
+  line-height: 1;
+  color: var(--color-foreground);
+}
+
+.network-monitor__requests {
+  height: 300px;
+  overflow-y: auto;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.network-monitor__empty {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-muted-foreground);
+  padding: var(--space-8) 0;
+}
+
+.network-monitor__empty-icon {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto var(--space-2);
+  opacity: 0.5;
+}
+
+.network-monitor__empty-text {
+  font-size: var(--text-xs);
+  margin-top: var(--space-1);
+}
+
+.network-monitor__request {
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.network-monitor__request-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.network-monitor__request-method {
+  font-weight: var(--font-weight-semibold);
+}
+
+.network-monitor__request-method--success {
+  color: hsl(142, 76%, 36%);
+}
+
+.network-monitor__request-method--redirect {
+  color: hsl(45, 93%, 47%);
+}
+
+.network-monitor__request-method--error {
+  color: hsl(0, 84%, 60%);
+}
+
+.network-monitor__request-timestamp {
+  color: var(--color-muted-foreground);
+}
+
+.network-monitor__request-url {
+  color: var(--color-muted-foreground);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.network-monitor__request-url--special {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.network-monitor__request-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.network-monitor__request-status {
+  font-weight: var(--font-weight-medium);
+}
+
+.network-monitor__request-status--success {
+  color: hsl(142, 76%, 36%);
+}
+
+.network-monitor__request-status--redirect {
+  color: hsl(45, 93%, 47%);
+}
+
+.network-monitor__request-status--error {
+  color: hsl(0, 84%, 60%);
+}
+
+.network-monitor__request-size {
+  color: var(--color-muted-foreground);
+}
+
+.network-monitor__footer {
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-card);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-xs);
+  color: var(--color-muted-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.network-monitor__footer-status {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.network-monitor__footer-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: hsl(142, 76%, 36%);
+  border-radius: 50%;
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

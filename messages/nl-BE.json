@@ -1,0 +1,515 @@
+{
+  "nav": {
+    "about": "Over mij",
+    "experience": "Ervaring",
+    "services": "Diensten",
+    "projects": "Projecten",
+    "security": "Security",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Welkom!",
+    "title": "Ik ben Brent!",
+    "tagline": "Dé full-stack ontwikkelaar voor jouw doeleinden.",
+    "getInTouch": "Neem contact op",
+    "viewProjects": "Bekijk projecten"
+  },
+  "about": {
+    "badge": "OVER",
+    "title": "Hallo, ik ben Brent",
+    "titleMorning": "Goedemorgen, ik ben Brent",
+    "titleNoon": "Goedemiddag, ik ben Brent",
+    "titleEvening": "Goedenavond, ik ben Brent",
+    "description1": "Hallo! Ik ben een full-stack ontwikkelaar uit België met een passie voor het bouwen van digitale systemen. Ik ben in 2019 begonnen met leren en heb mijn vaardigheden sindsdien continu verder ontwikkeld.",
+    "description2": "Mijn doel is niet alleen om digitale systemen te bouwen, maar ook om oplossingen te creëren die een echte meerwaarde bieden.",
+    "techTitle": "Technische expertise:",
+    "techDescription": "Ik werk met moderne technologieën die betrouwbaar, snel en efficiënt met elkaar samenwerken. Dit heeft tot resultaat dat je je geen zorgen hoeft te maken over het systeem",
+    "getInTouch": "Neem contact op →",
+    "annotation": "← Dit ben ik",
+    "yearsBuilding": "Jaar ervaring"
+  },
+  "experience": {
+    "badge": "ERVARING",
+    "title": "Professionele ervaring",
+    "work": "Werk",
+    "education": "Opleiding",
+    "hackathons": "Hackathons",
+    "current": "● Huidig",
+    "upcoming": "◐ Binnenkort",
+    "stillHere": "← Nog steeds hier!",
+    "stats": {
+      "yearsLearning": "Jaar ervaring",
+      "jobPositions": "Functies",
+      "hackathons": "Hackathons",
+      "technologies": "Technologieën"
+    },
+    "items": {
+      "work": [
+        {
+          "year": "2021 - Heden",
+          "title": "IT Ontwikkelaar & Beheerder",
+          "company": "Carrosserie Kris",
+          "description": "Onderhoud van systemen, klantinteractie en prestatieoptimalisatie.",
+          "personalNote": "Mijn eerste echte klant.",
+          "tags": [
+            "Webontwikkeling",
+            "IT Beheer",
+            "Boekhouding"
+          ],
+          "status": "current"
+        },
+        {
+          "year": "2023 - 2024",
+          "title": "Full-Stack Ontwikkelaar",
+          "company": "Axxit",
+          "description": "Bouwen van full-stack applicaties, code reviews en samenwerking in teamverband.",
+          "personalNote": "Hier leerde ik de waarde van code reviews en teamwerk.",
+          "tags": [
+            "Angular",
+            "ASP.NET",
+            "Docker",
+            "Teamwerk"
+          ]
+        }
+      ],
+      "education": [
+        {
+          "year": "2026",
+          "title": "Stagiair Ontwikkelaar",
+          "company": "WimNet",
+          "description": "Stage gericht op netwerken & infrastructuur.",
+          "tags": [
+            "Stage",
+            "Leren",
+            "Netwerken"
+          ]
+        },
+        {
+          "year": "2025",
+          "title": "Stagiair Ontwikkelaar",
+          "company": "Nitor",
+          "description": "Twee weken gewerkt aan React Native componenten. Mobiele ontwikkeling en componentarchitectuur.",
+          "personalNote": "Intensieve leerervaring in mobiele ontwikkeling.",
+          "tags": [
+            "React Native",
+            "Mobiele Ontwikkeling"
+          ]
+        }
+      ],
+      "hackathons": [
+        {
+          "year": "2025",
+          "title": "Hack The Future",
+          "company": "3de keer - 5de plaats van de 19 (Solo)",
+          "description": "Opnieuw solo. 5de plaats. Bouwen onder tijdsdruk zorgt voor een steile leercurve.",
+          "personalNote": "Solo project. Snelkookpan-leeromgeving.",
+          "tags": [
+            "Probleemoplossing",
+            "Solo werk",
+            "Tijdsbeheer"
+          ]
+        },
+        {
+          "year": "2024",
+          "title": "Hack The Future - Among The Stars",
+          "company": "2de keer - 12de plaats van de 12",
+          "description": "Laatste plaats. Meer geleerd van dit verlies dan van overwinningen.",
+          "personalNote": "Waardevolle leerervaring door uitdagingen.",
+          "tags": [
+            "Leerervaring",
+            "Angular"
+          ]
+        },
+        {
+          "year": "2023",
+          "title": "Hack The Future - Jungle Expedition",
+          "company": "1ste keer - 4de plaats van de 10 (Solo)",
+          "description": "Eerste hackathon, solo met Angular. 4de plaats. Overweldigend maar geslaagd.",
+          "personalNote": "Eerste hackathonervaring. Uitdagend maar belonend.",
+          "tags": [
+            "Eerste Hackathon",
+            "Angular",
+            "Leren"
+          ]
+        }
+      ]
+    }
+  },
+  "services": {
+    "badge": "DIENSTEN",
+    "title": "Laten we samen iets moois bouwen",
+    "annotation": "← Echte skills, echte resultaten",
+    "stats": {
+      "projectsDelivered": "Projecten Afgeleverd",
+      "yearsLearning": "Jaren Leren",
+      "technologiesUsed": "Technologieën Gebruikt"
+    },
+    "items": {
+      "webDevelopment": {
+        "title": "Webontwikkeling",
+        "description": "Websites die gewoon werken. Krachtige sites gebouwd voor echte gebruikers. Geen overbodige functies, maar een snelle en probleemloze ervaring."
+      },
+      "fullStackApps": {
+        "title": "Full-Stack Apps",
+        "description": "Van idee tot interface. Ik bouw end-to-end applicaties waarbij de frontend en backend perfect communiceren, zodat jij je geen zorgen hoeft te maken over de techniek."
+      },
+      "deployment": {
+        "title": "Deployment & Hosting",
+        "description": "Ga met een gerust hart live. Ik regel het zware werk—Docker, Linux en Cloud—om ervoor te zorgen dat je app online, veilig en klaar voor bezoekers blijft."
+      },
+      "database": {
+        "title": "Database Ontwerp",
+        "description": "Data waar je echt iets aan hebt. Ik structureer informatie zo dat het vandaag overzichtelijk is en morgen klaar is om te schalen. Simpel, logisch en toekomstbestendig."
+      },
+      "architecture": {
+        "title": "Architectuur Planning",
+        "description": "Eerst meten, dan pas coderen. Samen brengen we het grotere plaatje in kaart, zodat elk stukje technologie aansluit bij jouw doelen voordat de eerste regel code wordt geschreven."
+      }
+    }
+  },
+  "projects": {
+    "badge": "PROJECTEN",
+    "title": "Dingen die ik heb gebouwd",
+    "subtitle": "Echte projecten voor echte klanten. Elk project leerde me iets nieuws.",
+    "annotation": "← Scroll & klik om te verkennen",
+    "viewProject": "Bekijk project",
+    "viewCode": "Bekijk code",
+    "whatItDoes": "Wat het doet",
+    "techStack": "Tech stack",
+    "type": {
+      "web": "Web App",
+      "mobile": "Mobiele App",
+      "desktop": "Desktop App",
+      "other": "Andere"
+    },
+    "items": [
+      {
+        "title": "Carrosserie Kris",
+        "category": "Webontwikkeling",
+        "image": "carrosserieKris",
+        "description": "Een lokale carrosseriewebsite waar ik sinds 2021 aan werk.",
+        "longDescription": "Doorlopend project sinds 2021. Continue verbeteringen aan prestaties, SEO en gebruikerservaring. Langetermijn klantrelatie met regelmatige updates en onderhoud.",
+        "features": [
+          "Prestaties geoptimaliseerd",
+          "Vloeiende animaties",
+          "Mobile-first ontwerp",
+          "SEO verbeteringen",
+          "Werkende contactformulieren",
+          "Regelmatige updates & onderhoud"
+        ],
+        "tags": [
+          "React",
+          "Node.js",
+          "Tailwind"
+        ],
+        "color": "#e85454",
+        "type": "website",
+        "liveUrl": "https://carrosseriekris.be",
+        "githubUrl": ""
+      },
+      {
+        "title": "Provilion Broodjes",
+        "category": "Full-Stack Web App",
+        "image": "provilion",
+        "description": "Schoollunch bestelsysteem met betalingsverwerking.",
+        "longDescription": "Compleet broodjesbestelplatform voor een school. Leerlingen bestellen, ouders beheren tegoed, en administrators beheren de operaties. Geïntegreerde Stripe betalingen en aangepast admin dashboard.",
+        "features": [
+          "Stripe betalingsintegratie",
+          "Gebruikerstegoedsysteem",
+          "Bestellingsbeheer dashboard",
+          "Real-time bestelupdates",
+          "Op rollen gebaseerde toegangscontrole",
+          "E-mailmeldingen"
+        ],
+        "tags": [
+          "TypeScript",
+          "MySQL",
+          "Stripe",
+          "NextJS"
+        ],
+        "color": "#54e89c",
+        "type": "website",
+        "liveUrl": "https://provilion-broodjes.vercel.app",
+        "githubUrl": ""
+      },
+      {
+        "title": "Het Smaakpand (Gesloten)",
+        "category": "Website",
+        "image": "hetsmaakpand",
+        "description": "Eenvoudige website voor een broodjeszaak die inmiddels gesloten is.",
+        "longDescription": "Schoon ontwerp, menuweergave en mobiel-responsief. Gericht op eenvoud en functionaliteit.",
+        "features": [
+          "Schoon, minimaal ontwerp",
+          "Menuweergave",
+          "Mobiel responsief",
+          "Snel ladend",
+          "Makkelijk te updaten"
+        ],
+        "tags": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "color": "#d2b48c",
+        "type": "website",
+        "liveUrl": "https://precious-mooncake-1d00a4.netlify.app/",
+        "githubUrl": ""
+      }
+    ]
+  },
+  "security": {
+    "badge": "BEVEILIGING",
+    "title": "Beveiliging",
+    "subtitle": "Beveiliging is geen bijzaak—het is vanaf het begin ingebouwd.",
+    "description": "Ik focus op veilige codeerpraktijken, juiste authenticatie en het veilig houden van data. Elk project bevat vanaf dag één beveiligingsoverwegingen.",
+    "practices": {
+      "secureCoding": "Veilige Codeerpraktijken",
+      "authentication": "Juiste Authenticatie",
+      "dataProtection": "Gegevensbescherming",
+      "regularUpdates": "Regelmatige Updates"
+    }
+  },
+  "contact": {
+    "badge": "CONTACT",
+    "title": "Laten we samenwerken",
+    "subtitle": "Een project in gedachten? Laten we praten.",
+    "annotation": "← Wees niet verlegen!",
+    "form": {
+      "name": "Naam",
+      "email": "E-mail",
+      "message": "Bericht",
+      "send": "Verstuur bericht",
+      "sending": "Verzenden...",
+      "success": "Bericht succesvol verzonden!",
+      "error": "Verzenden mislukt. Probeer het opnieuw.",
+      "gdprConsent": "Ik stem in met de verwerking van mijn naam, e-mail en bericht om te reageren op mijn vraag.",
+      "gdprConsentLink": "Privacybeleid",
+      "gdprConsentSuffix": "Gegevens worden maximaal 12 maanden bewaard.",
+      "gdprRequired": "Accepteer onze gegevensverwerkingsvoorwaarden om dit formulier in te dienen."
+    },
+    "location": "Locatie",
+    "locationValue": "Geel, België",
+    "availability": "Beschikbaar voor nieuwe projecten"
+  },
+  "footer": {
+    "nodesDiscovered": "Nodes ontdekt:",
+    "annotation": "← Bedankt voor het scrollen!",
+    "copyright": "© {year} Brent Schoenmakers.",
+    "lastUpdated": "Laatst bijgewerkt: {date}",
+    "backToTop": "Terug naar boven",
+    "cookieSettings": "Cookie-instellingen",
+    "privacy": "Privacybeleid"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Gedachten over webontwikkeling, beveiliging en technologie.",
+    "featured": "Uitgelichte Berichten",
+    "viewAll": "Bekijk Alle Berichten",
+    "readMore": "Lees meer",
+    "noPosts": "Geen berichten gevonden.",
+    "loading": "Berichten laden...",
+    "comments": "Reacties",
+    "leaveComment": "Laat een reactie achter",
+    "commentName": "Naam *",
+    "commentEmail": "E-mail *",
+    "commentWebsite": "Website (optioneel)",
+    "commentContent": "Je reactie *",
+    "postComment": "Plaats reactie",
+    "submitting": "Verzenden...",
+    "commentNote": "Je reactie wordt beoordeeld voordat deze wordt gepubliceerd.",
+    "noComments": "Nog geen reacties. Wees de eerste om te reageren!",
+    "tags": "Tags:",
+    "category": "Categorie"
+  },
+  "admin": {
+    "login": {
+      "title": "Admin Login",
+      "subtitle": "Meld je aan voor toegang tot het admin panel",
+      "email": "E-mail",
+      "password": "Wachtwoord",
+      "login": "Inloggen",
+      "loggingIn": "Inloggen...",
+      "error": "Inloggen mislukt"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "welcome": "Welkom, {name}",
+      "logout": "Uitloggen",
+      "posts": "Berichten",
+      "comments": "Reacties",
+      "totalViews": "Totaal Weergaven",
+      "managePosts": "Beheer Berichten",
+      "managePostsDesc": "Maak, bewerk en beheer blogberichten",
+      "manageCategories": "Beheer Categorieën",
+      "manageCategoriesDesc": "Organiseer berichten per categorie",
+      "moderateComments": "Modereer Reacties",
+      "moderateCommentsDesc": "Bekijk en keur reacties goed"
+    },
+    "posts": {
+      "title": "Berichten",
+      "newPost": "Nieuw Bericht",
+      "all": "Alles",
+      "published": "Gepubliceerd",
+      "drafts": "Concepten",
+      "featured": "Uitgelicht",
+      "actions": "Acties",
+      "noPosts": "Geen berichten gevonden.",
+      "deleteConfirm": "Weet je zeker dat je dit bericht wilt verwijderen?",
+      "unpublish": "Depubliceren",
+      "publish": "Publiceren"
+    },
+    "postEditor": {
+      "newPost": "Nieuw Bericht",
+      "editPost": "Bewerk Bericht",
+      "saved": "Opgeslagen {time}",
+      "save": "Opslaan",
+      "saving": "Opslaan...",
+      "title": "Titel *",
+      "titlePlaceholder": "Berichttitel",
+      "excerpt": "Samenvatting *",
+      "excerptPlaceholder": "Korte beschrijving van het bericht",
+      "content": "Inhoud *",
+      "publish": "Publiceren",
+      "status": "Status",
+      "draft": "Concept",
+      "published": "Gepubliceerd",
+      "featured": "Uitgelicht bericht",
+      "category": "Categorie *",
+      "featuredImage": "Uitgelichte Afbeelding",
+      "seo": "SEO",
+      "seoTitle": "SEO Titel",
+      "seoTitlePlaceholder": "SEO titel (optioneel)",
+      "seoDescription": "SEO Beschrijving",
+      "seoDescriptionPlaceholder": "SEO beschrijving (optioneel)"
+    },
+    "categories": {
+      "title": "Categorieën",
+      "newCategory": "Nieuwe Categorie",
+      "createCategory": "Maak Categorie",
+      "name": "Naam *",
+      "description": "Beschrijving",
+      "create": "Aanmaken",
+      "cancel": "Annuleren",
+      "noCategories": "Nog geen categorieën. Maak er een aan om te beginnen."
+    },
+    "comments": {
+      "title": "Reacties",
+      "all": "Alles",
+      "pending": "In Afwachting",
+      "approved": "Goedgekeurd",
+      "noComments": "Geen reacties gevonden.",
+      "deleteConfirm": "Weet je zeker dat je deze reactie wilt verwijderen?"
+    }
+  },
+  "console": {
+    "openConsole": "Console openen",
+    "minimize": "Minimaliseren",
+    "maximize": "Maximaliseren",
+    "closeConsole": "Console sluiten",
+    "inputPlaceholder": "Typ een opdracht...",
+    "inputHint": "Druk op Tab om aan te vullen, Enter om uit te voeren",
+    "welcome": "Welkom in de portfolio console van Brent",
+    "welcomeHint": "Typ 'help' om beschikbare opdrachten te zien.",
+    "commandNotFound": "Opdracht niet gevonden: {cmd}\nTyp 'help' om beschikbare opdrachten te zien.",
+    "commandDescriptions": {
+      "help": "Beschikbare opdrachten tonen",
+      "clear": "Console leegmaken",
+      "whoami": "Huidige gebruikersinformatie tonen",
+      "about": "Informatie over Brent tonen",
+      "skills": "Technische vaardigheden tonen",
+      "projects": "Alle projecten weergeven",
+      "contact": "Contactinformatie tonen",
+      "ls": "Beschikbare secties weergeven",
+      "cd": "Naar een sectie navigeren (bijv. cd about)",
+      "map": "Verkenningskaart tonen (Nodes X/7)",
+      "scan": "Beveiligingsscan uitvoeren (demo)",
+      "vulnerability": "Controleren op kwetsbaarheden",
+      "headers": "Beveiligingsheaders controleren",
+      "network": "Netwerkinformatie tonen",
+      "encrypt": "Tekst versleutelen (demo)",
+      "hash": "Hash genereren (demo)",
+      "secret": "Een geheim onthullen"
+    },
+    "output": {
+      "helpTitle": "Beschikbare opdrachten:",
+      "helpCategoryGeneral": "Algemeen",
+      "helpCategoryInfo": "Informatie",
+      "helpCategoryNavigation": "Navigatie",
+      "helpCategoryCybersecurity": "Cyberbeveiliging",
+      "helpCdSection": "Naar een sectie navigeren (about, projects, experience, contact, security)",
+      "helpFooter": "Typ een opdracht en druk op Enter om uit te voeren.",
+      "whoami": "Gebruiker: brent@brentweb.eu\nRol: Full-Stack Ontwikkelaar & Aankomend Cybersecurity Engineer\nLocatie: Geel, België\nStatus: Beschikbaar voor projecten",
+      "about": "Brent Schoenmakers\nFull-Stack Ontwikkelaar & Aankomend Cybersecurity Engineer\n\nIk ben een ontwikkelaar uit Geel, België die al bouwt voor het web sinds 2019.\nMomenteel focus ik op full-stack ontwikkeling met React, Node.js en moderne tools,\nen bezig met het leren van cybersecurity engineering.\n\nPassioneel over het bouwen van veilige, efficiënte applicaties en het leren van\nbeveiligingsbest practices.",
+      "skills": "Technische Vaardigheden:\n\nFrontend:\n  - React, Angular, Next.js\n  - TypeScript, JavaScript\n  - Tailwind CSS\n\nBackend:\n  - Node.js, NestJS\n  - Python, .NET, C#\n  - REST APIs, GraphQL\n\nDatabase:\n  - MySQL\n  - Database ontwerp & optimalisatie\n\nDevOps:\n  - Docker, Linux\n  - CI/CD, Deployment\n  - Cloud platforms\n\nCyberbeveiliging (Leren):\n  - Beveiligingsbest practices\n  - Kwetsbaarheidsanalyse\n  - Netwerkbeveiliging\n  - Versleuteling & hashing",
+      "projects": "Projecten:\n\n1. Carrosserie Kris (2021 - Heden)\n   - Webontwikkeling & IT-beheer\n   - Langetermijn klantrelatie\n   - Technologieën: React, Node.js, Tailwind\n\n2. Provilion Broodjes\n   - Full-stack broodjesbestelsysteem\n   - Stripe betalingsintegratie\n   - Technologieën: TypeScript, MySQL, NextJS\n\n3. Het Smaakpand (Gesloten)\n   - Eenvoudige restaurantwebsite\n   - Technologieën: HTML, CSS, JavaScript\n\nVoor meer details, bezoek de sectie Projecten.",
+      "contact": "Contactinformatie:\n\nE-mail: brent@brentweb.eu\nLocatie: Geel, België\nGitHub: https://github.com/BrentWebEU\nLinkedIn: https://www.linkedin.com/in/brent-schoenmakers-3793a8262/\n\nStatus: Open voor nieuwe projecten\nReactietijd: Meestal binnen 24 uur",
+      "ls": "Beschikbare secties:\n  about       - Over sectie\n  experience  - Werkervaring & opleiding\n  services    - Aangeboden diensten\n  projects    - Portfolio projecten\n  contact     - Contactinformatie\n  security    - Cyberbeveiligingsinformatie",
+      "cdUsage": "Gebruik: cd <sectie>\nVoorbeeld: cd about",
+      "cdNavigating": "Navigeren naar sectie {section}...",
+      "cdNotFound": "Sectie \"{section}\" niet gevonden. Gebruik 'ls' om beschikbare secties te zien.",
+      "mapTitle": "Verkenningskaart:",
+      "mapNodesDiscovered": "Nodes ontdekt: {current}/{total}",
+      "mapProgress": "Voortgang: {percent}%",
+      "mapAvailableNodes": "Beschikbare nodes:",
+      "mapHeroNode": "[✓] hero (altijd ontdekt)",
+      "mapKeepExploring": "Blijf verkennen om alle nodes te ontgrendelen!",
+      "secret": "[GEHEIM ONTHULD]\n\nJe hebt het gevonden! Hier is een geheim:\n\nIk begon mijn reis op 11-jarige leeftijd. Ik bleef leren, falen en opnieuw beginnen, wat uitgroeide tot een hobby, een job en bovenal een passie.\nOnthoud dus: als je net begint of niet weet hoe je verder moet, kun je alles bereiken met de juiste motivatie. Zoek tutorials, artikelen of alles wat je helpt je reis te ontwikkelen om uiteindelijk geweldige oplossingen te bouwen.\nConclusie in 3 woorden: Blijf vooruit gaan!\n\nBlijf verkennen - er is meer te ontdekken!",
+      "scanTitle": "Beveiligingsscan Resultaten:",
+      "scanItems": "[✓] HTTPS ingeschakeld\n[✓] Beveiligingsheaders geconfigureerd\n[✓] Geen blootgestelde gevoelige gegevens\n[✓] Invoervalidatie aanwezig\n[✓] XSS-beveiliging actief\n[✓] CSRF-beveiliging ingeschakeld",
+      "scanCompleted": "Scan voltooid: {time}",
+      "scanStatus": "Status: Veilig",
+      "vulnerabilityTitle": "Kwetsbaarheidsanalyse:",
+      "vulnerabilityChecking": "Controleren op veelvoorkomende kwetsbaarheden...",
+      "vulnerabilityItems": "[✓] SQL Injectie: Beschermd\n[✓] XSS: Beschermd\n[✓] CSRF: Beschermd\n[✓] Clickjacking: Beschermd\n[✓] Onveilige directe objectreferenties: Beschermd",
+      "vulnerabilityClean": "Geen kritieke kwetsbaarheden gevonden.",
+      "vulnerabilityLastUpdated": "Laatst bijgewerkt: {date}",
+      "headersTitle": "Analyse Beveiligingsheaders:",
+      "headersItems": "[✓] Content-Security-Policy: Geconfigureerd\n[✓] X-Frame-Options: DENY\n[✓] X-Content-Type-Options: nosniff\n[✓] Strict-Transport-Security: Ingeschakeld\n[✓] Referrer-Policy: strict-origin-when-cross-origin\n[✓] Permissions-Policy: Geconfigureerd",
+      "headersAllConfigured": "Alle beveiligingsheaders correct geconfigureerd.",
+      "networkTitle": "Netwerkinformatie:",
+      "networkInfo": "Protocol: HTTPS\nPoort: 443\nVerbinding: Veilig (TLS 1.3)\nServer: Zelfgehost\nCDN: Actief\nCompressie: Ingeschakeld",
+      "networkRequestHeaders": "Verzoek Headers:",
+      "networkUserAgent": "  User-Agent: {userAgent}",
+      "networkAccept": "  Accept: text/html,application/json",
+      "networkAcceptLanguage": "  Accept-Language: {language}",
+      "encryptUsage": "Gebruik: encrypt <tekst>\nVoorbeeld: encrypt 'Hallo Wereld'",
+      "encryptResult": "Versleutelde tekst: {result}\n\nOpmerking: Dit is een demo. Echte versleuteling gebruikt de juiste algoritmen.",
+      "hashUsage": "Gebruik: hash <tekst>\nVoorbeeld: hash 'Hallo Wereld'",
+      "hashResult": "Hash (demo): {result}\n\nOpmerking: Dit is een demo. Echte hashing gebruikt SHA-256 of vergelijkbaar."
+    }
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Er is een fout opgetreden",
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "delete": "Verwijderen",
+    "edit": "Bewerken",
+    "close": "Sluiten"
+  },
+  "cookie": {
+    "banner": {
+      "title": "Cookievoorkeuren",
+      "description": "Ik gebruik cookies om uw ervaring te verbeteren. Analytische cookies (Google Analytics) helpen ons begrijpen hoe bezoekers onze site gebruiken, ze zijn volledig optioneel. Lees ons",
+      "privacyLink": "Privacybeleid",
+      "acceptAll": "Alles accepteren",
+      "rejectAll": "Niet-essentiële weigeren",
+      "manage": "Voorkeuren beheren",
+      "hidePreferences": "Voorkeuren verbergen",
+      "save": "Voorkeuren opslaan"
+    },
+    "categories": {
+      "essential": {
+        "title": "Essentieel",
+        "description": "Vereist voor de kernfunctionaliteit van de website, zoals het opslaan van themavoorkeuren. Deze kunnen niet worden uitgeschakeld.",
+        "alwaysActive": "Altijd actief"
+      },
+      "analytics": {
+        "title": "Analyse",
+        "description": "Helpt ons begrijpen hoe bezoekers onze website gebruiken via Google Analytics. IP-adressen worden geanonimiseerd en er worden geen persoonsgegevens opgeslagen."
+      }
+    },
+    "settings": "Cookie-instellingen"
+  }
+}

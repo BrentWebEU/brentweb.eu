@@ -1,0 +1,23 @@
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: "brent@brentweb.eu"
+      storage: "/acme.json"
+      httpChallenge:
+        entryPoint: web
+
+log:
+  level: DEBUG
+
+providers:
+  docker:
+    exposedByDefault: false
+
+api:
+  dashboard: true

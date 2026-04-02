@@ -1,0 +1,64 @@
+/* Base Styles */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-background);
+  color: var(--color-foreground);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.3;
+}
+
+/* Selection */
+::selection {
+  background: hsl(var(--primary) / 0.3);
+  color: var(--color-foreground);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Root and main layout */
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+}
+
+/* Scroll margin for anchor jumps with fixed nav */
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
+@media (min-width: 1024px) {
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+}

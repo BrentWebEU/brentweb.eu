@@ -1,0 +1,18 @@
+services:
+  portfolio:
+    image: ghcr.io/brentwebeu/portfolio-brentweb.eu:latest
+    container_name: brentweb
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.brentweb.rule=Host(`brentweb.eu`) || Host(`www.brentweb.eu`)"
+      - "traefik.http.routers.brentweb.entrypoints=websecure"
+      - "traefik.http.routers.brentweb.tls=true"
+      - "traefik.http.routers.brentweb.tls.certresolver=letsencrypt"
+      - "traefik.http.services.brentweb.loadbalancer.server.port=3000"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

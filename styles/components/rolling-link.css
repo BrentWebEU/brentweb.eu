@@ -1,0 +1,53 @@
+/* Rolling Link Animation */
+
+.rolling-link {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.rolling-link-inner {
+  display: inline-block;
+  position: relative;
+  height: 1.2em;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.rolling-link-text {
+  display: inline-block;
+  position: relative;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.rolling-link-initial {
+  display: inline-block;
+  transition: transform 0.4s var(--ease-out);
+  will-change: transform;
+}
+
+.rolling-link-text-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  transform: translateY(100%);
+  transition: transform 0.4s var(--ease-out);
+  will-change: transform;
+  white-space: nowrap;
+}
+
+.rolling-link:hover .rolling-link-text-active {
+  transform: translateY(0);
+}
+
+.rolling-link:hover .rolling-link-initial {
+  transform: translateY(-100%);
+}
+
+.rolling-letter {
+  display: inline-block;
+}

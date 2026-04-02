@@ -1,0 +1,77 @@
+/* Utility Classes */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  padding: var(--space-2) var(--space-4);
+  z-index: 100;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.focusable:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ── Shared hover patterns ──────────────────────────────────────────── */
+/* Grouped here to avoid repeating the same declaration across component files */
+
+/* Primary border accent on hover */
+.card:hover,
+.footer__back-to-top:hover,
+.project-dialog__tag:hover,
+.project-dialog__action-button--secondary:hover {
+  border-color: hsl(var(--primary) / 0.5);
+}
+
+/* Card lift: elevation on hover */
+.admin-action-card:hover,
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-dialog);
+}
+
+/* Toggle widget: border accent + scale */
+.network-monitor-toggle:hover,
+.system-health-toggle:hover {
+  border-color: hsl(var(--primary) / 0.5);
+  transform: scale(1.05);
+}
+
+/* Tool button: muted fill */
+.network-monitor__header-button:hover,
+.network-monitor__header-close:hover,
+.system-health__btn:hover {
+  background: var(--color-muted);
+}

@@ -1,0 +1,29 @@
+/* Layout Utilities */
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+.section {
+  padding-block: var(--section-py);
+}
+
+.section--tight {
+  padding-block: var(--section-py-tight);
+}
+
+.section--loose {
+  padding-block: var(--section-py-loose);
+}
+
+/* Grid helpers (minimal, prefer component-level grids) */
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}

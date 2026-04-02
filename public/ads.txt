@@ -1,0 +1,6 @@
+# Authorized Digital Sellers - ads.txt
+# For more information: https://iabtechlab.com/ads-txt/
+
+# Add your advertising network accounts here
+# Format: domain, publisher_id, relationship_type, certification_authority_id
+# Example: google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
