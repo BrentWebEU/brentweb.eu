@@ -1,7 +1,6 @@
 services:
   portfolio:
-    image: ghcr.io/brentwebeu/portfolio-brentweb.eu:latest
-    container_name: brentweb
+    build: .
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
