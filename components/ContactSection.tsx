@@ -15,6 +15,13 @@ import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "@/hooks/useTranslations";
 
+const googleMapsApiKey =
+  process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY &&
+  process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY !== "your_google_maps_api_key_here" &&
+  process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY.trim() !== ""
+    ? process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+    : null;
+
 const socialLinks = [
   { icon: GithubIcon, label: "GitHub", href: "https://github.com/BrentWebEU" },
   {
@@ -32,19 +39,7 @@ const socialLinks = [
 const MapComponent = memo(() => {
   const { theme } = useTheme();
   const [mapError, setMapError] = useState(false);
-  const [apiKey, setApiKey] = useState<string | null>(null);
-  const [apiKeyLoaded, setApiKeyLoaded] = useState(false);
   const center = { lat: 51.1610826, lng: 4.9903187 }; // Geel, Belgium
-
-  useEffect(() => {
-    fetch("/api/maps-config")
-      .then((res) => res.json())
-      .then((data) => {
-        setApiKey(data.apiKey ?? null);
-        setApiKeyLoaded(true);
-      })
-      .catch(() => setApiKeyLoaded(true));
-  }, []);
 
   const getColorScheme = () => {
     if (theme === "light") return "LIGHT";
@@ -52,9 +47,9 @@ const MapComponent = memo(() => {
   };
   const colorScheme = getColorScheme();
 
-  const hasValidApiKey = Boolean(apiKey && apiKey.length > 10);
+  const hasValidApiKey = Boolean(googleMapsApiKey && googleMapsApiKey.length > 10);
 
-  const useFallback = mapError || (apiKeyLoaded && !hasValidApiKey);
+  const useFallback = mapError || !hasValidApiKey;
 
   useEffect(() => {
     if (useFallback || !hasValidApiKey) return;
@@ -69,10 +64,6 @@ const MapComponent = memo(() => {
     globalThis.addEventListener("error", handleError);
     return () => globalThis.removeEventListener("error", handleError);
   }, [hasValidApiKey, useFallback]);
-
-  if (!apiKeyLoaded) {
-    return <div className="contact__map-container" />;
-  }
 
   return (
     <div className="contact__map-container">
@@ -94,7 +85,7 @@ const MapComponent = memo(() => {
             </div>
           </div>
         ) : (
-          <APIProvider apiKey={apiKey!}>
+          <APIProvider apiKey={googleMapsApiKey!}>
             <Map
               defaultCenter={center}
               defaultZoom={13}

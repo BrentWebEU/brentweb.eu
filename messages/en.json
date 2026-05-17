@@ -490,7 +490,7 @@
   "cookie": {
     "banner": {
       "title": "Cookie Preferences",
-      "description": "I use cookies to enhance your experience. Analytics cookies (Google Analytics) help us understand how visitors use our site, they are entirely optional. Read our",
+      "description": "I use cookies to enhance your experience. Optional analytics help me understand how visitors use the site through a privacy-conscious first-party setup. Read the",
       "privacyLink": "Privacy Policy",
       "acceptAll": "Accept all",
       "rejectAll": "Reject non-essential",
@@ -506,7 +506,7 @@
       },
       "analytics": {
         "title": "Analytics",
-        "description": "Helps us understand how visitors interact with our website via Google Analytics. IP addresses are anonymised and no personal data is stored."
+        "description": "Helps me understand how visitors interact with the website through a self-hosted analytics setup. Data is minimised and used only for private reporting."
       }
     },
     "settings": "Cookie settings"

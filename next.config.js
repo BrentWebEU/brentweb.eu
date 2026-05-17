@@ -21,19 +21,7 @@ const nextConfig = {
     },
   },
   async redirects() {
-    return [
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'brent@b',
-          },
-        ],
-        destination: 'https://www.brent@b/:path*',
-        permanent: true,
-      },
-    ];
+    return [];
   },
 };
 

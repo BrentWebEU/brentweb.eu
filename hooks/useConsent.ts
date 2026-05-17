@@ -29,9 +29,6 @@ export function useConsent() {
     const full: ConsentState = { ...prefs, timestamp: Date.now() };
     setConsentState(full);
     localStorage.setItem(CONSENT_KEY, JSON.stringify(full));
-    if (!prefs.analytics && typeof window !== 'undefined') {
-      (window as any)['ga-disable-G-NTBEEGE8WJ'] = true;
-    }
   }, []);
 
   return {

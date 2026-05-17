@@ -5,9 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { QueryClientProvider } from "@/providers/QueryProvider";
 import { LocaleProvider } from "@/components/LocaleProvider";
-import Script from "next/script";
 import DevToolsEasterEgg from "@/components/DevToolsEasterEgg";
-import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { PortfolioAnalytics } from "@/components/PortfolioAnalytics";
 import { CookieConsent } from "@/components/CookieConsent";
 import "@/styles/index.css";
 
@@ -39,9 +38,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <GoogleAnalytics />
-        <Script id="structured-data" type="application/ld+json">
-          {`
+        <script
+          id="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
             {
               "@context": "https://schema.org",
               "@type": "Person",
@@ -55,8 +56,9 @@ export default function RootLayout({
               ],
               "knowsAbout": ["Web Development", "Security", "React", "Node.js", "TypeScript", "Full-Stack Development"]
             }
-          `}
-        </Script>
+          `,
+          }}
+        />
       </head>
       <body className="font-sans">
         <noscript>
@@ -179,6 +181,7 @@ export default function RootLayout({
             <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
               <TooltipProvider>
                 <DevToolsEasterEgg />
+                <PortfolioAnalytics />
                 <CookieConsent />
                 {children}
                 <Toaster />

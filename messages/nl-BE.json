@@ -491,7 +491,7 @@
   "cookie": {
     "banner": {
       "title": "Cookievoorkeuren",
-      "description": "Ik gebruik cookies om uw ervaring te verbeteren. Analytische cookies (Google Analytics) helpen ons begrijpen hoe bezoekers onze site gebruiken, ze zijn volledig optioneel. Lees ons",
+      "description": "Ik gebruik cookies om uw ervaring te verbeteren. Optionele analytics helpen mij begrijpen hoe bezoekers de site gebruiken via een privacyvriendelijke first-party opzet. Lees het",
       "privacyLink": "Privacybeleid",
       "acceptAll": "Alles accepteren",
       "rejectAll": "Niet-essentiële weigeren",
@@ -507,7 +507,7 @@
       },
       "analytics": {
         "title": "Analyse",
-        "description": "Helpt ons begrijpen hoe bezoekers onze website gebruiken via Google Analytics. IP-adressen worden geanonimiseerd en er worden geen persoonsgegevens opgeslagen."
+        "description": "Helpt mij begrijpen hoe bezoekers de website gebruiken via een self-hosted analytics-opzet. De gegevens worden beperkt gehouden en enkel voor private rapportering gebruikt."
       }
     },
     "settings": "Cookie-instellingen"

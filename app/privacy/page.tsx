@@ -33,22 +33,20 @@ export default function PrivacyPage() {
         <h2>Information Collection</h2>
         <h3>Analytics Data</h3>
         <p>
-          This website uses Google Analytics to collect anonymized information about 
-          how visitors use the site. This includes:
+          This website uses a self-hosted analytics setup to collect limited,
+          pseudonymised information about how visitors use the site. This
+          includes:
         </p>
         <ul>
           <li>Pages visited and time spent on each page</li>
           <li>Browser type and version</li>
           <li>Device type and screen resolution</li>
-          <li>Geographic location (country/city level)</li>
           <li>Referral source (how you found this website)</li>
         </ul>
         <p>
-          Google Analytics uses cookies to track this information. You can opt out of 
-          Google Analytics by installing the{' '}
-          <a href="https://tools.google.com/dlpage/gaoptout" style={{ color: '#0066cc' }}>
-            Google Analytics Opt-out Browser Add-on
-          </a>.
+          Analytics are only recorded after you opt in via the cookie banner.
+          The resulting reports are reviewed privately in Metabase and are not
+          exposed on the public website.
         </p>
 
         <h3>Contact Forms</h3>
@@ -75,8 +73,9 @@ export default function PrivacyPage() {
             properly (e.g. theme preferences)
           </li>
           <li>
-            <strong>Analytics Cookies:</strong> Google Analytics cookies to understand 
-            website usage and improve user experience
+            <strong>Analytics Cookies:</strong> Consent-gated first-party
+            analytics requests used to understand website usage and improve the
+            experience
           </li>
         </ul>
         <p>
@@ -106,10 +105,8 @@ export default function PrivacyPage() {
         <p>This website uses the following third-party services:</p>
         <ul>
           <li>
-            <strong>Google Analytics:</strong> For website analytics. See{' '}
-            <a href="https://policies.google.com/privacy" style={{ color: '#0066cc' }}>
-              Google's Privacy Policy
-            </a>
+            <strong>Metabase:</strong> Used privately to visualise aggregated
+            website analytics stored in PostgreSQL
           </li>
         </ul>
       </section>
