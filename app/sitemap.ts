@@ -10,20 +10,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 1.0,
       // locale alternates
-      alternates: [
-        { hreflang: 'en', url: `${baseUrl}` },
-        { hreflang: 'nl-BE', url: `${baseUrl}/nl-BE` },
-      ],
+      alternates: {
+        languages: {
+          'en': `${baseUrl}`,
+          'nl-BE': `${baseUrl}/nl-BE`,
+        },
+      },
     },
     {
       url: `${baseUrl}/privacy`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.5,
-      alternates: [
-        { hreflang: 'en', url: `${baseUrl}/privacy` },
-        { hreflang: 'nl-BE', url: `${baseUrl}/nl-BE/privacy` },
-      ],
+      alternates: {
+        languages: {
+          'en': `${baseUrl}/privacy`,
+          'nl-BE': `${baseUrl}/nl-BE/privacy`,
+        },
+      },
     },
+  ];
   ];
 }
