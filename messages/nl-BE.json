@@ -52,11 +52,7 @@
           "company": "Carrosserie Kris",
           "description": "Onderhoud van systemen, klantinteractie en prestatieoptimalisatie.",
           "personalNote": "Mijn eerste echte klant.",
-          "tags": [
-            "Webontwikkeling",
-            "IT Beheer",
-            "Boekhouding"
-          ],
+          "tags": ["Webontwikkeling", "IT Beheer", "Boekhouding"],
           "status": "current"
         },
         {
@@ -65,12 +61,7 @@
           "company": "Axxit",
           "description": "Bouwen van full-stack applicaties, code reviews en samenwerking in teamverband.",
           "personalNote": "Hier leerde ik de waarde van code reviews en teamwerk.",
-          "tags": [
-            "Angular",
-            "ASP.NET",
-            "Docker",
-            "Teamwerk"
-          ]
+          "tags": ["Angular", "ASP.NET", "Docker", "Teamwerk"]
         }
       ],
       "education": [
@@ -79,11 +70,7 @@
           "title": "Stagiair Ontwikkelaar",
           "company": "WimNet",
           "description": "Stage gericht op netwerken & infrastructuur.",
-          "tags": [
-            "Stage",
-            "Leren",
-            "Netwerken"
-          ]
+          "tags": ["Stage", "Leren", "Netwerken"]
         },
         {
           "year": "2025",
@@ -91,10 +78,7 @@
           "company": "Nitor",
           "description": "Twee weken gewerkt aan React Native componenten. Mobiele ontwikkeling en componentarchitectuur.",
           "personalNote": "Intensieve leerervaring in mobiele ontwikkeling.",
-          "tags": [
-            "React Native",
-            "Mobiele Ontwikkeling"
-          ]
+          "tags": ["React Native", "Mobiele Ontwikkeling"]
         }
       ],
       "hackathons": [
@@ -104,11 +88,7 @@
           "company": "3de keer - 5de plaats van de 19 (Solo)",
           "description": "Opnieuw solo. 5de plaats. Bouwen onder tijdsdruk zorgt voor een steile leercurve.",
           "personalNote": "Solo project. Snelkookpan-leeromgeving.",
-          "tags": [
-            "Probleemoplossing",
-            "Solo werk",
-            "Tijdsbeheer"
-          ]
+          "tags": ["Probleemoplossing", "Solo werk", "Tijdsbeheer"]
         },
         {
           "year": "2024",
@@ -116,10 +96,7 @@
           "company": "2de keer - 12de plaats van de 12",
           "description": "Laatste plaats. Meer geleerd van dit verlies dan van overwinningen.",
           "personalNote": "Waardevolle leerervaring door uitdagingen.",
-          "tags": [
-            "Leerervaring",
-            "Angular"
-          ]
+          "tags": ["Leerervaring", "Angular"]
         },
         {
           "year": "2023",
@@ -127,11 +104,7 @@
           "company": "1ste keer - 4de plaats van de 10 (Solo)",
           "description": "Eerste hackathon, solo met Angular. 4de plaats. Overweldigend maar geslaagd.",
           "personalNote": "Eerste hackathonervaring. Uitdagend maar belonend.",
-          "tags": [
-            "Eerste Hackathon",
-            "Angular",
-            "Leren"
-          ]
+          "tags": ["Eerste Hackathon", "Angular", "Leren"]
         }
       ]
     }
@@ -198,15 +171,31 @@
           "Werkende contactformulieren",
           "Regelmatige updates & onderhoud"
         ],
-        "tags": [
-          "React",
-          "Node.js",
-          "Tailwind"
-        ],
+        "tags": ["React", "Node.js", "Tailwind"],
         "color": "#e85454",
         "type": "website",
         "liveUrl": "https://carrosseriekris.be",
         "githubUrl": ""
+      },
+      {
+        "title": "Distributed Intrusion Detection and Prevention System",
+        "category": "Low-Level Solution",
+        "image": "idps",
+        "description": "Eerst meten, dan pas coderen. Samen brengen we het grotere plaatje in kaart, zodat elk stukje technologie aansluit bij jouw doelen voordat de eerste regel code wordt geschreven.",
+        "longDescription": "Gedistribueerde beveiligingsmonitoring voor educatieve netwerken. Een Raspberry Pi vastlegt alle netwerkverkeer inline, stroomt het naar een VPS voor analyse en voert lokale blokkeringsregels toe — zonder dat het verkeer wordt onderbroken.",
+        "features": [
+          "Robuuste netwerkmonitoring",
+          "Gedistribueerd verwerkingssysteem",
+          "Real-time dashboard",
+          "Cyberaanval detectie en preventie",
+          "Low latency",
+          "Low-level networkmonitoring"
+        ],
+        "tags": ["Rust", "Angular", "Docker", "Suricata", "Shell", "Linux"],
+        "color": "#B7410E",
+        "type": "solution",
+        "liveUrl": "",
+        "githubUrl": "https://github.com/BrentWebEU/distributed-idps-solution"
       },
       {
         "title": "Provilion Broodjes",
@@ -222,12 +211,7 @@
           "Op rollen gebaseerde toegangscontrole",
           "E-mailmeldingen"
         ],
-        "tags": [
-          "TypeScript",
-          "MySQL",
-          "Stripe",
-          "NextJS"
-        ],
+        "tags": ["TypeScript", "MySQL", "Stripe", "NextJS"],
         "color": "#54e89c",
         "type": "website",
         "liveUrl": "https://provilion-broodjes.vercel.app",
@@ -246,11 +230,7 @@
           "Snel ladend",
           "Makkelijk te updaten"
         ],
-        "tags": [
-          "HTML",
-          "CSS",
-          "JavaScript"
-        ],
+        "tags": ["HTML", "CSS", "JavaScript"],
         "color": "#d2b48c",
         "type": "website",
         "liveUrl": "https://precious-mooncake-1d00a4.netlify.app/",

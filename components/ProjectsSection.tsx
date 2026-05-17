@@ -10,6 +10,7 @@ const IMAGE_MAP: Record<string, string> = {
   carrosserieKris: "/carrosseriekris.png",
   provilion: "/provilion.png",
   hetsmaakpand: "/hetsmaakpand.png",
+  idps: "/images/idps.png",
 };
 
 export const ProjectsSection = memo(() => {

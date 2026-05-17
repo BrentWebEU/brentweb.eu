@@ -52,11 +52,7 @@
           "company": "Carrosserie Kris",
           "description": "Maintained real systems, client collaboration, performance optimization.",
           "personalNote": "First real client.",
-          "tags": [
-            "Web Development",
-            "IT Management",
-            "Accountancy"
-          ],
+          "tags": ["Web Development", "IT Management", "Accountancy"],
           "status": "current"
         },
         {
@@ -65,12 +61,7 @@
           "company": "Axxit",
           "description": "Built full-stack applications, code reviews, team collaboration.",
           "personalNote": "Learned the value of code reviews and team collaboration.",
-          "tags": [
-            "Angular",
-            "ASP.NET",
-            "Docker",
-            "Team Work"
-          ]
+          "tags": ["Angular", "ASP.NET", "Docker", "Team Work"]
         }
       ],
       "education": [
@@ -79,10 +70,7 @@
           "title": "Developer Intern",
           "company": "WimNet",
           "description": "Upcoming internship. Networking & Infrastructure",
-          "tags": [
-            "Internship",
-            "Learning"
-          ]
+          "tags": ["Internship", "Learning"]
         },
         {
           "year": "2025",
@@ -90,10 +78,7 @@
           "company": "Nitor",
           "description": "Two weeks building React Native components. Mobile development, component architecture.",
           "personalNote": "Intensive learning experience in mobile development.",
-          "tags": [
-            "React Native",
-            "Mobile Development"
-          ]
+          "tags": ["React Native", "Mobile Development"]
         }
       ],
       "hackathons": [
@@ -103,11 +88,7 @@
           "company": "3rd Time - Ranked 5/19 (Solo)",
           "description": "Solo again. 5th place. Building under pressure = fast learning.",
           "personalNote": "Solo project. Fast-paced learning environment.",
-          "tags": [
-            "Problem Solving",
-            "Solo Work",
-            "Time Management"
-          ]
+          "tags": ["Problem Solving", "Solo Work", "Time Management"]
         },
         {
           "year": "2024",
@@ -115,10 +96,7 @@
           "company": "2nd Time - Ranked 12/12",
           "description": "Last place. Learned more from failure than wins.",
           "personalNote": "Valuable learning experience from challenges.",
-          "tags": [
-            "Learning Experience",
-            "Angular"
-          ]
+          "tags": ["Learning Experience", "Angular"]
         },
         {
           "year": "2023",
@@ -126,11 +104,7 @@
           "company": "1st Time - Ranked 4/10 (Solo)",
           "description": "First hackathon, solo with Angular. 4th place. Overwhelmed but worked.",
           "personalNote": "First hackathon experience. Challenging but rewarding.",
-          "tags": [
-            "First Hackathon",
-            "Angular",
-            "Learning"
-          ]
+          "tags": ["First Hackathon", "Angular", "Learning"]
         }
       ]
     }
@@ -197,15 +171,31 @@
           "Contact forms that actually work",
           "Regular updates & maintenance"
         ],
-        "tags": [
-          "React",
-          "Node.js",
-          "Tailwind"
-        ],
+        "tags": ["React", "Node.js", "Tailwind"],
         "color": "#e85454",
         "type": "website",
         "liveUrl": "https://carrosseriekris.be",
         "githubUrl": ""
+      },
+      {
+        "title": "Distributed Intrusion Detection and Prevention System",
+        "category": "Low-Level Solution",
+        "image": "idps",
+        "description": "A distributed IDPS solution that connects an edge device that is physically connected to the network (raspberry pi) with a server that handles processing tasks, dashboard and log analyzation.",
+        "longDescription": "Distributed security monitoring for educational networks. A Raspberry Pi captures all network traffic inline, streams it to a VPS for analysis, and enforces block rules locally — without ever holding up traffic.",
+        "features": [
+          "Robust traffic monitoring",
+          "Distributed processing",
+          "Real-time dashboard",
+          "Threat detection and prevention",
+          "Low latency",
+          "Low-level network monitoring"
+        ],
+        "tags": ["Rust", "Angular", "Docker", "Suricata", "Shell", "Linux"],
+        "color": "#B7410E",
+        "type": "solution",
+        "liveUrl": "",
+        "githubUrl": "https://github.com/BrentWebEU/distributed-idps-solution"
       },
       {
         "title": "Provilion Broodjes",
@@ -221,12 +211,7 @@
           "Role-based access control",
           "Email notifications"
         ],
-        "tags": [
-          "TypeScript",
-          "MySQL",
-          "Stripe",
-          "NextJS"
-        ],
+        "tags": ["TypeScript", "MySQL", "Stripe", "NextJS"],
         "color": "#54e89c",
         "type": "website",
         "liveUrl": "https://provilion-broodjes.vercel.app",
@@ -245,11 +230,7 @@
           "Fast loading",
           "Easy to update"
         ],
-        "tags": [
-          "HTML",
-          "CSS",
-          "JavaScript"
-        ],
+        "tags": ["HTML", "CSS", "JavaScript"],
         "color": "#d2b48c",
         "type": "website",
         "liveUrl": "https://precious-mooncake-1d00a4.netlify.app/",
