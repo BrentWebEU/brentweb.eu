@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { ProjectDialog } from "./ProjectDialog";
 import { ProjectMarqueeRow } from "./ProjectMarqueeRow";
 import { useTranslations } from "@/hooks/useTranslations";
+import { sendEvent } from '@/lib/analytics';
 
 const IMAGE_MAP: Record<string, string> = {
   carrosserieKris: "/carrosseriekris.png",
@@ -31,7 +32,10 @@ export const ProjectsSection = memo(() => {
   >(null);
 
   const handleProjectClick = useCallback(
-    (project: (typeof projects)[0]) => setSelectedProject(project),
+    (project: (typeof projects)[0]) => {
+      try { sendEvent('project_open', { project: project.title }); } catch (e) {}
+      setSelectedProject(project);
+    },
     []
   );
   const handleCloseDialog = useCallback(() => setSelectedProject(null), []);

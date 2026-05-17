@@ -14,6 +14,7 @@ import { useTheme } from "next-themes";
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "@/hooks/useTranslations";
+import { sendEvent } from '@/lib/analytics';
 
 const googleMapsApiKey =
   process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY &&
@@ -127,6 +128,9 @@ export const ContactSection = memo(() => {
     e.preventDefault();
     setIsSubmitting(true);
     setError(null);
+
+    // analytics: attempt
+    try { sendEvent('contact_form_submit_attempt'); } catch (e) {}
 
     if (!formData.gdprConsent) {
       setError(t('contact.form.gdprRequired'));

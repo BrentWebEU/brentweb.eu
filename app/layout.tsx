@@ -59,6 +59,13 @@ export default function RootLayout({
           `,
           }}
         />
+
+        {/* SEO: canonical + hreflang alternates */}
+        <link rel="canonical" href="https://www.brentweb.eu/" />
+        <link rel="alternate" hrefLang="en" href="https://www.brentweb.eu/" />
+        <link rel="alternate" hrefLang="nl-BE" href="https://www.brentweb.eu/nl-BE" />
+        <meta name="robots" content="index, follow" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
       </head>
       <body className="font-sans">
         <noscript>
