@@ -10,12 +10,17 @@ export async function POST(request: Request) {
     const ip = forwardedFor?.split(",")[0].trim() ?? null;
     const userAgent = request.headers.get("user-agent");
 
-    // persist to local analytics DB
-    await insertPortfolioAnalyticsEvent({
-      ...body,
-      ip,
-      userAgent,
-    });
+    // Persist to local analytics DB if available. Do not fail the request when DB is not configured.
+    try {
+      await insertPortfolioAnalyticsEvent({
+        ...body,
+        ip,
+        userAgent,
+      });
+    } catch (dbErr) {
+      // likely missing DATABASE_URL or DB error; log and continue
+      console.warn('portfolio track DB insert failed:', dbErr);
+    }
 
     // Optionally forward to Google Analytics 4 Measurement Protocol if configured
     const MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID; // e.g. G-XXXXXXX
