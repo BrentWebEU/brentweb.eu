@@ -8,7 +8,7 @@ import { useTranslations } from "@/hooks/useTranslations";
 import { sendEvent } from '@/lib/analytics';
 
 const IMAGE_MAP: Record<string, string> = {
-  carrosserieKris: "/carrosseriekris.png",
+  carrosserieKris: "/images/ckris-small.png",
   provilion: "/provilion.png",
   hetsmaakpand: "/hetsmaakpand.png",
   idps: "/images/idps.png",

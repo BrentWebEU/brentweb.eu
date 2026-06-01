@@ -9,15 +9,18 @@
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Greetings!",
-    "title": "My name is Brent!",
-    "tagline": "Building reliable systems since 2019.",
-    "getInTouch": "Get in touch",
-    "viewProjects": "View projects"
+    "badge": "I am Brent Schoenmakers!",
+    "title": "The go-to full-stack developer for your digital transformation.",
+    "tagline": "My vision is to build applications based on your goals, not the technology.",
+    "getInTouch": "Let's Talk",
+    "viewProjects": "View Work",
+    "location": "Geel, Belgium",
+    "featuredProject": "Carrosserie Kris",
+    "featured": "Featured"
   },
   "about": {
     "badge": "ABOUT",
-    "title": "Hello, I'm Brent",
+    "title": "Hello, I'm Brent Schoenmakers",
     "titleMorning": "Good morning, I'm Brent",
     "titleNoon": "Good afternoon, I'm Brent",
     "titleEvening": "Good evening, I'm Brent",
