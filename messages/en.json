@@ -55,7 +55,11 @@
           "company": "Carrosserie Kris",
           "description": "Maintained real systems, client collaboration, performance optimization.",
           "personalNote": "First real client.",
-          "tags": ["Web Development", "IT Management", "Accountancy"],
+          "tags": [
+            "Web Development",
+            "IT Management",
+            "Accountancy"
+          ],
           "status": "current"
         },
         {
@@ -64,7 +68,12 @@
           "company": "Axxit",
           "description": "Built full-stack applications, code reviews, team collaboration.",
           "personalNote": "Learned the value of code reviews and team collaboration.",
-          "tags": ["Angular", "ASP.NET", "Docker", "Team Work"]
+          "tags": [
+            "Angular",
+            "ASP.NET",
+            "Docker",
+            "Team Work"
+          ]
         }
       ],
       "education": [
@@ -73,7 +82,10 @@
           "title": "Developer Intern",
           "company": "WimNet",
           "description": "Upcoming internship. Networking & Infrastructure",
-          "tags": ["Internship", "Learning"]
+          "tags": [
+            "Internship",
+            "Learning"
+          ]
         },
         {
           "year": "2025",
@@ -81,7 +93,10 @@
           "company": "Nitor",
           "description": "Two weeks building React Native components. Mobile development, component architecture.",
           "personalNote": "Intensive learning experience in mobile development.",
-          "tags": ["React Native", "Mobile Development"]
+          "tags": [
+            "React Native",
+            "Mobile Development"
+          ]
         }
       ],
       "hackathons": [
@@ -91,7 +106,11 @@
           "company": "3rd Time - Ranked 5/19 (Solo)",
           "description": "Solo again. 5th place. Building under pressure = fast learning.",
           "personalNote": "Solo project. Fast-paced learning environment.",
-          "tags": ["Problem Solving", "Solo Work", "Time Management"]
+          "tags": [
+            "Problem Solving",
+            "Solo Work",
+            "Time Management"
+          ]
         },
         {
           "year": "2024",
@@ -99,7 +118,10 @@
           "company": "2nd Time - Ranked 12/12",
           "description": "Last place. Learned more from failure than wins.",
           "personalNote": "Valuable learning experience from challenges.",
-          "tags": ["Learning Experience", "Angular"]
+          "tags": [
+            "Learning Experience",
+            "Angular"
+          ]
         },
         {
           "year": "2023",
@@ -107,7 +129,11 @@
           "company": "1st Time - Ranked 4/10 (Solo)",
           "description": "First hackathon, solo with Angular. 4th place. Overwhelmed but worked.",
           "personalNote": "First hackathon experience. Challenging but rewarding.",
-          "tags": ["First Hackathon", "Angular", "Learning"]
+          "tags": [
+            "First Hackathon",
+            "Angular",
+            "Learning"
+          ]
         }
       ]
     }
@@ -147,7 +173,7 @@
   "projects": {
     "badge": "PROJECTS",
     "title": "Things I've built",
-    "subtitle": "Real projects for real clients. Each one taught me something new.",
+    "subtitle": "Projects for real clients..",
     "annotation": "← Scroll & click to explore",
     "viewProject": "View project",
     "viewCode": "View code",
@@ -174,11 +200,52 @@
           "Contact forms that actually work",
           "Regular updates & maintenance"
         ],
-        "tags": ["React", "Node.js", "Tailwind"],
+        "tags": [
+          "React",
+          "Node.js",
+          "Tailwind"
+        ],
         "color": "#e85454",
         "type": "website",
         "liveUrl": "https://carrosseriekris.be",
-        "githubUrl": ""
+        "githubUrl": "",
+        "code": "NODE_01",
+        "grid": "A1",
+        "status": "maintained",
+        "sector": "Client Web Presence",
+        "period": "2021 — PRESENT",
+        "abstract": "Local body shop website iterated on continuously since 2021 — performance, SEO, and conversion improvements shipped across a four-year client relationship.",
+        "business": {
+          "summary": "A long-term retainer relationship, not a one-off build. The site is the shop's primary lead channel: fast, findable on Google, and with contact forms that reliably convert visits into quote requests.",
+          "metrics": [
+            {
+              "value": "4+ yrs",
+              "label": "Continuous client retention"
+            },
+            {
+              "value": "#1",
+              "label": "Local search positioning"
+            },
+            {
+              "value": "Mobile",
+              "label": "First-class experience"
+            }
+          ],
+          "outcomes": [
+            "Steady inbound quote requests through the website",
+            "Iterative SEO work compounding since 2021",
+            "Client trusts one partner for updates and maintenance"
+          ]
+        },
+        "engineering": {
+          "summary": "React frontend with a Node.js backend, styled with Tailwind. The codebase is optimized for Core Web Vitals and kept evergreen through regular dependency and content updates.",
+          "decisions": [
+            "Mobile-first layout system; animations kept off the critical path",
+            "Image and asset pipeline tuned for Largest Contentful Paint",
+            "Form handling hardened against spam without hurting conversion",
+            "Small, boring stack chosen deliberately for long-term maintainability"
+          ]
+        }
       },
       {
         "title": "Distributed Intrusion Detection and Prevention System",
@@ -194,11 +261,55 @@
           "Low latency",
           "Low-level network monitoring"
         ],
-        "tags": ["Rust", "Angular", "Docker", "Suricata", "Shell", "Linux"],
+        "tags": [
+          "Rust",
+          "Angular",
+          "Docker",
+          "Suricata",
+          "Shell",
+          "Linux"
+        ],
         "color": "#B7410E",
         "type": "solution",
         "liveUrl": "",
-        "githubUrl": "https://github.com/BrentWebEU/distributed-idps-solution"
+        "githubUrl": "https://github.com/BrentWebEU/distributed-idps-solution",
+        "code": "NODE_02",
+        "grid": "A2",
+        "status": "active",
+        "sector": "Network Security",
+        "period": "2024 — PRESENT",
+        "abstract": "Distributed intrusion detection and prevention for educational networks. An inline edge device captures traffic, a remote server analyzes it, and block rules are enforced locally without slowing the network.",
+        "business": {
+          "summary": "Schools get enterprise-grade network protection on commodity hardware. Threats are detected and blocked in real time, while staff see everything on a single live dashboard — no security team required on site.",
+          "metrics": [
+            {
+              "value": "<1ms",
+              "label": "Added inline latency"
+            },
+            {
+              "value": "24/7",
+              "label": "Autonomous monitoring"
+            },
+            {
+              "value": "€0",
+              "label": "Per-seat licensing cost"
+            }
+          ],
+          "outcomes": [
+            "Real-time threat detection and automatic blocking",
+            "One dashboard for the whole network — no specialist needed",
+            "Runs on a Raspberry Pi: minimal hardware investment"
+          ]
+        },
+        "engineering": {
+          "summary": "A Rust capture agent runs inline on a Raspberry Pi, streams packet data to a VPS for Suricata-based analysis, and applies verdicts locally so the hot path never blocks on the network round-trip.",
+          "decisions": [
+            "Rust on the edge: memory-safe packet handling, zero GC pauses inline",
+            "Capture and enforcement decoupled from analysis — fail-open by design",
+            "Server-side pipeline containerized with Docker for reproducible deploys",
+            "Suricata rule engine drives detection; custom layer handles prevention"
+          ]
+        }
       },
       {
         "title": "Provilion Broodjes",
@@ -214,11 +325,53 @@
           "Role-based access control",
           "Email notifications"
         ],
-        "tags": ["TypeScript", "MySQL", "Stripe", "NextJS"],
+        "tags": [
+          "TypeScript",
+          "MySQL",
+          "Stripe",
+          "NextJS"
+        ],
         "color": "#54e89c",
         "type": "website",
         "liveUrl": "https://provilion-broodjes.vercel.app",
-        "githubUrl": ""
+        "githubUrl": "",
+        "code": "NODE_03",
+        "grid": "B1",
+        "status": "active",
+        "sector": "Commerce Platform",
+        "period": "2023 — PRESENT",
+        "abstract": "Full-stack lunch ordering platform for a school: students order, parents manage credits, administrators run daily operations — with integrated payment processing.",
+        "business": {
+          "summary": "Replaced manual cash handling with a self-service ordering system. Parents top up credits online, orders settle automatically through Stripe, and the kitchen works from one live operations dashboard.",
+          "metrics": [
+            {
+              "value": "100%",
+              "label": "Cashless transactions"
+            },
+            {
+              "value": "3",
+              "label": "User roles, one platform"
+            },
+            {
+              "value": "Live",
+              "label": "Order status updates"
+            }
+          ],
+          "outcomes": [
+            "Eliminated cash handling and manual order reconciliation",
+            "Parents control spending through a prepaid credit system",
+            "Admin dashboard turns daily orders into a single prep list"
+          ]
+        },
+        "engineering": {
+          "summary": "Next.js and TypeScript end to end, MySQL for persistence, and Stripe webhooks driving payment reconciliation. Role-based access control separates student, parent, and administrator capabilities.",
+          "decisions": [
+            "Webhook-driven payment flow: credit balances only mutate on confirmed events",
+            "RBAC enforced at the API layer, not just hidden in the UI",
+            "Transactional order writes keep credit ledger and orders consistent",
+            "Email notifications decoupled from the request path"
+          ]
+        }
       },
       {
         "title": "Het Smaakpand (Closed)",
@@ -233,13 +386,68 @@
           "Fast loading",
           "Easy to update"
         ],
-        "tags": ["HTML", "CSS", "JavaScript"],
+        "tags": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
         "color": "#d2b48c",
         "type": "website",
         "liveUrl": "https://precious-mooncake-1d00a4.netlify.app/",
-        "githubUrl": ""
+        "githubUrl": "",
+        "code": "NODE_04",
+        "grid": "B2",
+        "status": "decommissioned",
+        "sector": "Hospitality Web",
+        "period": "2022 — 2024",
+        "abstract": "Clean, minimal website for a local sandwich shop: menu display, opening hours, mobile-first. Retired when the business closed its doors.",
+        "business": {
+          "summary": "A small business got online fast and affordably. The site did one job — show the menu and get people through the door — and did it without ongoing complexity or cost.",
+          "metrics": [
+            {
+              "value": "Days",
+              "label": "Concept to launch"
+            },
+            {
+              "value": "Low",
+              "label": "Total cost of ownership"
+            },
+            {
+              "value": "Zero",
+              "label": "Maintenance incidents"
+            }
+          ],
+          "outcomes": [
+            "Menu and hours instantly findable from any phone",
+            "No CMS overhead for a shop with a stable menu",
+            "Cleanly decommissioned when the business closed"
+          ]
+        },
+        "engineering": {
+          "summary": "Static-first delivery with a deliberately minimal footprint. No frameworks where none were needed — fast loads, trivial hosting, and nothing to patch.",
+          "decisions": [
+            "Static delivery: no server runtime, near-zero attack surface",
+            "Hand-tuned CSS instead of a framework for a single-page footprint",
+            "Sub-second loads on mobile networks as the primary target",
+            "Archived with a clean teardown — no orphaned infrastructure"
+          ]
+        }
       }
-    ]
+    ],
+    "map": {
+      "businessTitle": "Business impact",
+      "businessAudience": "For managers & recruiters",
+      "engineeringTitle": "Engineering",
+      "engineeringAudience": "For tech leads",
+      "close": "Close",
+      "liveLink": "View live site",
+      "sourceLink": "View code",
+      "status": {
+        "active": "Live",
+        "maintained": "Actively maintained",
+        "decommissioned": "Retired"
+      }
+    }
   },
   "security": {
     "badge": "SECURITY",

@@ -178,7 +178,43 @@
         "color": "#e85454",
         "type": "website",
         "liveUrl": "https://carrosseriekris.be",
-        "githubUrl": ""
+        "githubUrl": "",
+        "code": "NODE_01",
+        "grid": "A1",
+        "status": "maintained",
+        "sector": "Klantwebsite",
+        "period": "2021 — HEDEN",
+        "abstract": "Website voor een lokaal carrosseriebedrijf, actief beheerd sinds 202, snelheid, SEO en zichtbaarheid binnen een langdurige samenwerking.",
+        "business": {
+          "summary": "Een langdurige samenwerking, geen eenmalig project. De site is één van de belangrijkste kanalen van de zaak: snel, vindbaar op Google, met contacteer mogelijkheden om klanten direct in contact te brengen met de firma.",
+          "metrics": [
+            {
+              "value": "4+ jr",
+              "label": "Continue samenwerking"
+            },
+            {
+              "value": "#7",
+              "label": "Lokale zoekresultaten"
+            },
+            {
+              "value": "Mobiel",
+              "label": "Mobile-first design"
+            }
+          ],
+          "outcomes": [
+            "Constante gesprekken via de website",
+            "SEO dat zijn positie behoudt",
+            "Eén vast aanspreekpunt voor updates en onderhoud"
+          ]
+        },
+        "engineering": {
+          "summary": "React-frontend met een Node.js-backend, gestyled met Tailwind. De codebase is geoptimaliseerd voor Core Web Vitals en blijft actueel via regelmatige updates van dependencies en content.",
+          "decisions": [
+            "Mobile-first lay-out, animaties buiten het kritieke pad gehouden",
+            "Formulieren beveiligd zonder gesprekken te verliezen",
+            "Bewust kleine, eenvoudige stack voor onderhoudbaarheid op lange termijn"
+          ]
+        }
       },
       {
         "title": "Distributed Intrusion Detection and Prevention System",
@@ -198,7 +234,44 @@
         "color": "#B7410E",
         "type": "solution",
         "liveUrl": "",
-        "githubUrl": "https://github.com/BrentWebEU/distributed-idps-solution"
+        "githubUrl": "https://github.com/Brentweb-Labs/netsentry-sensor",
+        "code": "NODE_02",
+        "grid": "A2",
+        "status": "active",
+        "sector": "Netwerkbeveiliging",
+        "period": "2024 — HEDEN",
+        "abstract": "Gedistribueerde intrusion detection en prevention voor educatieve netwerken. Een inline edge-toestel capteert het verkeer, een externe server analyseert het, en blokkeerregels worden lokaal afgedwongen zonder het netwerk te vertragen.",
+        "business": {
+          "summary": "Scholen krijgen netwerkbeveiliging op bedrijfsniveau met goedkope hardware. Bedreigingen worden in realtime gedetecteerd en geblokkeerd, terwijl het personeel alles volgt op één live dashboard — zonder securityteam ter plaatse.",
+          "metrics": [
+            {
+              "value": "<1ms",
+              "label": "Extra inline latency"
+            },
+            {
+              "value": "24/7",
+              "label": "Autonome monitoring"
+            },
+            {
+              "value": "€0",
+              "label": "Licentiekost per gebruiker"
+            }
+          ],
+          "outcomes": [
+            "Realtime detectie en automatische blokkering van bedreigingen",
+            "Eén dashboard voor het hele netwerk — geen specialist nodig",
+            "Draait op een Raspberry Pi: minimale hardware-investering"
+          ]
+        },
+        "engineering": {
+          "summary": "Een Rust capture-agent draait inline op een Raspberry Pi, streamt pakketdata naar een VPS voor analyse met Suricata, en past verdicts lokaal toe zodat het hot path nooit wacht op de netwerk-roundtrip.",
+          "decisions": [
+            "Rust aan de edge: memory-safe pakketverwerking, geen GC-pauzes inline",
+            "Capture en enforcement losgekoppeld van analyse — fail-open by design",
+            "Serverpipeline gecontaineriseerd met Docker voor reproduceerbare deploys",
+            "Suricata-regelengine stuurt detectie; eigen laag verzorgt preventie"
+          ]
+        }
       },
       {
         "title": "Provilion Broodjes",
@@ -217,8 +290,45 @@
         "tags": ["TypeScript", "MySQL", "Stripe", "NextJS"],
         "color": "#54e89c",
         "type": "website",
-        "liveUrl": "https://provilion-broodjes.vercel.app",
-        "githubUrl": ""
+        "liveUrl": "https://provilion-maandmenu.vercel.app/",
+        "githubUrl": "",
+        "code": "NODE_03",
+        "grid": "B1",
+        "status": "active",
+        "sector": "Commerce-platform",
+        "period": "2023 — HEDEN",
+        "abstract": "Full-stack bestelplatform voor broodjes op school: leerlingen bestellen, ouders beheren tegoeden, beheerders runnen de dagelijkse werking — met geïntegreerde betaalverwerking.",
+        "business": {
+          "summary": "Verving manueel cashbeheer door een selfservice-bestelsysteem. Ouders laden online tegoed op, bestellingen worden automatisch verrekend via Stripe, en de keuken werkt vanuit één live operationeel dashboard.",
+          "metrics": [
+            {
+              "value": "100%",
+              "label": "Cashloze transacties"
+            },
+            {
+              "value": "3",
+              "label": "Gebruikersrollen, één platform"
+            },
+            {
+              "value": "Live",
+              "label": "Bestelstatus-updates"
+            }
+          ],
+          "outcomes": [
+            "Geen cashbeheer of manuele verrekening van bestellingen meer",
+            "Ouders beheren uitgaven via een prepaid tegoedsysteem",
+            "Admin-dashboard bundelt dagbestellingen tot één bereidingslijst"
+          ]
+        },
+        "engineering": {
+          "summary": "Next.js en TypeScript van begin tot einde, MySQL voor persistentie, en Stripe-webhooks voor de betaalverwerking. Role-based access control scheidt de mogelijkheden van leerling, ouder en beheerder.",
+          "decisions": [
+            "Webhook-gedreven betaalflow: tegoeden wijzigen enkel na bevestigde events",
+            "RBAC afgedwongen op API-niveau, niet enkel verborgen in de UI",
+            "Transactionele order-writes houden tegoedgrootboek en bestellingen consistent",
+            "E-mailnotificaties losgekoppeld van het request-pad"
+          ]
+        }
       },
       {
         "title": "Het Smaakpand (Gesloten)",
@@ -237,9 +347,60 @@
         "color": "#d2b48c",
         "type": "website",
         "liveUrl": "https://precious-mooncake-1d00a4.netlify.app/",
-        "githubUrl": ""
+        "githubUrl": "",
+        "code": "NODE_04",
+        "grid": "B2",
+        "status": "decommissioned",
+        "sector": "Horecawebsite",
+        "period": "2022 — 2024",
+        "abstract": "Strakke, minimale website voor een lokale broodjeszaak: menuweergave, openingsuren, mobile-first. Uit dienst genomen toen de zaak de deuren sloot.",
+        "business": {
+          "summary": "Een kleine zaak stond snel en betaalbaar online. De site deed één ding — het menu tonen en mensen naar de winkel brengen — zonder lopende complexiteit of kosten.",
+          "metrics": [
+            {
+              "value": "Dagen",
+              "label": "Van concept tot lancering"
+            },
+            {
+              "value": "Laag",
+              "label": "Totale eigendomskost"
+            },
+            {
+              "value": "Nul",
+              "label": "Onderhoudsincidenten"
+            }
+          ],
+          "outcomes": [
+            "Menu en openingsuren meteen vindbaar op elke smartphone",
+            "Geen CMS-overhead voor een zaak met een stabiel menu",
+            "Netjes uit dienst genomen toen de zaak sloot"
+          ]
+        },
+        "engineering": {
+          "summary": "Static-first met een bewust minimale footprint. Geen frameworks waar ze niet nodig waren — snelle laadtijden, triviale hosting en niets om te patchen.",
+          "decisions": [
+            "Statische delivery: geen serverruntime, vrijwel geen aanvalsoppervlak",
+            "Handgeschreven CSS in plaats van een framework voor één pagina",
+            "Laadtijd onder de seconde op mobiele netwerken als hoofddoel",
+            "Gearchiveerd met een propere teardown — geen verweesde infrastructuur"
+          ]
+        }
       }
-    ]
+    ],
+    "map": {
+      "businessTitle": "Zakelijke impact",
+      "businessAudience": "Voor managers & recruiters",
+      "engineeringTitle": "Engineering",
+      "engineeringAudience": "Voor tech leads",
+      "close": "Sluiten",
+      "liveLink": "Bekijk live site",
+      "sourceLink": "Bekijk code",
+      "status": {
+        "active": "Live",
+        "maintained": "Actief onderhouden",
+        "decommissioned": "Gearchiveerd"
+      }
+    }
   },
   "security": {
     "badge": "BEVEILIGING",

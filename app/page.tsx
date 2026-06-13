@@ -6,7 +6,7 @@ import { HeroSection } from '@/components/HeroSection';
 import { AboutSection } from '@/components/AboutSection';
 import { ExperienceSection } from '@/components/ExperienceSection';
 import { ServicesSection } from '@/components/ServicesSection';
-import { ProjectsSection } from '@/components/ProjectsSection';
+import { StrategyMap } from '@/components/StrategyMap';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
 import { Console } from '@/components/Console';
@@ -42,7 +42,7 @@ export default function HomePage() {
       <AboutSection />
       <ExperienceSection />
       <ServicesSection />
-      <ProjectsSection />
+      <StrategyMap />
       <ContactSection />
       <Footer />
       <Console />
