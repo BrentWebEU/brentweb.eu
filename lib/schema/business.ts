@@ -13,7 +13,7 @@ export function buildBusinessSchema(locale: Locale) {
     areaServed: 'BE',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Geel',
+      addressLocality: 'Blankenberge - Geel',
       addressCountry: 'BE',
     },
     provider: { '@id': `${SITE_URL}/#person` },

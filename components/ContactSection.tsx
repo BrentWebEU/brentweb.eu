@@ -53,7 +53,7 @@ const socialLinks = [
 const MapComponent = memo(() => {
   const { theme } = useTheme();
   const [mapError, setMapError] = useState(false);
-  const center = { lat: 51.1610826, lng: 4.9903187 }; // Geel, Belgium
+  const center = { lat: 51.3112589, lng: 3.1323429 }; // Blankenberge - Geel, Belgium
 
   const getColorScheme = () => {
     if (theme === "light") return "LIGHT";
@@ -87,7 +87,7 @@ const MapComponent = memo(() => {
             <iframe
               src="https://www.openstreetmap.org/export/embed.html?bbox=4.9%2C51.1%2C5.1%2C51.2&layer=mapnik&marker=51.1657,4.9902"
               className="contact__map-fallback-iframe"
-              title="Map of Geel, Belgium"
+              title="Map of Blankenberge - Geel, Belgium"
               loading="lazy"
             />
             <div className="contact__map-fallback-note">
@@ -115,7 +115,7 @@ const MapComponent = memo(() => {
             >
               <Marker
                 position={center}
-                title="Brent Schoenmakers - Geel, Belgium"
+                title="Brent Schoenmakers - Blankenberge - Geel, Belgium"
               />
             </Map>
           </APIProvider>

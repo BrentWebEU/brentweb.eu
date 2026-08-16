@@ -17,7 +17,7 @@
   "hero": {
     "title": "Full-stack development for growing businesses",
     "tagline": "Websites, internal tools and small integrations, built by one person in Belgium.",
-    "location": "Geel, Belgium",
+    "location": "Blankenberge - Geel, Belgium",
     "featuredProject": "Carrosserie Kris",
     "featured": "Featured",
     "business": {
@@ -520,7 +520,7 @@
       }
     },
     "location": "Location",
-    "locationValue": "Geel, Belgium",
+    "locationValue": "Blankenberge - Geel, Belgium",
     "availability": "Available for new projects",
     "socialsLabel": "Elsewhere",
     "availabilityNote": "I usually reply within a day or two."

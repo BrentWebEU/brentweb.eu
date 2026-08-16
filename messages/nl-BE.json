@@ -17,7 +17,7 @@
   "hero": {
     "title": "Full-stack ontwikkeling voor groeiende bedrijven",
     "tagline": "Websites, interne tools en applicaties, gebouwd door één ontwikkelaar.",
-    "location": "Geel - Blankenberge, België",
+    "location": "Blankenberge - Geel, België",
     "featuredProject": "Carrosserie Kris",
     "featured": "Voorgesteld",
     "business": {
@@ -520,7 +520,7 @@
       }
     },
     "location": "Locatie",
-    "locationValue": "Geel, België",
+    "locationValue": "Blankenberge - Geel, België",
     "availability": "Beschikbaar voor nieuwe projecten",
     "socialsLabel": "Elders",
     "availabilityNote": "Ik antwoord meestal binnen een dag of twee."

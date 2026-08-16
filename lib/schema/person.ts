@@ -23,7 +23,7 @@ export function buildPersonSchema(locale: Locale) {
     jobTitle: 'Full-stack developer',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Geel',
+      addressLocality: 'Blankenberge - Geel',
       addressCountry: 'BE',
     },
     sameAs: [
