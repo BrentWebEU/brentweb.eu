@@ -1,23 +1,44 @@
+# Two ways in, and they are not interchangeable:
+#
+#   build args        NEXT_PUBLIC_* only. Next inlines these into the client
+#                     bundle during `next build`, so the value must exist at
+#                     BUILD time — and it ends up readable by every visitor.
+#                     Never put a real secret here (build args also survive in
+#                     `docker history`). These are protected by restricting the
+#                     key at the provider, not by hiding it.
+#
+#   SECRET_ENV_MAPPINGS  Everything server-only. with-docker-secrets.sh is the
+#                     entrypoint, so it exports these at CONTAINER START —
+#                     far too late to reach a client bundle. Correct for
+#                     credentials the browser must never see.
+#
+# Moving a NEXT_PUBLIC_* var into the secrets list silently disables the
+# feature that reads it; that is how GA shipped dead for a while.
 services:
   portfolio:
     build:
       context: .
       args:
         NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: "${NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}"
+        NEXT_PUBLIC_GA_ID: "${NEXT_PUBLIC_GA_ID}"
     container_name: portfolio
     restart: unless-stopped
     entrypoint: ["/bin/sh", "/run/config/with-docker-secrets.sh"]
     command: ["node","server.js"]
     environment:
       NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: "${NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}"
+      NEXT_PUBLIC_GA_ID: "${NEXT_PUBLIC_GA_ID}"
       NEXTAUTH_URL: https://brentweb.eu
       UPLOAD_DIR: ./public/uploads
-      SECRET_ENV_MAPPINGS: NEXTAUTH_SECRET=/run/secrets/nextauth_secret,JWT_SECRET=/run/secrets/jwt_secret,DATABASE_URL=/run/secrets/database_url
+      SECRET_ENV_MAPPINGS: NEXTAUTH_SECRET=/run/secrets/nextauth_secret,JWT_SECRET=/run/secrets/jwt_secret,DATABASE_URL=/run/secrets/database_url,RESEND_API_KEY=/run/secrets/resend_api_key
     volumes:
       - ../docker-tools/with-docker-secrets.sh:/run/config/with-docker-secrets.sh:ro
       - ./secrets/nextauth_secret:/run/secrets/nextauth_secret:ro
       - ./secrets/jwt_secret:/run/secrets/jwt_secret:ro
       - ./secrets/database_url:/run/secrets/database_url:ro
+      # Create secrets/resend_api_key on the host BEFORE the next `up`, or
+      # Docker will materialise this bind mount as a directory.
+      - ./secrets/resend_api_key:/run/secrets/resend_api_key:ro
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.brentweb.rule=Host(`brentweb.eu`) || Host(`www.brentweb.eu`)"
@@ -39,3 +60,5 @@ secrets:
     file: ./secrets/jwt_secret
   database_url:
     file: ./secrets/database_url
+  resend_api_key:
+    file: ./secrets/resend_api_key

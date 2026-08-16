@@ -13,6 +13,11 @@ FROM base AS builder
 WORKDIR /app
 ARG NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
 ENV NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=$NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+# NEXT_PUBLIC_* are inlined into the client bundle at build time, so GA has to
+# be present HERE — a runtime env var reaches the server only, and gtag would
+# never load in the browser.
+ARG NEXT_PUBLIC_GA_ID
+ENV NEXT_PUBLIC_GA_ID=$NEXT_PUBLIC_GA_ID
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
@@ -26,6 +31,11 @@ WORKDIR /app
 ENV NODE_ENV production
 ARG NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
 ENV NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=$NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+# NEXT_PUBLIC_* are inlined into the client bundle at build time, so GA has to
+# be present HERE — a runtime env var reaches the server only, and gtag would
+# never load in the browser.
+ARG NEXT_PUBLIC_GA_ID
+ENV NEXT_PUBLIC_GA_ID=$NEXT_PUBLIC_GA_ID
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 --ingroup nodejs nextjs
