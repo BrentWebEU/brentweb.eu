@@ -37,6 +37,8 @@
       "spec": {
         "stackLabel": "Stack",
         "stackValue": "TypeScript, Node, Rust, Docker, Linux",
+        "frameworksLabel": "Frameworks",
+        "frameworksValue": "React, Next.js, Angular, Tailwind, ASP.NET, Actix Web",
         "focusLabel": "Currently",
         "focusValue": "Distributed systems and network security",
         "locationLabel": "Based in",
@@ -423,7 +425,8 @@
       "status": {
         "active": "Live",
         "maintained": "Actively maintained",
-        "decommissioned": "Retired"
+        "decommissioned": "Retired",
+        "finished": "Finished"
       },
       "impactTitle": "Impact",
       "decisionsTitle": "Key decisions",
