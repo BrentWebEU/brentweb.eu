@@ -1,0 +1,47 @@
+---
+title: "Provilion Broodjes: webhook-driven payments, not optimistic ones"
+slug: "provilion-broodjes"
+audience: "tech"
+locale: "en"
+publishedAt: "2023-09-01"
+summary: "Next.js and TypeScript end to end, MySQL for persistence, Stripe webhooks driving every credit-balance mutation, and role-based access enforced at the API layer, not just hidden in the UI."
+---
+
+## The core constraint: money has to be right
+
+A credit-balance system that's "usually" correct isn't good enough, a parent's balance either matches what they actually paid, or the system has a bug that erodes trust immediately. That single requirement shaped most of the architecture below it.
+
+## Webhook-driven, not client-driven
+
+The naive version of this system updates a balance the moment the client says "payment succeeded." The problem: a client can lie, retry, or simply lose the response before it confirms anything server-side.
+
+<Callout>
+The rule enforced throughout: a balance changes only in response to a Stripe webhook event, never in response to a request from the browser. The client can ask for a payment; only Stripe confirming it moves money.
+</Callout>
+
+```ts
+// Simplified webhook handler shape
+export async function POST(req: Request) {
+  const event = stripe.webhooks.constructEvent(await req.text(), sig, secret);
+
+  if (event.type === 'payment_intent.succeeded') {
+    await db.transaction(async (tx) => {
+      await tx.credits.increment(userId, amount);
+      await tx.paymentLog.insert({ eventId: event.id, amount });
+    });
+  }
+}
+```
+
+Idempotency matters here too. Stripe can and will retry webhook delivery, so the handler keys off `event.id` to avoid double-crediting a balance on a duplicate delivery.
+
+## RBAC at the API layer
+
+Role checks live in the API handlers, not just conditionally-rendered UI. A student's request to view another student's order history is rejected server-side regardless of what the client-side UI would have allowed them to click.
+
+## Decisions that mattered
+
+- Payment state is a strict function of confirmed Stripe events. Never of client-reported success
+- Transactional writes keep the credit ledger and order records consistent even if a request fails midway
+- RBAC enforced at the API boundary, so a modified or bypassed client can't escalate its own permissions
+- Email notifications are decoupled from the request path, a slow email provider can't make an order feel slow

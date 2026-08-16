@@ -1,0 +1,37 @@
+---
+title: "Netwerkbeveiliging op enterprise-niveau, op een Raspberry Pi"
+slug: "idps"
+audience: "business"
+locale: "nl-BE"
+publishedAt: "2024-11-15"
+summary: "Scholen krijgen realtime dreigingsdetectie en -blokkering zonder security-team ter plaatse, draaiend op standaardhardware zonder licentiekosten per gebruiker."
+---
+
+## Het probleem
+
+Onderwijsnetwerken zijn een aantrekkelijk, onderbeschermd doelwit: honderden toestellen, een beperkt IT-budget, en geen dedicated personeel dat het verkeer continu opvolgt. Commerciële intrusion-detectiesystemen bestaan, maar zijn geprijsd en gelicentieerd voor bedrijven, niet voor scholen.
+
+Het probleem was niet een gebrek aan goede ideeën over beveiliging. Het was dat elke praktische optie een budget en team veronderstelde dat deze omgeving niet had.
+
+## De aanpak
+
+De oplossing splitst het probleem in twee: een klein, goedkoop toestel dat verkeer bekijkt waar het het netwerk binnenkomt, en een apart server die het zware analytische denkwerk doet. Zonder het netwerk daarop te laten wachten.
+
+<Callout>
+De enige niet-onderhandelbare vereiste was dat beveiligingsmonitoring nooit de reden mocht worden waarom het netwerk traag aanvoelde. Als beveiliging het gebruik verslechterde, zou het personeel het uiteindelijk gewoon uitschakelen.
+</Callout>
+
+- Een Raspberry Pi staat inline en bekijkt elk pakket dat passeert
+- Verkeer wordt gestreamd naar een externe server voor diepere analyse en dreigingsdetectie
+- Beslissingen (blokkeren of toelaten) worden lokaal op de Pi afgedwongen. Geen wachttijd op een retourtje
+- Één live dashboard geeft personeel één plek om te zien wat er gebeurt, zonder specialist nodig
+
+## Het resultaat
+
+<MetricGrid metrics={[
+  { value: "<1ms", label: "Toegevoegde inline latentie" },
+  { value: "24/7", label: "Autonome monitoring" },
+  { value: "€0", label: "Licentiekosten per gebruiker" },
+]} />
+
+Het netwerk krijgt continue, realtime dreigingsdetectie en automatische blokkering, personeel krijgt één dashboard in plaats van een stapel logs om te interpreteren, en het hele systeem draait op hardware die minder kost dan één licentie bij de meeste commerciële alternatieven. Zonder terugkerende licentiekosten.

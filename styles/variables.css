@@ -1,26 +1,54 @@
 /* Design Tokens - CSS Custom Properties */
 
+/* ─────────────────────────────────────────────────────────────────────────
+ * Neutral ramp.
+ *
+ * Both themes previously sat at maximum contrast — pure #ffffff against
+ * #09090b in light, and a near-black #09090b ground in dark. Both measured
+ * about 19:1 for body text. WCAG AAA is 7:1, so that was roughly triple what
+ * is needed, and it reads as glare in light and halation in dark.
+ *
+ * The ramp below lands body text at ~15:1 (light) and ~14.5:1 (dark): still
+ * comfortably AAA, considerably easier to look at. The ends were pulled in
+ * from both directions rather than only lightening the dark theme, so the two
+ * feel like the same product.
+ *
+ * Every pair below was measured, not eyeballed. Ratios are noted inline.
+ * ───────────────────────────────────────────────────────────────────────── */
+
 :root {
   /* Colors - Light mode */
-  --background: 0 0% 100%;
-  --foreground: 240 10% 4%;
+  /* Off-white ground (#fcfcfd) rather than pure white, so cards can be #fff
+   * and lift off it without needing a shadow. */
+  --background: 240 20% 99%;
+  --foreground: 240 9% 15%; /* 15.2:1 on bg — AAA */
   --card: 0 0% 100%;
-  --card-foreground: 240 10% 4%;
+  --card-foreground: 240 9% 15%;
   --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 4%;
-  --primary: 4 90% 58%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 240 5% 96%;
-  --secondary-foreground: 240 6% 10%;
-  --muted: 240 5% 96%;
-  --muted-foreground: 240 4% 46%;
-  --accent: 240 5% 96%;
-  --accent-foreground: 240 6% 10%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 240 6% 90%;
-  --input: 240 6% 90%;
-  --ring: 4 90% 58%;
+  --popover-foreground: 240 9% 15%;
+  /* Deepened from `4 90% 58%` (#f44034). That red measured 3.73:1 against
+   * white — it failed AA for both button labels and small accent text. At
+   * 50% lightness the same hue clears 4.6:1 both ways, and the lower
+   * saturation stops it reading as an alarm colour on a corporate page. */
+  --primary: 4 76% 50%;
+  --primary-foreground: 0 0% 100%; /* 4.62:1 on primary — AA */
+  --secondary: 240 16% 96%;
+  --secondary-foreground: 240 9% 15%;
+  --muted: 240 16% 96%;
+  --muted-foreground: 240 5% 42%; /* 5.5:1 on bg — AA */
+  --accent: 240 16% 96%;
+  --accent-foreground: 240 9% 15%;
+  --destructive: 0 72% 46%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 240 12% 88%;
+  --input: 240 12% 88%;
+  --ring: 4 76% 50%;
+
+  /* Status hues — project/case-study state dots. Tokenized so they stay
+   * consistent with the palette instead of drifting per component file.
+   * Desaturated alongside the primary so no single dot outshouts the page. */
+  --success: 160 72% 34%;
+  --warning: 38 88% 44%;
 
   /* Color aliases for easier use */
   --color-background: hsl(var(--background));
@@ -33,6 +61,18 @@
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
   --color-destructive: hsl(var(--destructive));
+  --color-success: hsl(var(--success));
+  --color-warning: hsl(var(--warning));
+  /* These six were referenced by component CSS but never declared, so every
+   * rule using them (.btn-secondary, .btn-destructive, focus rings) silently
+   * rendered unstyled. Backfilled to close the gap and to mirror the full
+   * @theme block in styles/index.css. */
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-ring: hsl(var(--ring));
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -52,11 +92,21 @@
   --nav-height: 4rem;
 
   /* Typography */
-  --font-sans: 'Outfit', sans-serif;
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --font-terminal: 'Share Tech Mono', 'JetBrains Mono', monospace;
-  --font-handwritten: 'Caveat', cursive;
+  /* Faces are self-hosted by next/font (app/fonts.ts) and injected as
+   * --font-geist / --font-outfit / --font-jetbrains-mono / --font-caveat on
+   * <html>. These aliases must stay declared HERE rather than only in the
+   * @theme block: non-inline theme vars are tree-shaken, and ~40 declarations
+   * across styles/components/*.css read var(--font-mono) and friends directly.
+   *
+   * Body text is Geist — a neutral grotesk that holds up at small sizes.
+   * Display is Outfit, kept from the previous system because it carries the
+   * brand; the split gives headings character without costing body legibility. */
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+  /* Engineering path only (annotations on /tech) */
+  --font-handwritten: var(--font-caveat), ui-rounded, cursive;
+  /* Share Tech Mono retired with the terminal/intro UI — use --font-mono. */
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -76,12 +126,16 @@
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
-  --radius: 1rem;
+  --radius: 0.5rem;
 
-  /* Shadows */
-  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-dialog: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-glow: 0 0 20px rgba(4, 90%, 58%, 0.3);
+  /* Shadows — restrained by design. Corporate surfaces read as borders and
+   * flat planes, not floating cards, so elevation stays subtle. */
+  /* The `-token` suffix exists so styles/index.css can map these into
+   * Tailwind's --shadow-* namespace. `--shadow-card: var(--shadow-card)` would
+   * be a self-reference and a build error. */
+  --shadow-card-token: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-card-hover-token: 0 2px 8px -2px rgba(0, 0, 0, 0.08);
+  --shadow-dialog-token: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
   /* Transitions */
   --ease-out: cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -89,39 +143,42 @@
   --duration-fast: 150ms;
   --duration-normal: 300ms;
   --duration-slow: 500ms;
-
-  /* Sidebar (if used) */
-  --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 240 10% 4%;
-  --sidebar-primary: 4 90% 58%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 240 5% 96%;
-  --sidebar-accent-foreground: 240 6% 10%;
-  --sidebar-border: 240 6% 90%;
-  --sidebar-ring: 4 90% 58%;
 }
 
 .dark {
   /* Colors - Dark mode */
-  --background: 240 10% 4%;
-  --foreground: 0 0% 98%;
-  --card: 240 10% 8%;
-  --card-foreground: 0 0% 98%;
-  --popover: 240 10% 8%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 4 90% 58%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 240 8% 12%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 240 6% 18%;
-  --muted-foreground: 240 5% 50%;
-  --accent: 240 8% 14%;
-  --accent-foreground: 0 0% 98%;
-  --destructive: 0 62% 30%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 240 6% 15%;
-  --input: 240 6% 15%;
-  --ring: 4 90% 58%;
+  /* Charcoal (#1a1a1e), not the previous near-black #09090b. 4% lightness is
+   * effectively black: it maximises contrast, which sounds good and is
+   * actually what makes long-form text shimmer on an OLED panel. */
+  --background: 240 7% 11%;
+  --foreground: 0 0% 92%; /* 14.6:1 on bg — AAA, without the glare of #fafafa */
+  --card: 240 7% 14%; /* lifts off the ground by 3 points, no shadow needed */
+  --card-foreground: 0 0% 92%;
+  --popover: 240 7% 14%;
+  --popover-foreground: 0 0% 92%;
+  /* Lighter than the light-theme red by design: the same brand hue has to
+   * carry against a dark ground. 5.25:1 on the background, 4.85:1 on cards. */
+  --primary: 4 76% 63%;
+  /* Charcoal, NOT white. White on this coral measures 3.30:1 and fails AA —
+   * and it failed on the old red too (3.73:1). Dark text on a bright accent
+   * fill reaches 5.41:1. Light mode keeps white labels because its red is
+   * deep enough to carry them; this is what per-theme tokens are for. */
+  --primary-foreground: 240 10% 10%; /* 5.41:1 on primary — AA */
+  --secondary: 240 7% 17%;
+  --secondary-foreground: 0 0% 92%;
+  --muted: 240 6% 20%;
+  --muted-foreground: 240 5% 64%; /* 6.6:1 on bg — AA */
+  --accent: 240 7% 18%;
+  --accent-foreground: 0 0% 92%;
+  --destructive: 0 62% 52%;
+  --destructive-foreground: 240 10% 10%;
+  --border: 240 6% 22%;
+  --input: 240 6% 22%;
+  --ring: 4 76% 63%;
+
+  /* Status hues — lifted slightly for contrast against the dark surface */
+  --success: 160 62% 50%;
+  --warning: 38 88% 62%;
 
   /* Color aliases for dark mode */
   --color-background: hsl(var(--background));
@@ -134,14 +191,12 @@
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
   --color-destructive: hsl(var(--destructive));
-
-  /* Sidebar dark mode */
-  --sidebar-background: 240 10% 4%;
-  --sidebar-foreground: 0 0% 98%;
-  --sidebar-primary: 4 90% 58%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 240 8% 12%;
-  --sidebar-accent-foreground: 0 0% 98%;
-  --sidebar-border: 240 6% 15%;
-  --sidebar-ring: 4 90% 58%;
+  --color-success: hsl(var(--success));
+  --color-warning: hsl(var(--warning));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-ring: hsl(var(--ring));
 }

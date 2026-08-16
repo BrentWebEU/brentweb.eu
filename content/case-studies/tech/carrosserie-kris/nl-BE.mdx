@@ -1,0 +1,53 @@
+---
+title: "Carrosserie Kris: performantie en spam-hardening op een kleine stack"
+slug: "carrosserie-kris"
+audience: "tech"
+locale: "nl-BE"
+publishedAt: "2024-06-01"
+updatedAt: "2026-01-10"
+summary: "React-frontend, Node.js-backend, bewust saai. Geoptimaliseerd voor Core Web Vitals en evergreen gehouden via kleine, continue updates in plaats van periodieke herbouw."
+---
+
+## Stack en beperkingen
+
+React aan de frontend, een Node.js-backend, Tailwind voor styling. Niets exotisch. De interessante beslissingen hier gaan over discipline, niet over architecturale originaliteit.
+
+De site is mobile-first door verkeersrealiteit, niet door trend: de meeste bezoekers komen via een Google-zoekopdracht op hun telefoon, dus elke performantiebeslissing werd genomen met dat als primair doel, desktop als secundair.
+
+## Performantiewerk
+
+Largest Contentful Paint was de metriek die telde, want die correleert rechtstreeks met of een mobiele bezoeker afhaakt voordat de pagina zelfs bruikbaar is.
+
+<Callout>
+Animaties werden bewust buiten het kritieke rendering-pad gehouden. Als een `framer-motion`-intro-animatie vertraagt wanneer de hero-afbeelding visueel klaar is, is dat netto verlies voor LCP, zelfs als het er mooi uitziet in een demo.
+</Callout>
+
+```ts
+// Vereenvoudigde strategie voor afbeeldingen: alles boven de vouw krijgt
+// prioriteit, de rest wacht tot het echt in de buurt van de viewport komt.
+<Image
+  src={heroImage}
+  alt="Carrosserie Kris"
+  priority
+  sizes="(min-width: 768px) 50vw, 100vw"
+/>
+```
+
+## Formulierbeveiliging zonder conversie te schaden
+
+Een contactformulier dat "veilig" is maar vervelend om in te vullen, is een slechter zakelijk resultaat dan één met iets minder anti-spam. De beperking was: harden tegen spam zonder frictie toe te voegen die een echte bezoeker opmerkt.
+
+```ts
+// Honeypot-veld: onzichtbaar voor echte gebruikers, onweerstaanbaar voor
+// bots die elk veld invullen dat ze in de DOM kunnen vinden.
+if (formData.honeypot) {
+  return { ok: true }; // doe alsof het gelukt is, verstuur niets, log server-side
+}
+```
+
+## Beslissingen die telden
+
+- Mobile-first layoutsysteem, waarbij desktop behandeld wordt als een progressieve verbetering in plaats van de basis
+- Afbeeldingen- en assetpijplijn specifiek getuned voor LCP, geen generieke "optimalisatie"
+- Spambeveiliging geïmplementeerd als honeypot in plaats van CAPTCHA, met een kleine ruil van bot-weerstand voor nul extra frictie
+- Een kleine, saaie stack bewust gekozen. De klantrelatie is het langetermijnactief, en een stack die niemand om de twee jaar opnieuw moet leren beschermt dat

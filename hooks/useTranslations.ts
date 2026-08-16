@@ -1,44 +1,32 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
-import { getTranslations, type Locale, defaultLocale } from '@/i18n';
-
-const STORAGE_KEY = 'locale';
+import { usePathname, useRouter } from 'next/navigation';
+import { useCallback } from 'react';
+import type { Locale } from '@/i18n';
+import { useLocaleContext } from '@/components/LocaleProvider';
+import { swapLocaleInPath } from '@/lib/locale';
+import { LOCALE_COOKIE } from '@/lib/audience';
+import { writePreferenceCookie } from '@/lib/audience-client';
 
 export function useLocale() {
-  const [locale, setLocaleState] = useState<Locale>(defaultLocale);
-  const [isLoading, setIsLoading] = useState(true);
+  const { locale } = useLocaleContext();
+  const router = useRouter();
+  const pathname = usePathname();
 
-  useEffect(() => {
-    // Get locale from localStorage or browser preference
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored && (stored === 'en' || stored === 'nl-BE')) {
-      setLocaleState(stored as Locale);
-    } else {
-      // Try to detect from browser
-      const browserLang = navigator.language;
-      if (browserLang.startsWith('nl')) {
-        setLocaleState('nl-BE');
-      } else {
-        setLocaleState('en');
-      }
-    }
-    setIsLoading(false);
-  }, []);
+  const setLocale = useCallback(
+    (next: Locale) => {
+      writePreferenceCookie(LOCALE_COOKIE, next);
+      router.push(swapLocaleInPath(pathname, next));
+    },
+    [pathname, router]
+  );
 
-  const setLocale = (newLocale: Locale) => {
-    setLocaleState(newLocale);
-    localStorage.setItem(STORAGE_KEY, newLocale);
-    // Update document language attribute
-    document.documentElement.lang = newLocale;
-    // Reload page to apply locale changes to all components
-    window.location.reload();
-  };
-
-  return { locale, setLocale, isLoading };
+  // isLoading is kept for call-site compatibility. The locale is now always
+  // known on first render because the server supplies it via LocaleProvider.
+  return { locale, setLocale, isLoading: false };
 }
 
 export function useTranslations() {
-  const { locale } = useLocale();
-  return useMemo(() => getTranslations(locale), [locale]);
+  const { t } = useLocaleContext();
+  return { t };
 }

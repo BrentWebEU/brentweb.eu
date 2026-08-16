@@ -1,0 +1,34 @@
+---
+title: "Het Smaakpand: the discipline of not building a platform"
+slug: "het-smaakpand"
+audience: "tech"
+locale: "en"
+publishedAt: "2022-03-01"
+updatedAt: "2024-08-01"
+summary: "Static-first delivery with a deliberately minimal footprint. No framework where none was needed, near-zero attack surface, and a clean teardown when the business closed."
+---
+
+## The temptation to over-build
+
+Every instinct in a developer trained on frameworks says "add a CMS, add a component library, add a build step." For a single-page site that changes twice a year, every one of those additions is attack surface and maintenance burden with no corresponding benefit.
+
+<Callout>
+The engineering decision here wasn't which framework to use. It was choosing not to use one, and being able to defend that choice rather than defaulting to the familiar stack out of habit.
+</Callout>
+
+## What "static-first" actually bought
+
+```html
+<!-- The entire interactive surface of the site: none. -->
+<!-- No client-side router, no hydration, no JS bundle to ship
+     beyond what the browser needs for basic page behavior. -->
+```
+
+- No server runtime. Nothing to patch, nothing that can be exploited via an outdated dependency, nothing to keep awake
+- Hand-tuned CSS instead of a framework, appropriate for a single page where a utility framework's abstraction cost outweighs its benefit
+- Sub-second loads on mobile networks as the actual target, not a nice-to-have
+- Trivial, predictable hosting with no moving parts to monitor
+
+## Decommissioning cleanly
+
+When the business closed, teardown was a non-event: no database to migrate or archive, no server to decommission, no subscription quietly renewing for a site nobody would ever look at again. The absence of infrastructure is itself an engineering decision. One that pays off exactly at the moment most projects generate an ugly, forgotten trail of half-shut-down services.

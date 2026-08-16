@@ -1,51 +1,37 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
+import { useEffect } from 'react';
+import { BRAND_COLORS } from '@/lib/brand-tokens';
 
+/**
+ * Console greeting for the engineering path. Mounted from the tech layout
+ * only — the business path and gateway ship a clean console.
+ */
 export default function DevToolsEasterEgg() {
   useEffect(() => {
     const ascii = `
   ██████╗ ██████╗ ███████╗███╗   ██╗████████╗
   ██╔══██╗██╔══██╗██╔════╝████╗  ██║╚══██╔══╝
-  ██████╔╝██████╔╝█████╗  ██╔██╗ ██║   ██║   
-  ██╔══██╗██╔══██╗██╔══╝  ██║╚██╗██║   ██║   
-  ██████╔╝██║  ██║███████╗██║ ╚████║   ██║   
+  ██████╔╝██████╔╝█████╗  ██╔██╗ ██║   ██║
+  ██╔══██╗██╔══██╗██╔══╝  ██║╚██╗██║   ██║
+  ██████╔╝██║  ██║███████╗██║ ╚████║   ██║
   ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝  `;
 
-    const secretNode = `
-  ┌─ SECRET NODE ────────────────────────────────┐
-  │                                              │
-  │   You've found the hidden layer.             │
-  │   The site has a terminal too.               │
-  │                                              │
-  │   Look for the  ▶  icon, bottom-right.       │
-  │   Open it and type:  secret                  │
-  │                                              │
-  └──────────────────────────────────────────────┘`;
+    const mono = "font-family: 'JetBrains Mono', monospace;";
 
     console.log(
       `%c${ascii}`,
-      "color: #E84825; font-family: 'JetBrains Mono', monospace; font-size: 10px; line-height: 1.4; font-weight: bold;"
+      `color: ${BRAND_COLORS.primary}; ${mono} font-size: 10px; line-height: 1.4; font-weight: bold;`
     );
 
     console.log(
-      "%c  Hey, I see you opened DevTools. 👋",
-      "color: #ffffff; font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: bold;"
+      '%c  Reading the source? The interactive demos at /tech/lab are the same\n  code, unminified: rate limiting, auth flows and state machines.',
+      `color: ${BRAND_COLORS.mutedForeground}; ${mono} font-size: 12px; line-height: 1.6;`
     );
 
     console.log(
-      "%c  You clearly live in this environment. So do I.\n  This portfolio was built by a developer — for developers.",
-      "color: #a0aec0; font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.6;"
-    );
-
-    console.log(
-      `%c${secretNode}`,
-      "color: #E84825; font-family: 'JetBrains Mono', monospace; font-size: 11px; line-height: 1.5;"
-    );
-
-    console.log(
-      "%c  — Brent Schoenmakers  |  brentweb.be",
-      "color: #4a5568; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-style: italic;"
+      '%c  Brent Schoenmakers  |  brentweb.eu',
+      `color: ${BRAND_COLORS.mutedForeground}; ${mono} font-size: 11px; font-style: italic;`
     );
   }, []);
 

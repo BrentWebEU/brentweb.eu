@@ -1,0 +1,47 @@
+---
+title: "Provilion Broodjes: webhook-gestuurde betalingen, geen optimistische"
+slug: "provilion-broodjes"
+audience: "tech"
+locale: "nl-BE"
+publishedAt: "2023-09-01"
+summary: "Next.js en TypeScript van begin tot eind, MySQL voor persistentie, Stripe-webhooks die elke tegoedmutatie aansturen, en rolgebaseerde toegang afgedwongen op API-niveau, niet enkel verborgen in de UI."
+---
+
+## De kernbeperking: geld moet correct zijn
+
+Een tegoedsysteem dat "meestal" correct is, is niet goed genoeg. Het saldo van een ouder komt overeen met wat ze echt betaalden, of het systeem heeft een bug die vertrouwen onmiddellijk aantast. Die ene vereiste bepaalde het meeste van de architectuur erna.
+
+## Webhook-gestuurd, niet client-gestuurd
+
+De naïeve versie van dit systeem werkt een saldo bij op het moment dat de client zegt "betaling gelukt." Het probleem: een client kan liegen, opnieuw proberen, of gewoon de respons verliezen voordat die iets server-side bevestigt.
+
+<Callout>
+De regel die overal gehandhaafd werd: een saldo verandert enkel in reactie op een Stripe-webhookevent, nooit in reactie op een aanvraag vanuit de browser. De client kan om een betaling vragen; enkel Stripe die bevestigt verplaatst geld.
+</Callout>
+
+```ts
+// Vereenvoudigde vorm van de webhook-handler
+export async function POST(req: Request) {
+  const event = stripe.webhooks.constructEvent(await req.text(), sig, secret);
+
+  if (event.type === 'payment_intent.succeeded') {
+    await db.transaction(async (tx) => {
+      await tx.credits.increment(userId, amount);
+      await tx.paymentLog.insert({ eventId: event.id, amount });
+    });
+  }
+}
+```
+
+Idempotentie is hier ook belangrijk. Stripe kan en zal webhookaflevering opnieuw proberen, dus de handler gebruikt `event.id` als key om dubbele creditering bij een duplicaataflevering te vermijden.
+
+## RBAC op API-niveau
+
+Rolcontroles leven in de API-handlers, niet enkel in conditioneel gerenderde UI. Een aanvraag van een leerling om de orderhistoriek van een andere leerling te bekijken wordt server-side geweigerd, ongeacht wat de client-side UI zou toelaten om op te klikken.
+
+## Beslissingen die telden
+
+- Betalingsstatus is een strikte functie van bevestigde Stripe-events. Nooit van client-gerapporteerd succes
+- Transactionele writes houden het tegoedgrootboek en orderrecords consistent, ook als een aanvraag halverwege faalt
+- RBAC afgedwongen op de API-grens, zodat een aangepaste of omzeilde client zijn eigen rechten niet kan escaleren
+- E-mailmeldingen zijn losgekoppeld van het aanvraagpad. Een trage e-mailprovider kan een bestelling niet traag laten aanvoelen

@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, memo, useEffect } from "react";
+import { useRef, useState, memo, useEffect, useTransition } from "react";
 import {
   Send,
   Mail,
@@ -9,12 +9,25 @@ import {
   Github as GithubIcon,
   Instagram as InstagramIcon,
 } from "lucide-react";
-import { toast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 import { useTheme } from "next-themes";
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { cn } from "@/lib/utils";
-import { useTranslations } from "@/hooks/useTranslations";
+import { useTranslations, useLocale } from "@/hooks/useTranslations";
 import { sendEvent } from '@/lib/analytics';
+import { routes } from '@/lib/routes';
+import type { Audience } from '@/lib/audience';
+import {
+  contactLeadFormSchema,
+  BUDGET_KEYS,
+  TIMELINE_KEYS,
+  type ContactLead,
+} from '@/lib/schemas/lead';
+import { submitLead } from '@/app/actions/submit-lead';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 
 const googleMapsApiKey =
   process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY &&
@@ -112,76 +125,67 @@ const MapComponent = memo(() => {
   );
 });
 
-export const ContactSection = memo(() => {
+export const ContactSection = memo(({ audience }: { audience: Audience }) => {
   const ref = useRef(null);
   const { t } = useTranslations();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-    gdprConsent: false,
+  const { locale } = useLocale();
+  const [isPending, startTransition] = useTransition();
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactLead>({
+    resolver: zodResolver(contactLeadFormSchema),
+    defaultValues: {
+      source: 'contact',
+      audience,
+      locale,
+      name: '',
+      email: '',
+      message: '',
+      gdprConsent: false,
+      honeypot: '',
+      budget: undefined,
+      timeline: undefined,
+    },
   });
-  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError(null);
+  const onSubmit = (values: ContactLead) => {
+    try { sendEvent('contact_form_submit_attempt'); } catch { /* analytics must never break the UI */ }
 
-    // analytics: attempt
-    try { sendEvent('contact_form_submit_attempt'); } catch (e) {}
+    startTransition(async () => {
+      const result = await submitLead(values);
 
-    if (!formData.gdprConsent) {
-      setError(t('contact.form.gdprRequired'));
-      setIsSubmitting(false);
-      return;
-    }
-
-    const { name, email, message } = formData;
-
-    try {
-      const response = await fetch("https://formcarry.com/s/kV0I8IGIy1L", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
-
-      const data = await response.json();
-
-      if (data.code === 200) {
-        toast({
-          title: t('contact.form.success'),
-          description: t('contact.form.success'),
-        });
-        setFormData({ name: "", email: "", message: "", gdprConsent: false });
-      } else if (data.code === 422) {
-        setError(data.message || t('contact.form.error'));
-      } else {
-        setError(data.message || t('contact.form.error'));
+      if (result.ok) {
+        toast.success(t('contact.form.success'));
+        reset();
+        return;
       }
-    } catch (err) {
-      setError(t('contact.form.error'));
-      console.error("Form submission error:", err);
-    } finally {
-      setIsSubmitting(false);
-    }
+
+      if (result.error === 'rate_limited') {
+        toast.error(t('contact.form.rateLimited'));
+        return;
+      }
+
+      toast.error(t('contact.form.error'));
+    });
   };
 
   return (
     <section id="contact" ref={ref} className="contact">
       <div className="contact__container">
         <div className="contact__header" style={{ position: "relative" }}>
-          <span className="contact__badge">{t('contact.badge')}</span>
+          <span className="contact__badge">{t(`contact.${audience}.badge`)}</span>
           <h2 className="contact__title">
-            {t('contact.title')}
+            {t(`contact.${audience}.title`)}
           </h2>
-          <span className="contact__annotation">{t('contact.annotation')}</span>
+          {audience === 'tech' && (
+            <span className="contact__annotation">{t(`contact.${audience}.annotation`)}</span>
+          )}
           <p className="contact__subtitle">
-            {t('contact.subtitle')}
+            {t(`contact.${audience}.subtitle`)}
           </p>
         </div>
 
@@ -213,7 +217,7 @@ export const ContactSection = memo(() => {
             </div>
 
             <div className="contact__socials">
-              <p className="contact__socials-label">Connect with me</p>
+              <p className="contact__socials-label">{t('contact.socialsLabel')}</p>
               <div className="contact__socials-list">
                 {socialLinks.map((social) => (
                   <a
@@ -235,98 +239,131 @@ export const ContactSection = memo(() => {
                 <span className="contact__availability-label">{t('contact.availability')}</span>
               </div>
               <p className="contact__availability-note">
-                Usually reply within 24 hours.
+                {t('contact.availabilityNote')}
               </p>
             </div>
           </div>
 
           <form
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmit(onSubmit)}
             className={cn("contact__form-wrapper", "form")}
           >
             <p className="contact__form-note">
-              Drop me a line below.
+              {t(`contact.${audience}.formNote`)}
             </p>
-            
-            <div className="form__row">
-              <div className="form__field">
-                <label htmlFor="name" className="form__label">{t('contact.form.name')}</label>
-                <input
-                  id="name"
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                  className="form__input"
-                  placeholder={t('contact.form.name')}
-                />
-              </div>
-              <div className="form__field">
-                <label htmlFor="email" className="form__label">{t('contact.form.email')}</label>
-                <input
-                  id="email"
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                  className="form__input"
-                  placeholder="you@example.com"
-                />
-              </div>
-            </div>
 
-            <div className="form__field">
-              <label htmlFor="message" className="form__label">{t('contact.form.message')}</label>
-              <textarea
-                id="message"
-                required
-                rows={4}
-                value={formData.message}
-                onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
-                className="form__textarea"
-                placeholder="Tell me about your project, ask a question, or just say hi..."
+            {/* Honeypot: real visitors never see this field. */}
+            <div className="form__honeypot" aria-hidden="true">
+              <label htmlFor="company_website">Company website</label>
+              <input
+                id="company_website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                {...register('honeypot')}
               />
             </div>
 
-            {error && (
-              <div className="form__error">{error}</div>
+            <div className="form__row">
+              <div className="form__field">
+                <label htmlFor="name" className="form__label">{t('contact.form.name')}</label>
+                <Input
+                  id="name"
+                  type="text"
+                  placeholder={t('contact.form.name')}
+                  {...register('name')}
+                />
+                {errors.name && <span className="form__error">{errors.name.message}</span>}
+              </div>
+              <div className="form__field">
+                <label htmlFor="email" className="form__label">{t('contact.form.email')}</label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  {...register('email')}
+                />
+                {errors.email && <span className="form__error">{errors.email.message}</span>}
+              </div>
+            </div>
+
+            {/* Qualification fields: business path only. The engineering path
+                keeps a plain message box — architecture conversations don't
+                start with a budget bracket. */}
+            {audience === 'business' && (
+              <div className="form__row">
+                <div className="form__field">
+                  <label htmlFor="budget" className="form__label">{t('contact.form.budget')}</label>
+                  <select id="budget" className="form__select" defaultValue="" {...register('budget')}>
+                    <option value="" disabled>
+                      {t('contact.form.selectPlaceholder')}
+                    </option>
+                    {BUDGET_KEYS.map((key) => (
+                      <option key={key} value={key}>
+                        {t(`contact.form.budgetOptions.${key}`)}
+                      </option>
+                    ))}
+                  </select>
+                  {errors.budget && <span className="form__error">{errors.budget.message}</span>}
+                </div>
+                <div className="form__field">
+                  <label htmlFor="timeline" className="form__label">{t('contact.form.timeline')}</label>
+                  {/* Labels reuse the calculator's timeline copy — already
+                      translated in both locales for the same key set. */}
+                  <select id="timeline" className="form__select" defaultValue="" {...register('timeline')}>
+                    <option value="" disabled>
+                      {t('contact.form.selectPlaceholder')}
+                    </option>
+                    {TIMELINE_KEYS.map((key) => (
+                      <option key={key} value={key}>
+                        {t(`calculator.timeline.options.${key}`)}
+                      </option>
+                    ))}
+                  </select>
+                  {errors.timeline && <span className="form__error">{errors.timeline.message}</span>}
+                </div>
+              </div>
             )}
+
+            <div className="form__field">
+              <label htmlFor="message" className="form__label">{t('contact.form.message')}</label>
+              <Textarea
+                id="message"
+                rows={4}
+                placeholder={t(`contact.${audience}.messagePlaceholder`)}
+                {...register('message')}
+              />
+              {errors.message && <span className="form__error">{errors.message.message}</span>}
+            </div>
 
             {/* GDPR consent */}
             <div className="form__gdpr">
               <label className="form__gdpr-label">
                 <input
                   type="checkbox"
-                  required
-                  checked={formData.gdprConsent}
-                  onChange={(e) =>
-                    setFormData({ ...formData, gdprConsent: e.target.checked })
-                  }
                   className="form__gdpr-checkbox"
+                  {...register('gdprConsent')}
                 />
                 <span>
                   {t('contact.form.gdprConsent')}{' '}
-                  <a href="/privacy" className="form__gdpr-link">
+                  <a href={routes.privacy(locale)} className="form__gdpr-link">
                     {t('contact.form.gdprConsentLink')}
                   </a>
                   {'. '}
                   {t('contact.form.gdprConsentSuffix')}
                 </span>
               </label>
+              {errors.gdprConsent && (
+                <span className="form__error">{t('contact.form.gdprRequired')}</span>
+              )}
             </div>
 
             <button
               type="submit"
-              disabled={isSubmitting}
+              disabled={isPending}
               className="form__button"
             >
-              {isSubmitting ? (
+              {isPending ? (
                 <>
                   <div className="form__button-spinner" />
                   {t('contact.form.sending')}

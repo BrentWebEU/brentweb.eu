@@ -4,33 +4,71 @@
     "experience": "Ervaring",
     "services": "Diensten",
     "projects": "Projecten",
-    "security": "Security",
+    "work": "Cases",
     "blog": "Blog",
-    "contact": "Contact"
+    "contact": "Contact",
+    "business": "Business",
+    "tech": "Techniek",
+    "backToGateway": "Terug naar de homepage",
+    "lab": "Lab",
+    "process": "Werkwijze",
+    "getQuote": "Wat het kost"
   },
   "hero": {
-    "badge": "Ik ben Brent Schoenmakers!",
-    "title": "Dé full-stack ontwikkelaar voor jouw digitalisering!",
-    "tagline": "Mijn visie is om applicaties te bouwen die gebaseerd zijn op jouw doelen, niet op de technologie.",
-    "getInTouch": "Praat Mee",
-    "viewProjects": "Bekijk Werk",
-    "location": "Geel, België",
+    "title": "Full-stack ontwikkeling voor groeiende bedrijven",
+    "tagline": "Websites, interne tools en applicaties, gebouwd door één ontwikkelaar.",
+    "location": "Geel - Blankenberge, België",
     "featuredProject": "Carrosserie Kris",
-    "featured": "Voorgesteld"
+    "featured": "Voorgesteld",
+    "business": {
+      "badge": "FREELANCE ONTWIKKELAAR, BELGIË",
+      "title": "Software dat zorgt voor efficientie",
+      "tagline": "Websites, interne tools en applicaties voor kleine bedrijven, aan een prijs die een kleine zaak ook echt kan verantwoorden.",
+      "getInTouch": "Wat kost het?",
+      "viewProjects": "Bekijk mijn werk",
+      "trust": "U krijgt een vaste prijs voor ik begin, en u communiceert direct met mij in plaats van met een verkoper."
+    },
+    "tech": {
+      "badge": "FULL-STACK ENGINEER",
+      "title": "Gebouwd met zorg en aandacht voor details",
+      "tagline": "Gebruik van de laatste technologieën, infrastructuur die ik zelf draai.",
+      "getInTouch": "Technische vragen?",
+      "viewProjects": "Open de case studies",
+      "spec": {
+        "stackLabel": "Stack",
+        "stackValue": "TypeScript, Node, Rust, C#,Docker, Linux",
+        "frameworksLabel": "Frameworks",
+        "frameworksValue": "React, Next.js, Angular, Tailwind, ASP.NET, Actix Web",
+        "focusLabel": "Momenteel",
+        "focusValue": "Ontwikkeling van systemen, applicaties en API's",
+        "locationLabel": "Gevestigd in",
+        "statusLabel": "Status",
+        "statusValue": "Open voor nieuw werk",
+        "statusValueLimited": "Beperkt beschikbaar voor nieuw werk",
+        "statusValueUnavailable": "Niet beschikbaar voor nieuw werk"
+      }
+    },
+    "_comment": "hero.title and hero.tagline are the site-wide <title> and meta description (app/[locale]/layout.tsx) plus the noscript gateway fallback. Per-path hero copy lives under hero.business / hero.tech."
   },
   "about": {
-    "badge": "OVER",
-    "title": "Hallo, ik ben Brent",
-    "titleMorning": "Goedemorgen, ik ben Brent",
-    "titleNoon": "Goedemiddag, ik ben Brent",
-    "titleEvening": "Goedenavond, ik ben Brent",
-    "description1": "Hallo! Ik ben een full-stack ontwikkelaar uit België met een passie voor het bouwen van digitale systemen. Ik ben in 2019 begonnen met leren en heb mijn vaardigheden sindsdien continu verder ontwikkeld.",
-    "description2": "Mijn doel is niet alleen om digitale systemen te bouwen, maar ook om oplossingen te creëren die een echte meerwaarde bieden.",
-    "techTitle": "Technische expertise:",
+    "badge": "OVER MIJ",
+    "techTitle": "Technische expertise",
     "techDescription": "Ik werk met moderne technologieën die betrouwbaar, snel en efficiënt met elkaar samenwerken. Dit heeft tot resultaat dat je je geen zorgen hoeft te maken over het systeem",
-    "getInTouch": "Neem contact op →",
+    "getInTouch": "Neem contact op",
     "annotation": "← Dit ben ik",
-    "yearsBuilding": "Jaar ervaring"
+    "yearsBuilding": "Jaar ervaring",
+    "business": {
+      "description1": "Ik bouw websites en interne tools voor kleine bedrijven in België. Het meeste is met de hand geschreven React en Next.js, plus wat er gekoppeld moet worden aan de systemen die u al gebruikt.",
+      "description2": "Er is geen accountmanager en niemand geeft uw project door aan een junior. De persoon die u mailt, is de persoon die de code schrijft, en ik ben er nog wanneer er iets moet veranderen.",
+      "title": "De persoon die het ook echt bouwt"
+    },
+    "tech": {
+      "titleMorning": "Goedemorgen, ik ben Brent",
+      "titleNoon": "Goedemiddag, ik ben Brent",
+      "titleEvening": "Goedenavond, ik ben Brent",
+      "description1": "Belgisch ontwikkelaar, bouwt sinds 2019, geregistreerd als student-zelfstandige. Ik geef om wat onder de UI zit: datamodellering en faalscenario's.",
+      "description2": "Momenteel verdiep ik me in gedistribueerde systemen en netwerkbeveiliging. De case studies documenteren de afwegingen."
+    }
   },
   "experience": {
     "badge": "ERVARING",
@@ -40,12 +78,10 @@
     "hackathons": "Hackathons",
     "current": "● Huidig",
     "upcoming": "◐ Binnenkort",
-    "stillHere": "← Nog steeds hier!",
     "stats": {
       "yearsLearning": "Jaar ervaring",
       "jobPositions": "Functies",
-      "hackathons": "Hackathons",
-      "technologies": "Technologieën"
+      "hackathons": "Hackathons"
     },
     "items": {
       "work": [
@@ -55,7 +91,11 @@
           "company": "Carrosserie Kris",
           "description": "Onderhoud van systemen, klantinteractie en prestatieoptimalisatie.",
           "personalNote": "Mijn eerste echte klant.",
-          "tags": ["Webontwikkeling", "IT Beheer", "Boekhouding"],
+          "tags": [
+            "Webontwikkeling",
+            "IT Beheer",
+            "Boekhouding"
+          ],
           "status": "current"
         },
         {
@@ -64,7 +104,12 @@
           "company": "Axxit",
           "description": "Bouwen van full-stack applicaties, code reviews en samenwerking in teamverband.",
           "personalNote": "Hier leerde ik de waarde van code reviews en teamwerk.",
-          "tags": ["Angular", "ASP.NET", "Docker", "Teamwerk"]
+          "tags": [
+            "Angular",
+            "ASP.NET",
+            "Docker",
+            "Teamwerk"
+          ]
         }
       ],
       "education": [
@@ -73,7 +118,11 @@
           "title": "Stagiair Ontwikkelaar",
           "company": "WimNet",
           "description": "Stage gericht op netwerken & infrastructuur.",
-          "tags": ["Stage", "Leren", "Netwerken"]
+          "tags": [
+            "Stage",
+            "Leren",
+            "Netwerken"
+          ]
         },
         {
           "year": "2025",
@@ -81,7 +130,10 @@
           "company": "Nitor",
           "description": "Twee weken gewerkt aan React Native componenten. Mobiele ontwikkeling en componentarchitectuur.",
           "personalNote": "Intensieve leerervaring in mobiele ontwikkeling.",
-          "tags": ["React Native", "Mobiele Ontwikkeling"]
+          "tags": [
+            "React Native",
+            "Mobiele Ontwikkeling"
+          ]
         }
       ],
       "hackathons": [
@@ -91,7 +143,11 @@
           "company": "3de keer - 5de plaats van de 19 (Solo)",
           "description": "Opnieuw solo. 5de plaats. Bouwen onder tijdsdruk zorgt voor een steile leercurve.",
           "personalNote": "Solo project. Snelkookpan-leeromgeving.",
-          "tags": ["Probleemoplossing", "Solo werk", "Tijdsbeheer"]
+          "tags": [
+            "Probleemoplossing",
+            "Solo werk",
+            "Tijdsbeheer"
+          ]
         },
         {
           "year": "2024",
@@ -99,7 +155,10 @@
           "company": "2de keer - 12de plaats van de 12",
           "description": "Laatste plaats. Meer geleerd van dit verlies dan van overwinningen.",
           "personalNote": "Waardevolle leerervaring door uitdagingen.",
-          "tags": ["Leerervaring", "Angular"]
+          "tags": [
+            "Leerervaring",
+            "Angular"
+          ]
         },
         {
           "year": "2023",
@@ -107,89 +166,83 @@
           "company": "1ste keer - 4de plaats van de 10 (Solo)",
           "description": "Eerste hackathon, solo met Angular. 4de plaats. Overweldigend maar geslaagd.",
           "personalNote": "Eerste hackathonervaring. Uitdagend maar belonend.",
-          "tags": ["Eerste Hackathon", "Angular", "Leren"]
+          "tags": [
+            "Eerste Hackathon",
+            "Angular",
+            "Leren"
+          ]
         }
       ]
     }
   },
   "services": {
-    "badge": "DIENSTEN",
-    "title": "Laten we samen iets moois bouwen",
-    "annotation": "← Echte skills, echte resultaten",
-    "stats": {
-      "projectsDelivered": "Projecten Afgeleverd",
-      "yearsLearning": "Jaren Leren",
-      "technologiesUsed": "Technologieën Gebruikt"
-    },
+    "badge": "WAT IK DOE",
+    "title": "Wat ik bouw, en wat het oplost",
     "items": {
       "webDevelopment": {
-        "title": "Webontwikkeling",
-        "description": "Websites die gewoon werken. Krachtige sites gebouwd voor echte gebruikers. Geen overbodige functies, maar een snelle en probleemloze ervaring."
+        "title": "Websites die echt klanten opleveren",
+        "description": "Geen standaard templates, maar websites die precies doen wat ze moeten doen: zorgen dat mensen contact met je opnemen."
       },
       "fullStackApps": {
-        "title": "Full-Stack Apps",
-        "description": "Van idee tot interface. Ik bouw end-to-end applicaties waarbij de frontend en backend perfect communiceren, zodat jij je geen zorgen hoeft te maken over de techniek."
+        "title": "Weg met ingewikkelde Excel-sheets",
+        "description": "Eén overzichtelijk systeem dat het handmatige werk overneemt. Iedereen logt op dezelfde plek in en alles klopt meteen"
       },
       "deployment": {
-        "title": "Deployment & Hosting",
-        "description": "Ga met een gerust hart live. Ik regel het zware werk—Docker, Linux en Cloud—om ervoor te zorgen dat je app online, veilig en klaar voor bezoekers blijft."
+        "title": "Geen technisch gedoe achteraf",
+        "description": "Geen technisch gedoe of zorgen over updates. Ik zorg dat je site altijd snel en veilig werkt voor een vast bedrag per jaar."
       },
       "database": {
-        "title": "Database Ontwerp",
-        "description": "Data waar je echt iets aan hebt. Ik structureer informatie zo dat het vandaag overzichtelijk is en morgen klaar is om te schalen. Simpel, logisch en toekomstbestendig."
+        "title": "Je gegevens overzichtelijk op één plek",
+        "description": "Een eenvoudig dashboard waarin je makkelijk spullen opzoekt, aanpast of downloadt. Gewoon heel makkelijk te gebruiken."
       },
       "architecture": {
-        "title": "Architectuur Planning",
-        "description": "Eerst meten, dan pas coderen. Samen brengen we het grotere plaatje in kaart, zodat elk stukje technologie aansluit bij jouw doelen voordat de eerste regel code wordt geschreven."
+        "title": "Veilig gebouwd en klaar om te groeien",
+        "description": "Goed beveiligd tegen hackers en gebouwd op de toekomst. Zo kan jouw systeem gewoon meegroeien als je bedrijf groter wordt."
       }
     }
   },
+  "proof": {
+    "badge": "WERK",
+    "title": "Wat ik bouwde, en wat het oplost",
+    "subtitle": "Slimme software en websites die dagelijkse problemen oplossen. Mijn oudste project draait al sinds 2021.",
+    "readCaseStudy": "Lees de case study",
+    "testimonialsTitle": "Wat zij zeiden",
+    "_testimonialsComment": "Alleen echte, toewijsbare citaten. Vorm: { quote, name, role, company }. De sectie verbergt zichzelf zolang deze lijst leeg is - vul nooit met verzonnen tekst.",
+    "testimonialsTest": [{
+      "quote": "Brent is een zeer bekwame ontwikkelaar die in staat is om complexe problemen op te lossen. Hij heeft een scherp oog voor detail en levert altijd werk van hoge kwaliteit.",
+      "name": "Kris",
+      "role": "Eigenaar",
+      "company": "Carrosserie Kris"
+    }],
+    "clientsLabel": "Voor wie ik bouwde"
+  },
   "projects": {
-    "badge": "PROJECTEN",
-    "title": "Dingen die ik heb gebouwd",
-    "subtitle": "Echte projecten voor echte klanten. Elk project leerde me iets nieuws.",
-    "annotation": "← Scroll & klik om te verkennen",
-    "viewProject": "Bekijk project",
-    "viewCode": "Bekijk code",
-    "whatItDoes": "Wat het doet",
-    "techStack": "Tech stack",
-    "type": {
-      "web": "Web App",
-      "mobile": "Mobiele App",
-      "desktop": "Desktop App",
-      "other": "Andere"
-    },
+    "badge": "SYSTEMEN",
+    "title": "Wat ik bouwde, en wat het oplost",
+    "subtitle": "Open er 1 om te zien hoe het in elkaar zit en welke afwegingen ik maakte.",
+    "viewProject": "Bekijk hoe het werkt",
     "items": [
       {
         "title": "Carrosserie Kris",
-        "category": "Webontwikkeling",
         "image": "carrosserieKris",
-        "description": "Een lokale carrosseriewebsite waar ik sinds 2021 aan werk.",
-        "longDescription": "Doorlopend project sinds 2021. Continue verbeteringen aan prestaties, SEO en gebruikerservaring. Langetermijn klantrelatie met regelmatige updates en onderhoud.",
-        "features": [
-          "Prestaties geoptimaliseerd",
-          "Vloeiende animaties",
-          "Mobile-first ontwerp",
-          "SEO verbeteringen",
-          "Werkende contactformulieren",
-          "Regelmatige updates & onderhoud"
+        "tags": [
+          "React",
+          "Node.js",
+          "Tailwind"
         ],
-        "tags": ["React", "Node.js", "Tailwind"],
-        "color": "#e85454",
         "type": "website",
         "liveUrl": "https://carrosseriekris.be",
         "githubUrl": "",
-        "code": "NODE_01",
-        "grid": "A1",
+        "slug": "carrosserie-kris",
         "status": "maintained",
         "sector": "Klantwebsite",
-        "period": "2021 — HEDEN",
-        "abstract": "Website voor een lokaal carrosseriebedrijf, actief beheerd sinds 202, snelheid, SEO en zichtbaarheid binnen een langdurige samenwerking.",
+        "period": "2021 - HEDEN",
+        "abstract": "Website voor een lokaal carrosseriebedrijf, actief beheerd sinds 2021, snelheid, SEO en zichtbaarheid binnen een langdurige samenwerking.",
         "business": {
           "summary": "Een langdurige samenwerking, geen eenmalig project. De site is één van de belangrijkste kanalen van de zaak: snel, vindbaar op Google, met contacteer mogelijkheden om klanten direct in contact te brengen met de firma.",
           "metrics": [
             {
-              "value": "4+ jr",
+              "value": "5+ jr",
               "label": "Continue samenwerking"
             },
             {
@@ -211,38 +264,34 @@
           "summary": "React-frontend met een Node.js-backend, gestyled met Tailwind. De codebase is geoptimaliseerd voor Core Web Vitals en blijft actueel via regelmatige updates van dependencies en content.",
           "decisions": [
             "Mobile-first lay-out, animaties buiten het kritieke pad gehouden",
+            "Beeld- en assetpipeline afgestemd op Largest Contentful Paint",
             "Formulieren beveiligd zonder gesprekken te verliezen",
             "Bewust kleine, eenvoudige stack voor onderhoudbaarheid op lange termijn"
           ]
-        }
+        },
+        "client": "Carrosserie Kris"
       },
       {
         "title": "Distributed Intrusion Detection and Prevention System",
-        "category": "Low-Level Solution",
         "image": "idps",
-        "description": "Eerst meten, dan pas coderen. Samen brengen we het grotere plaatje in kaart, zodat elk stukje technologie aansluit bij jouw doelen voordat de eerste regel code wordt geschreven.",
-        "longDescription": "Gedistribueerde beveiligingsmonitoring voor educatieve netwerken. Een Raspberry Pi vastlegt alle netwerkverkeer inline, stroomt het naar een VPS voor analyse en voert lokale blokkeringsregels toe — zonder dat het verkeer wordt onderbroken.",
-        "features": [
-          "Robuuste netwerkmonitoring",
-          "Gedistribueerd verwerkingssysteem",
-          "Real-time dashboard",
-          "Cyberaanval detectie en preventie",
-          "Low latency",
-          "Low-level networkmonitoring"
+        "tags": [
+          "Rust",
+          "Angular",
+          "Docker",
+          "Suricata",
+          "Shell",
+          "Linux"
         ],
-        "tags": ["Rust", "Angular", "Docker", "Suricata", "Shell", "Linux"],
-        "color": "#B7410E",
         "type": "solution",
         "liveUrl": "",
         "githubUrl": "https://github.com/Brentweb-Labs/netsentry-sensor",
-        "code": "NODE_02",
-        "grid": "A2",
-        "status": "active",
+        "slug": "idps",
+        "status": "finished",
         "sector": "Netwerkbeveiliging",
-        "period": "2024 — HEDEN",
+        "period": "2024 - HEDEN",
         "abstract": "Gedistribueerde intrusion detection en prevention voor educatieve netwerken. Een inline edge-toestel capteert het verkeer, een externe server analyseert het, en blokkeerregels worden lokaal afgedwongen zonder het netwerk te vertragen.",
         "business": {
-          "summary": "Scholen krijgen netwerkbeveiliging op bedrijfsniveau met goedkope hardware. Bedreigingen worden in realtime gedetecteerd en geblokkeerd, terwijl het personeel alles volgt op één live dashboard — zonder securityteam ter plaatse.",
+          "summary": "Scholen krijgen netwerkbeveiliging op bedrijfsniveau met goedkope hardware. Bedreigingen worden in realtime gedetecteerd en geblokkeerd, terwijl het personeel alles volgt op één live dashboard - zonder securityteam ter plaatse.",
           "metrics": [
             {
               "value": "<1ms",
@@ -259,7 +308,7 @@
           ],
           "outcomes": [
             "Realtime detectie en automatische blokkering van bedreigingen",
-            "Eén dashboard voor het hele netwerk — geen specialist nodig",
+            "Eén dashboard voor het hele netwerk - geen specialist nodig",
             "Draait op een Raspberry Pi: minimale hardware-investering"
           ]
         },
@@ -267,7 +316,7 @@
           "summary": "Een Rust capture-agent draait inline op een Raspberry Pi, streamt pakketdata naar een VPS voor analyse met Suricata, en past verdicts lokaal toe zodat het hot path nooit wacht op de netwerk-roundtrip.",
           "decisions": [
             "Rust aan de edge: memory-safe pakketverwerking, geen GC-pauzes inline",
-            "Capture en enforcement losgekoppeld van analyse — fail-open by design",
+            "Capture en enforcement losgekoppeld van analyse - fail-open by design",
             "Serverpipeline gecontaineriseerd met Docker voor reproduceerbare deploys",
             "Suricata-regelengine stuurt detectie; eigen laag verzorgt preventie"
           ]
@@ -275,29 +324,21 @@
       },
       {
         "title": "Provilion Broodjes",
-        "category": "Full-Stack Web App",
         "image": "provilion",
-        "description": "Schoollunch bestelsysteem met betalingsverwerking.",
-        "longDescription": "Compleet broodjesbestelplatform voor een school. Leerlingen bestellen, ouders beheren tegoed, en administrators beheren de operaties. Geïntegreerde Stripe betalingen en aangepast admin dashboard.",
-        "features": [
-          "Stripe betalingsintegratie",
-          "Gebruikerstegoedsysteem",
-          "Bestellingsbeheer dashboard",
-          "Real-time bestelupdates",
-          "Op rollen gebaseerde toegangscontrole",
-          "E-mailmeldingen"
+        "tags": [
+          "TypeScript",
+          "MySQL",
+          "Stripe",
+          "NextJS"
         ],
-        "tags": ["TypeScript", "MySQL", "Stripe", "NextJS"],
-        "color": "#54e89c",
         "type": "website",
         "liveUrl": "https://provilion-maandmenu.vercel.app/",
         "githubUrl": "",
-        "code": "NODE_03",
-        "grid": "B1",
-        "status": "active",
+        "slug": "provilion-broodjes",
+        "status": "decommissioned",
         "sector": "Commerce-platform",
-        "period": "2023 — HEDEN",
-        "abstract": "Full-stack bestelplatform voor broodjes op school: leerlingen bestellen, ouders beheren tegoeden, beheerders runnen de dagelijkse werking — met geïntegreerde betaalverwerking.",
+        "period": "2024 - 2026",
+        "abstract": "Full-stack bestelplatform voor broodjes op school: leerlingen bestellen, ouders beheren tegoeden, beheerders runnen de dagelijkse werking - met geïntegreerde betaalverwerking.",
         "business": {
           "summary": "Verving manueel cashbeheer door een selfservice-bestelsysteem. Ouders laden online tegoed op, bestellingen worden automatisch verrekend via Stripe, en de keuken werkt vanuit één live operationeel dashboard.",
           "metrics": [
@@ -328,34 +369,27 @@
             "Transactionele order-writes houden tegoedgrootboek en bestellingen consistent",
             "E-mailnotificaties losgekoppeld van het request-pad"
           ]
-        }
+        },
+        "client": "Provilion Broodjes"
       },
       {
         "title": "Het Smaakpand (Gesloten)",
-        "category": "Website",
         "image": "hetsmaakpand",
-        "description": "Eenvoudige website voor een broodjeszaak die inmiddels gesloten is.",
-        "longDescription": "Schoon ontwerp, menuweergave en mobiel-responsief. Gericht op eenvoud en functionaliteit.",
-        "features": [
-          "Schoon, minimaal ontwerp",
-          "Menuweergave",
-          "Mobiel responsief",
-          "Snel ladend",
-          "Makkelijk te updaten"
+        "tags": [
+          "HTML",
+          "CSS",
+          "JavaScript"
         ],
-        "tags": ["HTML", "CSS", "JavaScript"],
-        "color": "#d2b48c",
         "type": "website",
         "liveUrl": "https://precious-mooncake-1d00a4.netlify.app/",
         "githubUrl": "",
-        "code": "NODE_04",
-        "grid": "B2",
+        "slug": "het-smaakpand",
         "status": "decommissioned",
         "sector": "Horecawebsite",
-        "period": "2022 — 2024",
+        "period": "2022 - 2024",
         "abstract": "Strakke, minimale website voor een lokale broodjeszaak: menuweergave, openingsuren, mobile-first. Uit dienst genomen toen de zaak de deuren sloot.",
         "business": {
-          "summary": "Een kleine zaak stond snel en betaalbaar online. De site deed één ding — het menu tonen en mensen naar de winkel brengen — zonder lopende complexiteit of kosten.",
+          "summary": "Een kleine zaak stond snel en betaalbaar online. De site deed één ding - het menu tonen en mensen naar de winkel brengen - zonder lopende complexiteit of kosten.",
           "metrics": [
             {
               "value": "Dagen",
@@ -377,48 +411,95 @@
           ]
         },
         "engineering": {
-          "summary": "Static-first met een bewust minimale footprint. Geen frameworks waar ze niet nodig waren — snelle laadtijden, triviale hosting en niets om te patchen.",
+          "summary": "Static-first met een bewust minimale footprint. Geen frameworks waar ze niet nodig waren - snelle laadtijden, triviale hosting en niets om te patchen.",
           "decisions": [
             "Statische delivery: geen serverruntime, vrijwel geen aanvalsoppervlak",
             "Handgeschreven CSS in plaats van een framework voor één pagina",
             "Laadtijd onder de seconde op mobiele netwerken als hoofddoel",
-            "Gearchiveerd met een propere teardown — geen verweesde infrastructuur"
+            "Gearchiveerd met een propere teardown - geen verweesde infrastructuur"
           ]
-        }
+        },
+        "client": "Het Smaakpand"
       }
     ],
     "map": {
-      "businessTitle": "Zakelijke impact",
-      "businessAudience": "Voor managers & recruiters",
-      "engineeringTitle": "Engineering",
-      "engineeringAudience": "Voor tech leads",
       "close": "Sluiten",
       "liveLink": "Bekijk live site",
+      "readCaseStudy": "Lees de volledige case study",
       "sourceLink": "Bekijk code",
       "status": {
         "active": "Live",
         "maintained": "Actief onderhouden",
-        "decommissioned": "Gearchiveerd"
+        "decommissioned": "Gearchiveerd",
+        "finished": "Afgerond"
+      },
+      "impactTitle": "Impact",
+      "decisionsTitle": "Belangrijkste keuzes",
+      "stackTitle": "Stack"
+    }
+  },
+  "process": {
+    "badge": "ZO WERK IK",
+    "title": "Hoe een project meestal verloopt",
+    "subtitle": "U kent de scope, de prijs en ongeveer de deadline voor ik begin te bouwen.",
+    "steps": {
+      "1": {
+        "title": "Een eerste gesprek",
+        "body": "Een half uur over wat u tijd kost. Gratis, en zonder verplichting erna."
+      },
+      "2": {
+        "title": "Een prijs op papier",
+        "body": "Wat ik bouw, wat het kost en wanneer het klaar is."
+      },
+      "3": {
+        "title": "Bouwen",
+        "body": "U ziet elke week iets werkends, zo halen we fouten er vroeg uit."
+      },
+      "4": {
+        "title": "Livegang",
+        "body": "Installatie, migratie en een rondleiding zodat u het zelf kunt beheren."
+      },
+      "5": {
+        "title": "Daarna",
+        "body": "Ik blijf bereikbaar. De meesten houden me erbij voor kleine aanpassingen."
+      }
+    },
+    "guaranteesTitle": "Hoe het is om met mij te werken",
+    "guarantees": {
+      "1": {
+        "title": "U kent de prijs vooraf",
+        "body": "Ik werk per project, niet per uur. Groeit de scope, dan hoort u wat het kost voor ik het bouw."
+      },
+      "2": {
+        "title": "U spreekt rechtstreeks met mij",
+        "body": "Geen team, geen accountmanager. Wie u mailt, is wie de code schrijft."
+      },
+      "3": {
+        "title": "Ik antwoord binnen een dag of twee",
+        "body": "Ik studeer ernaast, dus daar ben ik eerlijk over in plaats van directe antwoorden te beloven."
+      },
+      "4": {
+        "title": "Ik verdwijn niet na de livegang",
+        "body": "Gaat er iets stuk dat ik bouwde, dan herstel ik het. Dat is geen nieuw project."
       }
     }
   },
-  "security": {
-    "badge": "BEVEILIGING",
-    "title": "Beveiliging",
-    "subtitle": "Beveiliging is geen bijzaak—het is vanaf het begin ingebouwd.",
-    "description": "Ik focus op veilige codeerpraktijken, juiste authenticatie en het veilig houden van data. Elk project bevat vanaf dag één beveiligingsoverwegingen.",
-    "practices": {
-      "secureCoding": "Veilige Codeerpraktijken",
-      "authentication": "Juiste Authenticatie",
-      "dataProtection": "Gegevensbescherming",
-      "regularUpdates": "Regelmatige Updates"
-    }
-  },
   "contact": {
-    "badge": "CONTACT",
-    "title": "Laten we samenwerken",
-    "subtitle": "Een project in gedachten? Laten we praten.",
-    "annotation": "← Wees niet verlegen!",
+    "business": {
+      "badge": "CONTACT",
+      "title": "Vertel me over uw project",
+      "subtitle": "Vertel me wat u vertraagt. Ik antwoord eerlijk of ik de juiste persoon ben en ongeveer wat het zou kosten.",
+      "messagePlaceholder": "Welk proces kost u tijd, en hoe ziet een goed resultaat eruit?",
+      "formNote": "Hoe meer u vertelt, hoe bruikbaarder mijn eerste antwoord is."
+    },
+    "tech": {
+      "badge": "CONTACT",
+      "title": "Laten we over architectuur praten",
+      "subtitle": "Open voor interessante technische vraagstukken, samenwerkingen of een goed gesprek over systeemontwerp.",
+      "annotation": "← Wees niet verlegen!",
+      "messagePlaceholder": "Wat bouw je, en welke afweging speelt er?",
+      "formNote": "Architectuurvragen en samenwerkingen zijn welkom."
+    },
     "form": {
       "name": "Naam",
       "email": "E-mail",
@@ -430,11 +511,47 @@
       "gdprConsent": "Ik stem in met de verwerking van mijn naam, e-mail en bericht om te reageren op mijn vraag.",
       "gdprConsentLink": "Privacybeleid",
       "gdprConsentSuffix": "Gegevens worden maximaal 12 maanden bewaard.",
-      "gdprRequired": "Accepteer onze gegevensverwerkingsvoorwaarden om dit formulier in te dienen."
+      "gdprRequired": "Accepteer onze gegevensverwerkingsvoorwaarden om dit formulier in te dienen.",
+      "rateLimited": "U verstuurt iets te snel. Wacht een paar minuten en probeer opnieuw.",
+      "budget": "Ruw budget",
+      "timeline": "Tijdlijn",
+      "selectPlaceholder": "Maak een keuze",
+      "budgetOptions": {
+        "<500": "Minder dan € 500",
+        "500-1500": "€ 500 - € 1.500",
+        "1500-3000": "€ 1.500 - € 3.000",
+        "3000+": "€ 3.000+",
+        "not-sure": "Nog geen idee"
+      }
     },
     "location": "Locatie",
     "locationValue": "Geel, België",
-    "availability": "Beschikbaar voor nieuwe projecten"
+    "availability": "Beschikbaar voor nieuwe projecten",
+    "socialsLabel": "Elders",
+    "availabilityNote": "Ik antwoord meestal binnen een dag of twee."
+  },
+  "cta": {
+    "mid": {
+      "eyebrow": "KOSTEN",
+      "title": "Benieuwd wat het zou kosten?",
+      "body": "Een paar vragen en u krijgt een realistische prijsofferte en tijdlijn, plus een PDF die u kunt bijhouden.",
+      "primary": "Bekijk wat het kost",
+      "secondary": "Bekijk mijn werk"
+    },
+    "closing": {
+      "eyebrow": "CONTACT",
+      "title": "Vertel me wat u tijd kost.",
+      "body": "Beschrijf het probleem en ik zeg eerlijk of ik kan helpen, en ongeveer wat het zou vragen.",
+      "primary": "Stuur me een bericht",
+      "secondary": "Mail me rechtstreeks"
+    },
+    "tech": {
+      "eyebrow": "CASES",
+      "title": "Liever de lange versie?",
+      "body": "Elke case loopt door de afwegingen: wat ik koos, wat ik wegliet, en wat ik nu anders zou doen.",
+      "primary": "Lees de cases",
+      "secondary": "Mail me rechtstreeks"
+    }
   },
   "footer": {
     "nodesDiscovered": "Nodes ontdekt:",
@@ -445,192 +562,8 @@
     "cookieSettings": "Cookie-instellingen",
     "privacy": "Privacybeleid"
   },
-  "blog": {
-    "title": "Blog",
-    "subtitle": "Gedachten over webontwikkeling, beveiliging en technologie.",
-    "featured": "Uitgelichte Berichten",
-    "viewAll": "Bekijk Alle Berichten",
-    "readMore": "Lees meer",
-    "noPosts": "Geen berichten gevonden.",
-    "loading": "Berichten laden...",
-    "comments": "Reacties",
-    "leaveComment": "Laat een reactie achter",
-    "commentName": "Naam *",
-    "commentEmail": "E-mail *",
-    "commentWebsite": "Website (optioneel)",
-    "commentContent": "Je reactie *",
-    "postComment": "Plaats reactie",
-    "submitting": "Verzenden...",
-    "commentNote": "Je reactie wordt beoordeeld voordat deze wordt gepubliceerd.",
-    "noComments": "Nog geen reacties. Wees de eerste om te reageren!",
-    "tags": "Tags:",
-    "category": "Categorie"
-  },
-  "admin": {
-    "login": {
-      "title": "Admin Login",
-      "subtitle": "Meld je aan voor toegang tot het admin panel",
-      "email": "E-mail",
-      "password": "Wachtwoord",
-      "login": "Inloggen",
-      "loggingIn": "Inloggen...",
-      "error": "Inloggen mislukt"
-    },
-    "dashboard": {
-      "title": "Dashboard",
-      "welcome": "Welkom, {name}",
-      "logout": "Uitloggen",
-      "posts": "Berichten",
-      "comments": "Reacties",
-      "totalViews": "Totaal Weergaven",
-      "managePosts": "Beheer Berichten",
-      "managePostsDesc": "Maak, bewerk en beheer blogberichten",
-      "manageCategories": "Beheer Categorieën",
-      "manageCategoriesDesc": "Organiseer berichten per categorie",
-      "moderateComments": "Modereer Reacties",
-      "moderateCommentsDesc": "Bekijk en keur reacties goed"
-    },
-    "posts": {
-      "title": "Berichten",
-      "newPost": "Nieuw Bericht",
-      "all": "Alles",
-      "published": "Gepubliceerd",
-      "drafts": "Concepten",
-      "featured": "Uitgelicht",
-      "actions": "Acties",
-      "noPosts": "Geen berichten gevonden.",
-      "deleteConfirm": "Weet je zeker dat je dit bericht wilt verwijderen?",
-      "unpublish": "Depubliceren",
-      "publish": "Publiceren"
-    },
-    "postEditor": {
-      "newPost": "Nieuw Bericht",
-      "editPost": "Bewerk Bericht",
-      "saved": "Opgeslagen {time}",
-      "save": "Opslaan",
-      "saving": "Opslaan...",
-      "title": "Titel *",
-      "titlePlaceholder": "Berichttitel",
-      "excerpt": "Samenvatting *",
-      "excerptPlaceholder": "Korte beschrijving van het bericht",
-      "content": "Inhoud *",
-      "publish": "Publiceren",
-      "status": "Status",
-      "draft": "Concept",
-      "published": "Gepubliceerd",
-      "featured": "Uitgelicht bericht",
-      "category": "Categorie *",
-      "featuredImage": "Uitgelichte Afbeelding",
-      "seo": "SEO",
-      "seoTitle": "SEO Titel",
-      "seoTitlePlaceholder": "SEO titel (optioneel)",
-      "seoDescription": "SEO Beschrijving",
-      "seoDescriptionPlaceholder": "SEO beschrijving (optioneel)"
-    },
-    "categories": {
-      "title": "Categorieën",
-      "newCategory": "Nieuwe Categorie",
-      "createCategory": "Maak Categorie",
-      "name": "Naam *",
-      "description": "Beschrijving",
-      "create": "Aanmaken",
-      "cancel": "Annuleren",
-      "noCategories": "Nog geen categorieën. Maak er een aan om te beginnen."
-    },
-    "comments": {
-      "title": "Reacties",
-      "all": "Alles",
-      "pending": "In Afwachting",
-      "approved": "Goedgekeurd",
-      "noComments": "Geen reacties gevonden.",
-      "deleteConfirm": "Weet je zeker dat je deze reactie wilt verwijderen?"
-    }
-  },
-  "console": {
-    "openConsole": "Console openen",
-    "minimize": "Minimaliseren",
-    "maximize": "Maximaliseren",
-    "closeConsole": "Console sluiten",
-    "inputPlaceholder": "Typ een opdracht...",
-    "inputHint": "Druk op Tab om aan te vullen, Enter om uit te voeren",
-    "welcome": "Welkom in de portfolio console van Brent",
-    "welcomeHint": "Typ 'help' om beschikbare opdrachten te zien.",
-    "commandNotFound": "Opdracht niet gevonden: {cmd}\nTyp 'help' om beschikbare opdrachten te zien.",
-    "commandDescriptions": {
-      "help": "Beschikbare opdrachten tonen",
-      "clear": "Console leegmaken",
-      "whoami": "Huidige gebruikersinformatie tonen",
-      "about": "Informatie over Brent tonen",
-      "skills": "Technische vaardigheden tonen",
-      "projects": "Alle projecten weergeven",
-      "contact": "Contactinformatie tonen",
-      "ls": "Beschikbare secties weergeven",
-      "cd": "Naar een sectie navigeren (bijv. cd about)",
-      "map": "Verkenningskaart tonen (Nodes X/7)",
-      "scan": "Beveiligingsscan uitvoeren (demo)",
-      "vulnerability": "Controleren op kwetsbaarheden",
-      "headers": "Beveiligingsheaders controleren",
-      "network": "Netwerkinformatie tonen",
-      "encrypt": "Tekst versleutelen (demo)",
-      "hash": "Hash genereren (demo)",
-      "secret": "Een geheim onthullen"
-    },
-    "output": {
-      "helpTitle": "Beschikbare opdrachten:",
-      "helpCategoryGeneral": "Algemeen",
-      "helpCategoryInfo": "Informatie",
-      "helpCategoryNavigation": "Navigatie",
-      "helpCategoryCybersecurity": "Cyberbeveiliging",
-      "helpCdSection": "Naar een sectie navigeren (about, projects, experience, contact, security)",
-      "helpFooter": "Typ een opdracht en druk op Enter om uit te voeren.",
-      "whoami": "Gebruiker: brent@brentweb.eu\nRol: Full-Stack Ontwikkelaar & Aankomend Cybersecurity Engineer\nLocatie: Geel, België\nStatus: Beschikbaar voor projecten",
-      "about": "Brent Schoenmakers\nFull-Stack Ontwikkelaar & Aankomend Cybersecurity Engineer\n\nIk ben een ontwikkelaar uit Geel, België die al bouwt voor het web sinds 2019.\nMomenteel focus ik op full-stack ontwikkeling met React, Node.js en moderne tools,\nen bezig met het leren van cybersecurity engineering.\n\nPassioneel over het bouwen van veilige, efficiënte applicaties en het leren van\nbeveiligingsbest practices.",
-      "skills": "Technische Vaardigheden:\n\nFrontend:\n  - React, Angular, Next.js\n  - TypeScript, JavaScript\n  - Tailwind CSS\n\nBackend:\n  - Node.js, NestJS\n  - Python, .NET, C#\n  - REST APIs, GraphQL\n\nDatabase:\n  - MySQL\n  - Database ontwerp & optimalisatie\n\nDevOps:\n  - Docker, Linux\n  - CI/CD, Deployment\n  - Cloud platforms\n\nCyberbeveiliging (Leren):\n  - Beveiligingsbest practices\n  - Kwetsbaarheidsanalyse\n  - Netwerkbeveiliging\n  - Versleuteling & hashing",
-      "projects": "Projecten:\n\n1. Carrosserie Kris (2021 - Heden)\n   - Webontwikkeling & IT-beheer\n   - Langetermijn klantrelatie\n   - Technologieën: React, Node.js, Tailwind\n\n2. Provilion Broodjes\n   - Full-stack broodjesbestelsysteem\n   - Stripe betalingsintegratie\n   - Technologieën: TypeScript, MySQL, NextJS\n\n3. Het Smaakpand (Gesloten)\n   - Eenvoudige restaurantwebsite\n   - Technologieën: HTML, CSS, JavaScript\n\nVoor meer details, bezoek de sectie Projecten.",
-      "contact": "Contactinformatie:\n\nE-mail: brent@brentweb.eu\nLocatie: Geel, België\nGitHub: https://github.com/BrentWebEU\nLinkedIn: https://www.linkedin.com/in/brent-schoenmakers-3793a8262/\n\nStatus: Open voor nieuwe projecten\nReactietijd: Meestal binnen 24 uur",
-      "ls": "Beschikbare secties:\n  about       - Over sectie\n  experience  - Werkervaring & opleiding\n  services    - Aangeboden diensten\n  projects    - Portfolio projecten\n  contact     - Contactinformatie\n  security    - Cyberbeveiligingsinformatie",
-      "cdUsage": "Gebruik: cd <sectie>\nVoorbeeld: cd about",
-      "cdNavigating": "Navigeren naar sectie {section}...",
-      "cdNotFound": "Sectie \"{section}\" niet gevonden. Gebruik 'ls' om beschikbare secties te zien.",
-      "mapTitle": "Verkenningskaart:",
-      "mapNodesDiscovered": "Nodes ontdekt: {current}/{total}",
-      "mapProgress": "Voortgang: {percent}%",
-      "mapAvailableNodes": "Beschikbare nodes:",
-      "mapHeroNode": "[✓] hero (altijd ontdekt)",
-      "mapKeepExploring": "Blijf verkennen om alle nodes te ontgrendelen!",
-      "secret": "[GEHEIM ONTHULD]\n\nJe hebt het gevonden! Hier is een geheim:\n\nIk begon mijn reis op 11-jarige leeftijd. Ik bleef leren, falen en opnieuw beginnen, wat uitgroeide tot een hobby, een job en bovenal een passie.\nOnthoud dus: als je net begint of niet weet hoe je verder moet, kun je alles bereiken met de juiste motivatie. Zoek tutorials, artikelen of alles wat je helpt je reis te ontwikkelen om uiteindelijk geweldige oplossingen te bouwen.\nConclusie in 3 woorden: Blijf vooruit gaan!\n\nBlijf verkennen - er is meer te ontdekken!",
-      "scanTitle": "Beveiligingsscan Resultaten:",
-      "scanItems": "[✓] HTTPS ingeschakeld\n[✓] Beveiligingsheaders geconfigureerd\n[✓] Geen blootgestelde gevoelige gegevens\n[✓] Invoervalidatie aanwezig\n[✓] XSS-beveiliging actief\n[✓] CSRF-beveiliging ingeschakeld",
-      "scanCompleted": "Scan voltooid: {time}",
-      "scanStatus": "Status: Veilig",
-      "vulnerabilityTitle": "Kwetsbaarheidsanalyse:",
-      "vulnerabilityChecking": "Controleren op veelvoorkomende kwetsbaarheden...",
-      "vulnerabilityItems": "[✓] SQL Injectie: Beschermd\n[✓] XSS: Beschermd\n[✓] CSRF: Beschermd\n[✓] Clickjacking: Beschermd\n[✓] Onveilige directe objectreferenties: Beschermd",
-      "vulnerabilityClean": "Geen kritieke kwetsbaarheden gevonden.",
-      "vulnerabilityLastUpdated": "Laatst bijgewerkt: {date}",
-      "headersTitle": "Analyse Beveiligingsheaders:",
-      "headersItems": "[✓] Content-Security-Policy: Geconfigureerd\n[✓] X-Frame-Options: DENY\n[✓] X-Content-Type-Options: nosniff\n[✓] Strict-Transport-Security: Ingeschakeld\n[✓] Referrer-Policy: strict-origin-when-cross-origin\n[✓] Permissions-Policy: Geconfigureerd",
-      "headersAllConfigured": "Alle beveiligingsheaders correct geconfigureerd.",
-      "networkTitle": "Netwerkinformatie:",
-      "networkInfo": "Protocol: HTTPS\nPoort: 443\nVerbinding: Veilig (TLS 1.3)\nServer: Zelfgehost\nCDN: Actief\nCompressie: Ingeschakeld",
-      "networkRequestHeaders": "Verzoek Headers:",
-      "networkUserAgent": "  User-Agent: {userAgent}",
-      "networkAccept": "  Accept: text/html,application/json",
-      "networkAcceptLanguage": "  Accept-Language: {language}",
-      "encryptUsage": "Gebruik: encrypt <tekst>\nVoorbeeld: encrypt 'Hallo Wereld'",
-      "encryptResult": "Versleutelde tekst: {result}\n\nOpmerking: Dit is een demo. Echte versleuteling gebruikt de juiste algoritmen.",
-      "hashUsage": "Gebruik: hash <tekst>\nVoorbeeld: hash 'Hallo Wereld'",
-      "hashResult": "Hash (demo): {result}\n\nOpmerking: Dit is een demo. Echte hashing gebruikt SHA-256 of vergelijkbaar."
-    }
-  },
   "common": {
-    "loading": "Laden...",
-    "error": "Er is een fout opgetreden",
-    "save": "Opslaan",
-    "cancel": "Annuleren",
-    "delete": "Verwijderen",
-    "edit": "Bewerken",
-    "close": "Sluiten"
+    "skipToContent": "Ga naar inhoud"
   },
   "cookie": {
     "banner": {
@@ -653,7 +586,388 @@
         "title": "Analyse",
         "description": "Helpt mij begrijpen hoe bezoekers de website gebruiken via een self-hosted analytics-opzet. De gegevens worden beperkt gehouden en enkel voor private rapportering gebruikt."
       }
+    }
+  },
+  "calculator": {
+    "metaTitle": "Kostenraming",
+    "metaDescription": "Krijg direct een budgetindicatie en tijdlijn voor je project, plus een downloadbare PDF-samenvatting.",
+    "badge": "KOSTENRAMING",
+    "title": "Wat zou uw project kosten?",
+    "subtitle": "Een paar korte vragen en u krijgt een realistische prijsofferte, een tijdlijn en een PDF die u kunt bijhouden.",
+    "stepOf": "Stap {current} van {total}",
+    "back": "Terug",
+    "next": "Volgende",
+    "scope": {
+      "title": "Wat heeft jouw project nodig?",
+      "description": "Selecteer alles wat van toepassing is.",
+      "options": {
+        "website": {
+          "label": "Website",
+          "description": "Een nieuwe site voor uw zaak, met de hand gebouwd.",
+          "includes": [
+            "Een site die met de hand gebouwd is in React en Next.js, geen template",
+            "Werkt goed op gsm en is snel genoeg om te scoren in Google",
+            "Hosting, domeinnaam en SSL worden voor u geregeld"
+          ]
+        },
+        "web_app": {
+          "label": "Webapp",
+          "description": "Iets met logins, gegevens en een beheerderskant.",
+          "includes": [
+            "Een toepassing met accounts en rechten",
+            "Een beheerdersgedeelte zodat u het zelf kunt onderhouden",
+            "Een database opgebouwd rond de vragen die u stelt"
+          ]
+        },
+        "api_integration": {
+          "label": "API Integratie",
+          "description": "Koppel betalingen, een CRM, of een andere dienst.",
+          "includes": [
+            "Koppeling met een externe API (betalingen, CRM, enzovoort)",
+            "Foutafhandeling en herpooglogica",
+            "Integratietests tegen de echte API"
+          ]
+        },
+        "automation": {
+          "label": "Automatisering",
+          "description": "Automatiseer een manueel proces of taak.",
+          "includes": [
+            "Script of dienst die een workflow automatiseert",
+            "Geplande taken of webhook-triggers",
+            "Monitoring en meldingen bij fouten"
+          ]
+        }
+      },
+      "error": "Kies minstens één optie om verder te gaan."
     },
-    "settings": "Cookie-instellingen"
+    "timeline": {
+      "title": "Wat is je tijdlijn?",
+      "options": {
+        "asap": "Zo snel mogelijk",
+        "1-3m": "1-3 maanden",
+        "3-6m": "3-6 maanden",
+        "6m-plus": "6+ maanden",
+        "not-sure": "Nog niet zeker"
+      }
+    },
+    "result": {
+      "title": "Hier is je inschatting",
+      "budgetLabel": "Geschat budget",
+      "timelineLabel": "Geschatte tijdlijn",
+      "weeksLabel": "{min}-{max} weken",
+      "includedTitle": "Wat er doorgaans bij inbegrepen is",
+      "downloadPdf": "Download PDF-samenvatting",
+      "downloadingPdf": "PDF wordt voorbereid...",
+      "disclaimer": "Dit is een ruwe richtlijn, geen offerte. Het echte bedrag hangt af van details die we samen doornemen.",
+      "rushNote": "U koos 'zo snel mogelijk'. Ik studeer hiernaast, dus een krappe deadline betekent meestal scope schrappen in plaats van meer uren maken. Dat zeg ik liever vooraf, en een spoedtoeslag reken ik sowieso niet aan."
+    },
+    "lead": {
+      "title": "Ontvang je inschatting per e-mail",
+      "subtitle": "Ik mail u de samenvatting en volg persoonlijk op binnen een dag of twee.",
+      "name": "Naam",
+      "email": "E-mail",
+      "company": "Bedrijf (optioneel)",
+      "notes": "Nog iets dat ik moet weten? (optioneel)",
+      "submit": "Stuur me de inschatting",
+      "sending": "Verzenden...",
+      "success": "Verzonden! Check je inbox voor de PDF-samenvatting.",
+      "error": "Er ging iets mis. Probeer het opnieuw.",
+      "rateLimited": "U verstuurt iets te snel. Wacht een paar minuten en probeer opnieuw."
+    },
+    "pdf": {
+      "title": "Samenvatting projectraming",
+      "preparedFor": "Opgemaakt voor {name} op {date}",
+      "budgetLabel": "Geraamd budget",
+      "timelineLabel": "Geraamde doorlooptijd",
+      "weeks": "{min}-{max} weken",
+      "scopeLabel": "Gekozen scope",
+      "timelinePreferenceLabel": "Voorkeur qua timing",
+      "includedLabel": "Wat er inbegrepen is",
+      "footer": "Dit is een ruwe raming, geen vaste offerte. Neem contact op via brent@brentweb.eu om de details door te nemen."
+    }
+  },
+  "work": {
+    "metaTitleList": "Case studies",
+    "metaDescriptionList": "Diepgaande case studies over echte klant- en persoonlijke projecten - het probleem, de bouw, en wat er is uitgeleverd.",
+    "listBadge": "CASE STUDIES",
+    "listTitle": "Het werk, opengelegd",
+    "listSubtitle": "Elk project hieronder heeft een volledige uitwerking: het probleem, wat er gebouwd is, en wat het echt veranderde.",
+    "readMore": "Lees de volledige case study",
+    "comingSoon": "De volledige uitwerking komt eraan. Hier is voorlopig de korte versie.",
+    "backToList": "← Terug naar case studies"
+  },
+  "lab": {
+    "metaTitle": "Developer lab",
+    "metaDescription": "Interactieve widgets die echte systeemconcepten tonen: rate limiting, auth-flows, en state machines - dezelfde ideeën die in productie draaien, zichtbaar gemaakt.",
+    "badge": "DEVELOPER LAB",
+    "title": "Systemen, zichtbaar gemaakt",
+    "subtitle": "Dezelfde concepten die in productie draaien op deze site - rate limiting, auth-flows, request-levenscycli - als iets waar je écht mee kan spelen.",
+    "rateLimit": {
+      "title": "Rate Limit Simulator",
+      "description": "Het exacte token-bucket-algoritme dat het contactformulier en de calculator van deze site beschermt, geanimeerd. Capaciteit {capacity} aanvragen, ongeveer één token elke {refillSeconds}s bijgevuld.",
+      "sendRequest": "Verstuur aanvraag",
+      "allowed": "Toegelaten",
+      "blocked": "Geblokkeerd. Probeer opnieuw over {seconds}s",
+      "tokensLabel": "Beschikbare tokens"
+    },
+    "authFlow": {
+      "title": "Auth Flow Visualizer",
+      "description": "Een stap-voor-stap doorloop van een typische login-sequentie. Enkel illustratief - geen echte backend, geen echte tokens.",
+      "steps": {
+        "idle": "Wachten op login",
+        "credentials": "Inloggegevens verzonden",
+        "verify": "Server verifieert inloggegevens",
+        "issueToken": "Sessietoken uitgegeven",
+        "authenticated": "Geauthenticeerd"
+      },
+      "start": "Start login",
+      "restart": "Herstart"
+    },
+    "stateMachine": {
+      "title": "Request Lifecycle Visualizer",
+      "description": "Een kleine finite-state machine die toont hoe een enkele aanvraag door validatie en verwerking beweegt - of op elke stap kan falen.",
+      "states": {
+        "idle": "Inactief",
+        "validating": "Valideren",
+        "processing": "Verwerken",
+        "success": "Succes",
+        "failed": "Gefaald"
+      },
+      "trigger": "Vuur aanvraag af",
+      "triggerFailure": "Vuur falende aanvraag af"
+    }
+  },
+  "email": {
+    "confirmationSubject": "Bedankt voor je bericht, {name}",
+    "confirmationBodyContact": "Ik heb je bericht ontvangen en reageer binnen 24 uur.",
+    "confirmationBodyCalculator": "Ik heb je aanvraag voor een projectinschatting ontvangen - je overzicht is als PDF bijgevoegd. Ik neem persoonlijk binnen 24 uur contact op om de details te bespreken.",
+    "confirmationSignature": "Brent"
+  },
+  "privacy": {
+    "title": "Privacybeleid",
+    "lastUpdated": "Laatst bijgewerkt: {date}",
+    "backHome": "← Terug naar Home",
+    "sections": [
+      {
+        "title": "Inleiding",
+        "paragraphs": [
+          "Dit privacybeleid legt uit hoe Brent Schoenmakers (\"ik\", \"me\", of \"mijn\") jouw informatie verzamelt, gebruikt en beschermt wanneer je deze website bezoekt (www.brentweb.eu)."
+        ]
+      },
+      {
+        "title": "Analysegegevens",
+        "paragraphs": [
+          "Deze website gebruikt een self-hosted analyse-opzet om beperkte, gepseudonimiseerde informatie te verzamelen over hoe bezoekers de site gebruiken. Dit omvat:"
+        ],
+        "list": [
+          {
+            "text": "Bezochte pagina's en tijd doorgebracht op elke pagina"
+          },
+          {
+            "text": "Browsertype en -versie"
+          },
+          {
+            "text": "Apparaattype en schermresolutie"
+          },
+          {
+            "text": "Verwijzingsbron (hoe je deze website vond)"
+          }
+        ],
+        "afterList": [
+          "Analytics worden enkel geregistreerd nadat je toestemming geeft via de cookiebanner. De resulterende rapporten worden privé bekeken in Metabase en worden niet blootgesteld op de publieke website."
+        ]
+      },
+      {
+        "title": "Contactformulieren & Kostencalculator",
+        "paragraphs": [
+          "Wanneer je het contactformulier of de projectkostencalculator op deze website gebruikt, verzamel ik:"
+        ],
+        "list": [
+          {
+            "text": "Je naam en e-mailadres"
+          },
+          {
+            "text": "Je bericht, en de projectdetails die je opgeeft - budgetofferte en tijdlijn op het zakelijke contactformulier, of scope, tijdlijn, optionele bedrijfsnaam en notities in de kostencalculator"
+          }
+        ],
+        "afterList": [
+          "Deze informatie wordt uitsluitend gebruikt om te reageren op je aanvraag, wordt verzonden via Resend (een transactionele e-mailprovider) naar mijn inbox en naar de jouwe als bevestiging, en wordt met geen andere derde partij gedeeld. Inzendingen worden per IP-adres begrensd (rate-limited) om misbruik te voorkomen; die rate-limit-teller wordt enkel in servergeheugen bijgehouden, nooit naar schijf geschreven, en automatisch verwijderd na een korte periode van inactiviteit. Een verborgen veld op beide formulieren helpt geautomatiseerde spaminzendingen te detecteren en bevat geen persoonsgegevens."
+        ]
+      },
+      {
+        "title": "Cookies",
+        "paragraphs": [
+          "Deze website gebruikt de volgende soorten cookies:"
+        ],
+        "list": [
+          {
+            "label": "Essentiële cookies:",
+            "text": "Vereist voor de correcte werking van de website (bv. themavoorkeuren)"
+          },
+          {
+            "label": "Voorkeurscookies:",
+            "text": "Twee first-party cookies onthouden hoe je graag browst - bw-locale bewaart je gekozen taal en bw-path bewaart of je via het business- of engineeringpad binnenkwam, zodat terugkerende bezoeken de startpagina overslaan. Geen van beide bevat persoonsgegevens, geen van beide wordt gedeeld, en beide verlopen na één jaar."
+          },
+          {
+            "label": "Analytische cookies:",
+            "text": "Toestemming-gebonden first-party analyseverzoeken gebruikt om websitegebruik te begrijpen en de ervaring te verbeteren"
+          }
+        ],
+        "afterList": [
+          "Je kan cookies beheren via je browserinstellingen. Het uitschakelen van cookies kan echter de werking van de website beïnvloeden."
+        ]
+      },
+      {
+        "title": "Gegevensbeveiliging",
+        "paragraphs": [
+          "Ik implementeer beveiligingsmaatregelen om je informatie te beschermen, waaronder:"
+        ],
+        "list": [
+          {
+            "text": "HTTPS-versleuteling voor alle gegevensoverdracht"
+          },
+          {
+            "text": "Strict Transport Security (HSTS)-headers"
+          },
+          {
+            "text": "Rate limiting op elk formulier dat invoer aanvaardt, om misbruik te beperken"
+          },
+          {
+            "text": "Regelmatige security-updates en monitoring"
+          }
+        ],
+        "afterList": [
+          "Geen enkele overdrachtsmethode via het internet is echter 100% veilig, en ik kan absolute veiligheid niet garanderen."
+        ]
+      },
+      {
+        "title": "Diensten van Derden",
+        "paragraphs": [
+          "Deze website gebruikt de volgende diensten van derden:"
+        ],
+        "list": [
+          {
+            "label": "Resend:",
+            "text": "Gebruikt om e-mails van het contactformulier en de kostencalculator af te leveren, inclusief de PDF-inschattingssamenvatting die je aanvraagt"
+          },
+          {
+            "label": "Metabase:",
+            "text": "Privé gebruikt om geaggregeerde websiteanalyses opgeslagen in PostgreSQL te visualiseren"
+          }
+        ]
+      },
+      {
+        "title": "Jouw Rechten",
+        "paragraphs": [
+          "Je hebt het recht om:"
+        ],
+        "list": [
+          {
+            "text": "Toegang te vragen tot de persoonsgegevens die ik over jou bewaar"
+          },
+          {
+            "text": "Correctie van onjuiste informatie te vragen"
+          },
+          {
+            "text": "Verwijdering van je gegevens te vragen"
+          },
+          {
+            "text": "Je af te melden voor analytics-tracking"
+          }
+        ],
+        "afterList": [
+          "Om deze rechten uit te oefenen, contacteer me op brent@brentweb.eu"
+        ]
+      },
+      {
+        "title": "Privacy van Kinderen",
+        "paragraphs": [
+          "Deze website is niet bedoeld voor kinderen onder de 13 jaar. Ik verzamel niet bewust persoonsgegevens van kinderen."
+        ]
+      },
+      {
+        "title": "Wijzigingen aan dit Beleid",
+        "paragraphs": [
+          "Ik kan dit privacybeleid van tijd tot tijd bijwerken. De bijgewerkte versie wordt aangeduid met een bijgewerkte \"Laatst bijgewerkt\"-datum boven aan deze pagina."
+        ]
+      },
+      {
+        "title": "Contact",
+        "paragraphs": [
+          "Als je vragen hebt over dit privacybeleid, contacteer me op brent@brentweb.eu"
+        ]
+      }
+    ],
+    "lastUpdatedDate": "2026-08-10"
+  },
+  "errors": {
+    "title": "Er ging iets mis.",
+    "description": "Dat ligt aan mij, niet aan u. De fout is gelogd. Probeer opnieuw, of ga terug naar het begin.",
+    "retry": "Probeer opnieuw",
+    "backHome": "Terug naar start",
+    "notFoundTitle": "Deze pagina bestaat niet.",
+    "notFoundDescription": "De link is mogelijk verouderd, of het adres bevat een typfout."
+  },
+  "pain": {
+    "badge": "HERKENBAAR?",
+    "title": "Waarvoor mensen mij meestal bellen",
+    "subtitle": "U hoeft niet te weten wat u moet vragen. Als een van deze dingen bekend klinkt, kan ik u waarschijnlijk helpen.",
+    "fixLabel": "Wat ik zou bouwen",
+    "items": {
+      "1": {
+        "problem": "Dezelfde bestelling wordt twee keer ingetypt",
+        "body": "Een bestelling komt op één manier binnen en iemand typt ze ergens anders opnieuw in. Elke keer dat dat gebeurt kan er iets misgaan, en het kost iemand ongeveer een uur per dag.",
+        "fix": "Een systeem waar het maar één keer ingevoerd wordt en automatisch verwerkt wordt."
+      },
+      "2": {
+        "problem": "We hebben een website, maar niemand belt",
+        "body": "Er staat een website online, maar bezoekers haken af zonder actie te ondernemen. Hierdoor levert de site niks op en loop je dagelijks potentiele klanten mis.",
+        "fix": "Een strakke, snelle website met duidelijke actieknoppen die meteen de aandacht van potentiële klanten trekt."
+      },
+      "3": {
+        "problem": "Alles staat in één Excel-bestand",
+        "body": "Meerdere mensen die in dezelfde Excel werken leidt al snel tot dubbele invoer, overschreven data en fouten die veel tijd kosten.",
+        "fix": "Een veilige webapplicatie waarin iedereen tegelijk werkt, met automatische controles tegen dubbele of foute gegevens."
+      }
+    }
+  },
+  "pricing": {
+    "badge": "PRIJZEN",
+    "title": "Wat het kost",
+    "subtitle": "Dit zijn de echte prijsvorken waarmee ik werk. U krijgt een vaste prijs op papier voor ik begin te bouwen.",
+    "rangeLabel": "Gebruikelijke offerte",
+    "durationLabel": "Duurt meestal",
+    "weeks": "{min}-{max} weken",
+    "ctaTitle": "Niet zeker wat u nodig hebt?",
+    "ctaBody": "Beantwoord drie vragen en u krijgt een prijsvork en een ruwe timing voor uw project, plus een pdf die u kunt bijhouden.",
+    "cta": "Schat mijn project in",
+    "note": "Dit zijn vorken, geen offertes. Het eindbedrag hangt af van details die we samen doornemen, en zodra we het eens zijn, verandert het niet meer."
+  },
+  "faq": {
+    "badge": "VRAGEN",
+    "title": "Voor u mij mailt",
+    "subtitle": "Wat mensen mij meestal als eerste vragen.",
+    "items": {
+      "1": {
+        "q": "Wat als ik niet weet wat ik nodig heb?",
+        "a": "Zo beginnen de meeste projecten, dus dat is geen probleem. Vertel me in gewone taal wat u vertraagt en ik zeg u wat ervoor nodig is. Soms is het eerlijke antwoord dat u mij niet nodig hebt, en dat zeg ik er ook bij."
+      },
+      "2": {
+        "q": "Ben ik eigenaar van wat u bouwt?",
+        "a": "Ja. De code, de domeinnaam en het hostingaccount staan allemaal op uw naam. Wilt u het ooit aan een andere ontwikkelaar overdragen, dan zit niets vast en moet u niets terugkopen."
+      },
+      "3": {
+        "q": "Wat als er iets stukgaat?",
+        "a": "Gaat er iets stuk dat ik gebouwd heb, dan herstel ik het. Dat is geen nieuw project en ik factureer het ook niet zo. De meeste mensen houden mij daarna sowieso aan voor kleine aanpassingen."
+      },
+      "4": {
+        "q": "Waarom is dit goedkoper dan een bureau?",
+        "a": "Er is geen verkoopteam, geen projectmanager en geen kantoor om te betalen. U betaalt voor het werk zelf, niet voor de overhead eromheen."
+      },
+      "5": {
+        "q": "Hoe snel antwoordt u?",
+        "a": "Binnen een dag of twee. Dat zeg ik liever eerlijk dan u een onmiddellijk antwoord te beloven en het dan niet waar te maken."
+      }
+    }
   }
 }

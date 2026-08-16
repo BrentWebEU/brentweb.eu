@@ -1,0 +1,164 @@
+/* Preloader — first-paint wordmark animation.
+ *
+ * Timeline (ms from first paint):
+ *   0 → 1195   glyphs draw, staggered 45ms apart, "Brent" → "web" → tagline
+ *   430 → 1305 each glyph's fill inks in behind its own outline
+ *   0 → 1300   progress rule fills left to right
+ *   1350 → 2000 overlay lifts off the top of the viewport
+ *
+ * The lift's `animationend` is what unmounts components/Preloader.tsx, so the
+ * overlay itself must always carry an animation — including in the
+ * reduced-motion branch at the bottom, where it fades instead.
+ */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 200; /* over .nav (50) and the skip link (100) */
+  display: grid;
+  place-items: center;
+  background: var(--color-background);
+  will-change: transform;
+  animation: preloader-lift 650ms cubic-bezier(0.76, 0, 0.24, 1) 1350ms forwards;
+}
+
+/* Set by the inline script in components/Preloader.tsx on repeat visits within
+ * the same tab, before this element is parsed. */
+html[data-preloaded] .preloader {
+  display: none;
+}
+
+/* Scroll lock, added from the effect and removed when the overlay unmounts.
+ * body needs it too: styles/base.css sets `overflow-x: hidden` there, which
+ * would otherwise leave vertical scrolling live behind the overlay. */
+html.preloader-active,
+html.preloader-active body {
+  overflow: hidden;
+}
+
+.preloader__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  /* Leaves slightly ahead of the overlay, so the mark is gone before the
+   * background edge crosses it. */
+  animation: preloader-exit 400ms var(--ease-out) 1300ms forwards;
+}
+
+.preloader__mark {
+  width: min(62vw, 24rem);
+  height: auto;
+  color: var(--color-foreground);
+}
+
+/* Each glyph outlines itself, then fills. `pathLength="1"` on the paths (see
+ * components/Logo.tsx) is what lets one dasharray value drive contours of
+ * wildly different real lengths at the same speed. */
+.preloader__mark path {
+  fill-opacity: 0;
+  stroke: currentColor;
+  stroke-width: 0.9;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation:
+    preloader-draw 700ms var(--ease-out) calc(var(--i) * 45ms) forwards,
+    preloader-ink 380ms var(--ease-out) calc(var(--i) * 45ms + 430ms) forwards;
+}
+
+/* Brand red, matching the fill in components/Logo.tsx. */
+.preloader__mark path[data-tone='accent'] {
+  stroke: #eb4a4c;
+}
+
+/* The tagline glyphs are a third the cap height of the wordmark; the same
+ * stroke weight on them reads as a blob. */
+.preloader__mark path[data-tone='slogan'] {
+  stroke-width: 0.5;
+}
+
+.preloader__bar {
+  position: relative;
+  overflow: hidden;
+  width: min(62vw, 24rem);
+  height: 2px;
+  background: var(--color-border);
+}
+
+.preloader__bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #eb4a4c;
+  transform: scaleX(0);
+  transform-origin: left;
+  /* Nearly linear on purpose. A snappy ease-out curve here filled the rule to
+   * ~85% in the first third of the timeline, so the bar sat visibly finished
+   * while glyphs were still drawing. */
+  animation: preloader-progress 1300ms cubic-bezier(0.5, 0, 0.2, 1) forwards;
+}
+
+@keyframes preloader-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes preloader-ink {
+  to {
+    fill-opacity: 1;
+    stroke-opacity: 0;
+  }
+}
+
+@keyframes preloader-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes preloader-exit {
+  to {
+    opacity: 0;
+    transform: translateY(-0.75rem);
+  }
+}
+
+@keyframes preloader-lift {
+  to {
+    transform: translateY(-101%);
+  }
+}
+
+/* No drawing, no travel — the mark is simply there, and the overlay fades.
+ * The overlay keeps an animation so Preloader.tsx still gets its unmount
+ * signal from `animationend`. */
+@media (prefers-reduced-motion: reduce) {
+  .preloader {
+    animation: preloader-fade 300ms linear 500ms forwards;
+  }
+
+  .preloader__inner {
+    animation: none;
+  }
+
+  .preloader__mark path {
+    fill-opacity: 1;
+    stroke: none;
+    animation: none;
+  }
+
+  .preloader__bar::after {
+    transform: scaleX(1);
+    animation: none;
+  }
+}
+
+@keyframes preloader-fade {
+  to {
+    opacity: 0;
+    /* The lift branch travels off-screen; this one stays put, so it has to
+     * stop swallowing clicks in the frames between fading out and unmounting. */
+    pointer-events: none;
+  }
+}

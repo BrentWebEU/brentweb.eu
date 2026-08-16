@@ -1,0 +1,36 @@
+---
+title: "Het Smaakpand: snel en betaalbaar online, netjes gearchiveerd"
+slug: "het-smaakpand"
+audience: "business"
+locale: "nl-BE"
+publishedAt: "2022-03-01"
+updatedAt: "2024-08-01"
+summary: "Een kleine broodjeszaak moest online vindbaar zijn zonder doorlopende complexiteit of kosten. En toen de zaak sloot, werd de site even netjes gearchiveerd."
+---
+
+## Het probleem
+
+Niet elke zaak heeft een platform nodig. Een kleine lokale broodjeszaak had precies één ding nodig van een website: mensen laten het menu en de openingsuren vinden vanaf hun telefoon voor ze binnenstapten. Al het overige. Een CMS om op in te loggen, een stack die gepatcht moet worden, een maandelijkse hostingfactuur die haar nut overleeft. Zou overhead geweest zijn zonder return.
+
+## De aanpak
+
+De discipline hier was nee zeggen tegen complexiteit die de zaak niet nodig had, niet functies toevoegen omdat ze beschikbaar waren.
+
+<Callout>
+De echte ontwerpbeslissing lag in de scope, niet de technologie: bouw het kleinste ding dat die ene taak goed doet, en weersta de verleiding om "voor alle zekerheid" een dashboard of CMS toe te voegen.
+</Callout>
+
+- Static-first levering. Geen server-runtime om te patchen, te monitoren, of uiteindelijk te vergeten
+- Handgetunede CSS in plaats van een framework, want een single-pagesite heeft er geen nodig
+- Laadtijden onder de seconde als expliciet doel, geen bijzaak
+- Een menu en openingsuren die triviaal manueel bij te werken waren, want ze veranderden zelden
+
+## Het resultaat
+
+<MetricGrid metrics={[
+  { value: "Dagen", label: "Concept tot lancering" },
+  { value: "Laag", label: "Totale eigendomskost" },
+  { value: "Nul", label: "Onderhoudsincidenten" },
+]} />
+
+De zaak stond online binnen dagen, niet weken, tegen een kost die logisch was voor haar grootte. En draaide zonder één onderhoudsincident gedurende haar volledige levensduur. Toen de zaak sloot, werd de site netjes uit dienst genomen: geen verweesde server, geen aanhoudend abonnement, niets dat bleef draaien dat iemand ooit zou moeten opmerken en uitschakelen.

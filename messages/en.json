@@ -4,33 +4,69 @@
     "experience": "Experience",
     "services": "Services",
     "projects": "Projects",
-    "security": "Security",
+    "work": "Case studies",
     "blog": "Blog",
-    "contact": "Contact"
+    "contact": "Contact",
+    "business": "Business",
+    "tech": "Engineering",
+    "backToGateway": "Back to the homepage",
+    "lab": "Lab",
+    "process": "Process",
+    "getQuote": "What it costs"
   },
   "hero": {
-    "badge": "I am Brent Schoenmakers!",
-    "title": "The go-to full-stack developer for your digital transformation.",
-    "tagline": "My vision is to build applications based on your goals, not the technology.",
-    "getInTouch": "Let's Talk",
-    "viewProjects": "View Work",
+    "title": "Full-stack development for growing businesses",
+    "tagline": "Websites, internal tools and small integrations, built by one person in Belgium.",
     "location": "Geel, Belgium",
     "featuredProject": "Carrosserie Kris",
-    "featured": "Featured"
+    "featured": "Featured",
+    "business": {
+      "badge": "FREELANCE DEVELOPER, BELGIUM",
+      "title": "Software that ends the manual work.",
+      "tagline": "Websites, internal tools and integrations for small businesses, at a price a small business can actually justify.",
+      "getInTouch": "See what it would cost",
+      "viewProjects": "View my work",
+      "trust": "You get a fixed price before I start, and you deal with me directly rather than a salesperson."
+    },
+    "tech": {
+      "badge": "FULL-STACK ENGINEER",
+      "title": "Built for the failure path, not just the happy one.",
+      "tagline": "TypeScript across the stack, infrastructure I run in production.",
+      "getInTouch": "Discuss architecture",
+      "viewProjects": "Open the case studies",
+      "spec": {
+        "stackLabel": "Stack",
+        "stackValue": "TypeScript, Node, Rust, Docker, Linux",
+        "focusLabel": "Currently",
+        "focusValue": "Distributed systems and network security",
+        "locationLabel": "Based in",
+        "statusLabel": "Status",
+        "statusValue": "Open to new work",
+        "statusValueLimited": "Limited availability for new work",
+        "statusValueUnavailable": "Not available for new work"
+      }
+    },
+    "_comment": "hero.title and hero.tagline are the site-wide <title> and meta description (app/[locale]/layout.tsx) plus the noscript gateway fallback. Per-path hero copy lives under hero.business / hero.tech."
   },
   "about": {
     "badge": "ABOUT",
-    "title": "Hello, I'm Brent Schoenmakers",
-    "titleMorning": "Good morning, I'm Brent",
-    "titleNoon": "Good afternoon, I'm Brent",
-    "titleEvening": "Good evening, I'm Brent",
-    "description1": "Hello! I'm a Belgian full-stack developer passionate about building reliable systems. I've been learning since 2019 and constantly improving my skills.",
-    "description2": "My goal is not just to build reliable systems but also to develop systems that people like using without necessary complexity.",
-    "techTitle": "Technical expertise:",
+    "techTitle": "Technical expertise",
     "techDescription": "I work across the full stack using modern technologies including React, Angular, Next.js, TypeScript, Node.js, NestJS, React Native, Python, .NET, C#, MySQL, and Docker",
-    "getInTouch": "Get in touch →",
+    "getInTouch": "Get in touch",
     "annotation": "← This is me",
-    "yearsBuilding": "years building"
+    "yearsBuilding": "years building",
+    "business": {
+      "description1": "I build websites and internal tools for small businesses in Belgium. Most of it is hand-coded React and Next.js, plus whatever needs connecting to the systems you already use.",
+      "description2": "There's no account manager and nobody hands your project to a junior. The person you email is the person writing the code, and I'm still around when something needs changing.",
+      "title": "The person who will actually build it"
+    },
+    "tech": {
+      "titleMorning": "Good morning, I'm Brent",
+      "titleNoon": "Good afternoon, I'm Brent",
+      "titleEvening": "Good evening, I'm Brent",
+      "description1": "Belgian developer, building since 2019, registered as a student-zelfstandige. I care about what sits under the UI: data modelling and failure modes.",
+      "description2": "Currently going deep on distributed systems and network security. The case studies document the trade-offs I made."
+    }
   },
   "experience": {
     "badge": "EXPERIENCE",
@@ -40,17 +76,15 @@
     "hackathons": "Hackathons",
     "current": "● Current",
     "upcoming": "◐ Upcoming",
-    "stillHere": "← Still here!",
     "stats": {
       "yearsLearning": "Years of learning",
       "jobPositions": "Job Positions",
-      "hackathons": "Hackathons",
-      "technologies": "Technologies"
+      "hackathons": "Hackathons"
     },
     "items": {
       "work": [
         {
-          "year": "2021 – Present",
+          "year": "2021 - Present",
           "title": "IT Developer & Administrator",
           "company": "Carrosserie Kris",
           "description": "Maintained real systems, client collaboration, performance optimization.",
@@ -84,7 +118,8 @@
           "description": "Upcoming internship. Networking & Infrastructure",
           "tags": [
             "Internship",
-            "Learning"
+            "Learning",
+            "Networking"
           ]
         },
         {
@@ -139,82 +174,63 @@
     }
   },
   "services": {
-    "badge": "SERVICES",
-    "title": "Let's build something great",
-    "annotation": "← Real skills, real results",
-    "stats": {
-      "projectsDelivered": "Projects Delivered",
-      "yearsLearning": "Years Learning",
-      "technologiesUsed": "Technologies Used"
-    },
+    "badge": "WHAT I DO",
+    "title": "What I build, and what it solves",
     "items": {
       "webDevelopment": {
-        "title": "Web Development",
-        "description": "Websites that just work. High-performance sites built for real users. No bloat, just a fast, seamless experience for your users."
+        "title": "Hand-coded websites that bring in work",
+        "description": "Sites built by hand in React, not assembled from a template. I judge them on how many people find you and get in touch, not on how many pages they have."
       },
       "fullStackApps": {
-        "title": "Full-Stack Apps",
-        "description": "From Idea to Interface. I build end-to-end applications where the front and back ends talk to each other perfectly, so you don't have to worry about the 'how'."
+        "title": "Replace the spreadsheet",
+        "description": "One application that takes a manual process off your team, with one login and one place where the data lives."
       },
       "deployment": {
-        "title": "Deployment & Hosting",
-        "description": "Go live with confidence. I handle the heavy lifting—Docker, Linux, and Cloud—to make sure your app stays online, secure, and ready for traffic."
+        "title": "Hosting that stays up",
+        "description": "Deployment and monitoring on Docker, Linux and managed cloud, with a bill you can actually read."
       },
       "database": {
-        "title": "Database Design",
-        "description": "Data you can actually use. I structure your information so it's organized for today and ready to scale for tomorrow. Simple, logical, and future-proof."
+        "title": "Data you can report on",
+        "description": "Set up to answer the questions you actually ask, and to grow later without needing a rebuild."
       },
       "architecture": {
-        "title": "Architecture Planning",
-        "description": "Measure twice, code once. I will map out the 'big picture' together, ensuring every piece of tech aligns with your goals before a single line of code is written."
+        "title": "Decide before you build",
+        "description": "We make the expensive decisions up front, instead of discovering them halfway through."
       }
     }
   },
+  "proof": {
+    "badge": "WORK",
+    "title": "Still running in production.",
+    "subtitle": "Four systems I built and still look after. The oldest has run since 2021.",
+    "readCaseStudy": "Read the case study",
+    "testimonialsTitle": "What they said",
+    "_testimonialsComment": "Real, attributable quotes only. Shape: { quote, name, role, company }. The section hides itself while this array is empty - never fill it with invented copy.",
+    "testimonials": [],
+    "clientsLabel": "People I've built for"
+  },
   "projects": {
-    "badge": "PROJECTS",
-    "title": "Things I've built",
-    "subtitle": "Projects for real clients..",
-    "annotation": "← Scroll & click to explore",
-    "viewProject": "View project",
-    "viewCode": "View code",
-    "whatItDoes": "What does it do",
-    "techStack": "Tech stack",
-    "type": {
-      "web": "Web App",
-      "mobile": "Mobile App",
-      "desktop": "Desktop App",
-      "other": "Other"
-    },
+    "badge": "SYSTEMS",
+    "title": "Four systems I built that are still running",
+    "subtitle": "Open one to see how it's put together and which trade-offs I made.",
+    "viewProject": "See how it works",
     "items": [
       {
         "title": "Carrosserie Kris",
-        "category": "Web Development",
         "image": "carrosserieKris",
-        "description": "A local body shop website that I've been iterating on since 2021.",
-        "longDescription": "Ongoing project since 2021. Continuous improvements to performance, SEO, and user experience. Long-term client relationship with regular updates and maintenance.",
-        "features": [
-          "Performance optimized",
-          "Smooth animations",
-          "Mobile-first design",
-          "SEO improvements",
-          "Contact forms that actually work",
-          "Regular updates & maintenance"
-        ],
         "tags": [
           "React",
           "Node.js",
           "Tailwind"
         ],
-        "color": "#e85454",
         "type": "website",
         "liveUrl": "https://carrosseriekris.be",
         "githubUrl": "",
-        "code": "NODE_01",
-        "grid": "A1",
+        "slug": "carrosserie-kris",
         "status": "maintained",
         "sector": "Client Web Presence",
-        "period": "2021 — PRESENT",
-        "abstract": "Local body shop website iterated on continuously since 2021 — performance, SEO, and conversion improvements shipped across a four-year client relationship.",
+        "period": "2021 - PRESENT",
+        "abstract": "Local body shop website iterated on continuously since 2021 - performance, SEO, and conversion improvements shipped across a four-year client relationship.",
         "business": {
           "summary": "A long-term retainer relationship, not a one-off build. The site is the shop's primary lead channel: fast, findable on Google, and with contact forms that reliably convert visits into quote requests.",
           "metrics": [
@@ -245,22 +261,12 @@
             "Form handling hardened against spam without hurting conversion",
             "Small, boring stack chosen deliberately for long-term maintainability"
           ]
-        }
+        },
+        "client": "Carrosserie Kris"
       },
       {
         "title": "Distributed Intrusion Detection and Prevention System",
-        "category": "Low-Level Solution",
         "image": "idps",
-        "description": "A distributed IDPS solution that connects an edge device that is physically connected to the network (raspberry pi) with a server that handles processing tasks, dashboard and log analyzation.",
-        "longDescription": "Distributed security monitoring for educational networks. A Raspberry Pi captures all network traffic inline, streams it to a VPS for analysis, and enforces block rules locally — without ever holding up traffic.",
-        "features": [
-          "Robust traffic monitoring",
-          "Distributed processing",
-          "Real-time dashboard",
-          "Threat detection and prevention",
-          "Low latency",
-          "Low-level network monitoring"
-        ],
         "tags": [
           "Rust",
           "Angular",
@@ -269,18 +275,16 @@
           "Shell",
           "Linux"
         ],
-        "color": "#B7410E",
         "type": "solution",
         "liveUrl": "",
         "githubUrl": "https://github.com/BrentWebEU/distributed-idps-solution",
-        "code": "NODE_02",
-        "grid": "A2",
+        "slug": "idps",
         "status": "active",
         "sector": "Network Security",
-        "period": "2024 — PRESENT",
+        "period": "2024 - PRESENT",
         "abstract": "Distributed intrusion detection and prevention for educational networks. An inline edge device captures traffic, a remote server analyzes it, and block rules are enforced locally without slowing the network.",
         "business": {
-          "summary": "Schools get enterprise-grade network protection on commodity hardware. Threats are detected and blocked in real time, while staff see everything on a single live dashboard — no security team required on site.",
+          "summary": "Schools get enterprise-grade network protection on commodity hardware. Threats are detected and blocked in real time, while staff see everything on a single live dashboard - no security team required on site.",
           "metrics": [
             {
               "value": "<1ms",
@@ -297,7 +301,7 @@
           ],
           "outcomes": [
             "Real-time threat detection and automatic blocking",
-            "One dashboard for the whole network — no specialist needed",
+            "One dashboard for the whole network - no specialist needed",
             "Runs on a Raspberry Pi: minimal hardware investment"
           ]
         },
@@ -305,7 +309,7 @@
           "summary": "A Rust capture agent runs inline on a Raspberry Pi, streams packet data to a VPS for Suricata-based analysis, and applies verdicts locally so the hot path never blocks on the network round-trip.",
           "decisions": [
             "Rust on the edge: memory-safe packet handling, zero GC pauses inline",
-            "Capture and enforcement decoupled from analysis — fail-open by design",
+            "Capture and enforcement decoupled from analysis - fail-open by design",
             "Server-side pipeline containerized with Docker for reproducible deploys",
             "Suricata rule engine drives detection; custom layer handles prevention"
           ]
@@ -313,34 +317,21 @@
       },
       {
         "title": "Provilion Broodjes",
-        "category": "Full-Stack Web App",
         "image": "provilion",
-        "description": "School lunch ordering system with payment processing.",
-        "longDescription": "Complete sandwich ordering platform for a school. Students order, parents manage credits, administrators handle operations. Integrated Stripe payments and custom admin dashboard. Payment flows and role-based permissions.",
-        "features": [
-          "Stripe payment integration",
-          "User credit system",
-          "Order management dashboard",
-          "Real-time order updates",
-          "Role-based access control",
-          "Email notifications"
-        ],
         "tags": [
           "TypeScript",
           "MySQL",
           "Stripe",
           "NextJS"
         ],
-        "color": "#54e89c",
         "type": "website",
         "liveUrl": "https://provilion-broodjes.vercel.app",
         "githubUrl": "",
-        "code": "NODE_03",
-        "grid": "B1",
+        "slug": "provilion-broodjes",
         "status": "active",
         "sector": "Commerce Platform",
-        "period": "2023 — PRESENT",
-        "abstract": "Full-stack lunch ordering platform for a school: students order, parents manage credits, administrators run daily operations — with integrated payment processing.",
+        "period": "2023 - PRESENT",
+        "abstract": "Full-stack lunch ordering platform for a school: students order, parents manage credits, administrators run daily operations - with integrated payment processing.",
         "business": {
           "summary": "Replaced manual cash handling with a self-service ordering system. Parents top up credits online, orders settle automatically through Stripe, and the kitchen works from one live operations dashboard.",
           "metrics": [
@@ -371,38 +362,27 @@
             "Transactional order writes keep credit ledger and orders consistent",
             "Email notifications decoupled from the request path"
           ]
-        }
+        },
+        "client": "Provilion Broodjes"
       },
       {
         "title": "Het Smaakpand (Closed)",
-        "category": "Website",
         "image": "hetsmaakpand",
-        "description": "Simple website for a sandwich shop that has since closed.",
-        "longDescription": "Simple website for a local sandwich shop. Clean design, menu display, mobile-responsive. Focused on simplicity and functionality.",
-        "features": [
-          "Clean, minimal design",
-          "Menu display",
-          "Mobile responsive",
-          "Fast loading",
-          "Easy to update"
-        ],
         "tags": [
           "HTML",
           "CSS",
           "JavaScript"
         ],
-        "color": "#d2b48c",
         "type": "website",
         "liveUrl": "https://precious-mooncake-1d00a4.netlify.app/",
         "githubUrl": "",
-        "code": "NODE_04",
-        "grid": "B2",
+        "slug": "het-smaakpand",
         "status": "decommissioned",
         "sector": "Hospitality Web",
-        "period": "2022 — 2024",
+        "period": "2022 - 2024",
         "abstract": "Clean, minimal website for a local sandwich shop: menu display, opening hours, mobile-first. Retired when the business closed its doors.",
         "business": {
-          "summary": "A small business got online fast and affordably. The site did one job — show the menu and get people through the door — and did it without ongoing complexity or cost.",
+          "summary": "A small business got online fast and affordably. The site did one job - show the menu and get people through the door - and did it without ongoing complexity or cost.",
           "metrics": [
             {
               "value": "Days",
@@ -424,48 +404,94 @@
           ]
         },
         "engineering": {
-          "summary": "Static-first delivery with a deliberately minimal footprint. No frameworks where none were needed — fast loads, trivial hosting, and nothing to patch.",
+          "summary": "Static-first delivery with a deliberately minimal footprint. No frameworks where none were needed - fast loads, trivial hosting, and nothing to patch.",
           "decisions": [
             "Static delivery: no server runtime, near-zero attack surface",
             "Hand-tuned CSS instead of a framework for a single-page footprint",
             "Sub-second loads on mobile networks as the primary target",
-            "Archived with a clean teardown — no orphaned infrastructure"
+            "Archived with a clean teardown - no orphaned infrastructure"
           ]
-        }
+        },
+        "client": "Het Smaakpand"
       }
     ],
     "map": {
-      "businessTitle": "Business impact",
-      "businessAudience": "For managers & recruiters",
-      "engineeringTitle": "Engineering",
-      "engineeringAudience": "For tech leads",
       "close": "Close",
       "liveLink": "View live site",
+      "readCaseStudy": "Read the full case study",
       "sourceLink": "View code",
       "status": {
         "active": "Live",
         "maintained": "Actively maintained",
         "decommissioned": "Retired"
+      },
+      "impactTitle": "Impact",
+      "decisionsTitle": "Key decisions",
+      "stackTitle": "Stack"
+    }
+  },
+  "process": {
+    "badge": "HOW I WORK",
+    "title": "How a project usually goes",
+    "subtitle": "You know the scope, the price and roughly how long it takes before I start building.",
+    "steps": {
+      "1": {
+        "title": "A first chat",
+        "body": "Half an hour on what is slowing you down. Free, and no obligation after it."
+      },
+      "2": {
+        "title": "A written price",
+        "body": "What I'll build, what it costs and when it will be ready."
+      },
+      "3": {
+        "title": "Building",
+        "body": "You see something working every week, so we catch mistakes early."
+      },
+      "4": {
+        "title": "Going live",
+        "body": "Setup, migration and a walkthrough so you can manage it yourself."
+      },
+      "5": {
+        "title": "After",
+        "body": "I'm still around. Most people keep me on for small changes."
+      }
+    },
+    "guaranteesTitle": "What working with me is like",
+    "guarantees": {
+      "1": {
+        "title": "You get a price up front",
+        "body": "I quote per project, not per hour. If the scope grows, I tell you what it costs before I build it."
+      },
+      "2": {
+        "title": "You talk to me directly",
+        "body": "There's no team and no account manager. The person you email is the person writing the code."
+      },
+      "3": {
+        "title": "I answer within a day or two",
+        "body": "I study alongside this, so I'd rather be upfront about that than promise instant replies."
+      },
+      "4": {
+        "title": "I don't disappear after launch",
+        "body": "If something I built breaks, I fix it. That's not a new project."
       }
     }
   },
-  "security": {
-    "badge": "SECURITY",
-    "title": "Security",
-    "subtitle": "Security isn't an afterthought—it's built in from the start.",
-    "description": "I focus on secure coding practices, proper authentication, and keeping data safe. Every project includes security considerations from day one.",
-    "practices": {
-      "secureCoding": "Secure Coding Practices",
-      "authentication": "Proper Authentication",
-      "dataProtection": "Data Protection",
-      "regularUpdates": "Regular Updates"
-    }
-  },
   "contact": {
-    "badge": "CONTACT",
-    "title": "Let's work together",
-    "subtitle": "Have a project in mind? Let's talk.",
-    "annotation": "← Don't be shy!",
+    "business": {
+      "badge": "GET IN TOUCH",
+      "title": "Tell me about your project",
+      "subtitle": "Tell me what is slowing you down. I'll reply honestly about whether I'm the right fit and roughly what it would cost.",
+      "messagePlaceholder": "What process is costing you time, and what would a good outcome look like?",
+      "formNote": "The more you tell me, the more useful my first reply will be."
+    },
+    "tech": {
+      "badge": "CONTACT",
+      "title": "Let's talk architecture",
+      "subtitle": "Open to interesting technical problems, collaborations, or a good discussion about systems design.",
+      "annotation": "← Don't be shy!",
+      "messagePlaceholder": "What are you building, and which trade-off are you weighing?",
+      "formNote": "Architecture questions and collaborations welcome."
+    },
     "form": {
       "name": "Name",
       "email": "Email",
@@ -477,11 +503,47 @@
       "gdprConsent": "I consent to my name, email, and message being processed to respond to my inquiry.",
       "gdprConsentLink": "Privacy Policy",
       "gdprConsentSuffix": "Data retained for up to 12 months.",
-      "gdprRequired": "Please accept our data processing terms to submit this form."
+      "gdprRequired": "Please accept our data processing terms to submit this form.",
+      "rateLimited": "You're sending messages a bit fast. Please wait a few minutes and try again.",
+      "budget": "Rough budget",
+      "timeline": "Timeline",
+      "selectPlaceholder": "Select an option",
+      "budgetOptions": {
+        "<500": "Under €500",
+        "500-1500": "€500 - €1,500",
+        "1500-3000": "€1,500 - €3,000",
+        "3000+": "€3,000+",
+        "not-sure": "No idea yet"
+      }
     },
     "location": "Location",
     "locationValue": "Geel, Belgium",
-    "availability": "Available for new projects"
+    "availability": "Available for new projects",
+    "socialsLabel": "Elsewhere",
+    "availabilityNote": "I usually reply within a day or two."
+  },
+  "cta": {
+    "mid": {
+      "eyebrow": "COSTS",
+      "title": "Curious what it would cost?",
+      "body": "A few questions and you get a realistic price range and timeline, plus a PDF you can keep.",
+      "primary": "See what it would cost",
+      "secondary": "View my work"
+    },
+    "closing": {
+      "eyebrow": "CONTACT",
+      "title": "Tell me what is slowing you down.",
+      "body": "Describe the problem and I'll tell you honestly whether I can help, and roughly what it would take.",
+      "primary": "Send me a message",
+      "secondary": "Email me directly"
+    },
+    "tech": {
+      "eyebrow": "CASE STUDIES",
+      "title": "Want the long version?",
+      "body": "Each case study walks through the trade-offs: what I picked, what I left out, and what I'd do differently now.",
+      "primary": "Read the case studies",
+      "secondary": "Email me directly"
+    }
   },
   "footer": {
     "nodesDiscovered": "Nodes discovered:",
@@ -492,192 +554,8 @@
     "cookieSettings": "Cookie settings",
     "privacy": "Privacy Policy"
   },
-  "blog": {
-    "title": "Blog",
-    "subtitle": "Thoughts on web development, security, and technology.",
-    "featured": "Featured Posts",
-    "viewAll": "View All Posts",
-    "readMore": "Read more",
-    "noPosts": "No posts found.",
-    "loading": "Loading posts...",
-    "comments": "Comments",
-    "leaveComment": "Leave a Comment",
-    "commentName": "Name *",
-    "commentEmail": "Email *",
-    "commentWebsite": "Website (optional)",
-    "commentContent": "Your comment *",
-    "postComment": "Post Comment",
-    "submitting": "Submitting...",
-    "commentNote": "Your comment will be reviewed before being published.",
-    "noComments": "No comments yet. Be the first to comment!",
-    "tags": "Tags:",
-    "category": "Category"
-  },
-  "admin": {
-    "login": {
-      "title": "Admin Login",
-      "subtitle": "Sign in to access the admin panel",
-      "email": "Email",
-      "password": "Password",
-      "login": "Login",
-      "loggingIn": "Logging in...",
-      "error": "Login failed"
-    },
-    "dashboard": {
-      "title": "Dashboard",
-      "welcome": "Welcome, {name}",
-      "logout": "Logout",
-      "posts": "Posts",
-      "comments": "Comments",
-      "totalViews": "Total Views",
-      "managePosts": "Manage Posts",
-      "managePostsDesc": "Create, edit, and manage blog posts",
-      "manageCategories": "Manage Categories",
-      "manageCategoriesDesc": "Organize posts by categories",
-      "moderateComments": "Moderate Comments",
-      "moderateCommentsDesc": "Review and approve comments"
-    },
-    "posts": {
-      "title": "Posts",
-      "newPost": "New Post",
-      "all": "All",
-      "published": "Published",
-      "drafts": "Drafts",
-      "featured": "Featured",
-      "actions": "Actions",
-      "noPosts": "No posts found.",
-      "deleteConfirm": "Are you sure you want to delete this post?",
-      "unpublish": "Unpublish",
-      "publish": "Publish"
-    },
-    "postEditor": {
-      "newPost": "New Post",
-      "editPost": "Edit Post",
-      "saved": "Saved {time}",
-      "save": "Save",
-      "saving": "Saving...",
-      "title": "Title *",
-      "titlePlaceholder": "Post title",
-      "excerpt": "Excerpt *",
-      "excerptPlaceholder": "Brief description of the post",
-      "content": "Content *",
-      "publish": "Publish",
-      "status": "Status",
-      "draft": "Draft",
-      "published": "Published",
-      "featured": "Featured post",
-      "category": "Category *",
-      "featuredImage": "Featured Image",
-      "seo": "SEO",
-      "seoTitle": "SEO Title",
-      "seoTitlePlaceholder": "SEO title (optional)",
-      "seoDescription": "SEO Description",
-      "seoDescriptionPlaceholder": "SEO description (optional)"
-    },
-    "categories": {
-      "title": "Categories",
-      "newCategory": "New Category",
-      "createCategory": "Create Category",
-      "name": "Name *",
-      "description": "Description",
-      "create": "Create",
-      "cancel": "Cancel",
-      "noCategories": "No categories yet. Create one to get started."
-    },
-    "comments": {
-      "title": "Comments",
-      "all": "All",
-      "pending": "Pending",
-      "approved": "Approved",
-      "noComments": "No comments found.",
-      "deleteConfirm": "Are you sure you want to delete this comment?"
-    }
-  },
-  "console": {
-    "openConsole": "Open console",
-    "minimize": "Minimize",
-    "maximize": "Maximize",
-    "closeConsole": "Close console",
-    "inputPlaceholder": "Type a command...",
-    "inputHint": "Press Tab to autocomplete, Enter to execute",
-    "welcome": "Welcome to Brent's Portfolio Console",
-    "welcomeHint": "Type 'help' to see available commands.",
-    "commandNotFound": "Command not found: {cmd}\nType 'help' to see available commands.",
-    "commandDescriptions": {
-      "help": "Show available commands",
-      "clear": "Clear the console",
-      "whoami": "Display current user information",
-      "about": "Show information about Brent",
-      "skills": "Display technical skills",
-      "projects": "List all projects",
-      "contact": "Show contact information",
-      "ls": "List available sections",
-      "cd": "Navigate to a section (e.g., cd about)",
-      "map": "Show exploration map (Nodes X/7)",
-      "scan": "Perform security scan (demo)",
-      "vulnerability": "Check for vulnerabilities",
-      "headers": "Check security headers",
-      "network": "Show network information",
-      "encrypt": "Encrypt text (demo)",
-      "hash": "Generate hash (demo)",
-      "secret": "Reveal a secret"
-    },
-    "output": {
-      "helpTitle": "Available commands:",
-      "helpCategoryGeneral": "General",
-      "helpCategoryInfo": "Information",
-      "helpCategoryNavigation": "Navigation",
-      "helpCategoryCybersecurity": "Cybersecurity",
-      "helpCdSection": "Navigate to a section (about, projects, experience, contact, security)",
-      "helpFooter": "Type a command and press Enter to execute.",
-      "whoami": "User: brent@brentweb.eu\nRole: Full-Stack Developer & Aspiring Cybersecurity Engineer\nLocation: Geel, Belgium\nStatus: Available for projects",
-      "about": "Brent Schoenmakers\nFull-Stack Developer & Aspiring Cybersecurity Engineer\n\nI'm a developer from Geel, Belgium who's been building for the web since 2019.\nCurrently focusing on full-stack development with React, Node.js, and modern tools,\nwhile also pursuing cybersecurity engineering.\n\nPassionate about building secure, efficient applications and learning about\nsecurity best practices.",
-      "skills": "Technical Skills:\n\nFrontend:\n  - React, Angular, Next.js\n  - TypeScript, JavaScript\n  - Tailwind CSS\n\nBackend:\n  - Node.js, NestJS\n  - Python, .NET, C#\n  - REST APIs, GraphQL\n\nDatabase:\n  - MySQL\n  - Database design & optimization\n\nDevOps:\n  - Docker, Linux\n  - CI/CD, Deployment\n  - Cloud platforms\n\nCybersecurity (Learning):\n  - Security best practices\n  - Vulnerability assessment\n  - Network security\n  - Encryption & hashing",
-      "projects": "Projects:\n\n1. Carrosserie Kris (2021 - Present)\n   - Web development & IT management\n   - Long-term client relationship\n   - Technologies: React, Node.js, Tailwind\n\n2. Provilion Broodjes\n   - Full-stack sandwich ordering system\n   - Stripe payment integration\n   - Technologies: TypeScript, MySQL, NextJS\n\n3. Het Smaakpand (Closed)\n   - Simple restaurant website\n   - Technologies: HTML, CSS, JavaScript\n\nFor more details, visit the Projects section.",
-      "contact": "Contact Information:\n\nEmail: brent@brentweb.eu\nLocation: Geel, Belgium\nGitHub: https://github.com/BrentWebEU\nLinkedIn: https://www.linkedin.com/in/brent-schoenmakers-3793a8262/\n\nStatus: Open for new projects\nResponse time: Usually within 24 hours",
-      "ls": "Available sections:\n  about       - About section\n  experience  - Work experience & education\n  services    - Services offered\n  projects    - Portfolio projects\n  contact     - Contact information\n  security    - Cybersecurity information",
-      "cdUsage": "Usage: cd <section>\nExample: cd about",
-      "cdNavigating": "Navigating to {section} section...",
-      "cdNotFound": "Section \"{section}\" not found. Use 'ls' to see available sections.",
-      "mapTitle": "Exploration Map:",
-      "mapNodesDiscovered": "Nodes discovered: {current}/{total}",
-      "mapProgress": "Progress: {percent}%",
-      "mapAvailableNodes": "Available nodes:",
-      "mapHeroNode": "[✓] hero (always discovered)",
-      "mapKeepExploring": "Keep exploring to unlock all nodes!",
-      "secret": "[SECRET REVEALED]\n\nYou found it! Here's a secret:\n\nI started my journey at just 11 years old. I kept learning, failing, and starting again, which evolved into a hobby, a job, and most importantly, a passion.\nSo remember, if you are just starting out or don't know how to continue: you can achieve anything with the right motivation. Search for tutorials, articles, or anything that can help you evolve your journey to eventually build amazing solutions.\nConclusion in 3 words: Keep pushing forward!\n\nKeep exploring - there's more to discover!",
-      "scanTitle": "Security Scan Results:",
-      "scanItems": "[✓] HTTPS enabled\n[✓] Security headers configured\n[✓] No exposed sensitive data\n[✓] Input validation in place\n[✓] XSS protection active\n[✓] CSRF protection enabled",
-      "scanCompleted": "Scan completed: {time}",
-      "scanStatus": "Status: Secure",
-      "vulnerabilityTitle": "Vulnerability Assessment:",
-      "vulnerabilityChecking": "Checking common vulnerabilities...",
-      "vulnerabilityItems": "[✓] SQL Injection: Protected\n[✓] XSS: Protected\n[✓] CSRF: Protected\n[✓] Clickjacking: Protected\n[✓] Insecure Direct Object References: Protected",
-      "vulnerabilityClean": "No critical vulnerabilities found.",
-      "vulnerabilityLastUpdated": "Last updated: {date}",
-      "headersTitle": "Security Headers Analysis:",
-      "headersItems": "[✓] Content-Security-Policy: Configured\n[✓] X-Frame-Options: DENY\n[✓] X-Content-Type-Options: nosniff\n[✓] Strict-Transport-Security: Enabled\n[✓] Referrer-Policy: strict-origin-when-cross-origin\n[✓] Permissions-Policy: Configured",
-      "headersAllConfigured": "All security headers properly configured.",
-      "networkTitle": "Network Information:",
-      "networkInfo": "Protocol: HTTPS\nPort: 443\nConnection: Secure (TLS 1.3)\nServer: Self-Hosted\nCDN: Active\nCompression: Enabled",
-      "networkRequestHeaders": "Request Headers:",
-      "networkUserAgent": "  User-Agent: {userAgent}",
-      "networkAccept": "  Accept: text/html,application/json",
-      "networkAcceptLanguage": "  Accept-Language: {language}",
-      "encryptUsage": "Usage: encrypt <text>\nExample: encrypt 'Hello World'",
-      "encryptResult": "Encrypted text: {result}\n\nNote: This is a demo. Real encryption uses proper algorithms.",
-      "hashUsage": "Usage: hash <text>\nExample: hash 'Hello World'",
-      "hashResult": "Hash (demo): {result}\n\nNote: This is a demo. Real hashing uses SHA-256 or similar."
-    }
-  },
   "common": {
-    "loading": "Loading...",
-    "error": "An error occurred",
-    "save": "Save",
-    "cancel": "Cancel",
-    "delete": "Delete",
-    "edit": "Edit",
-    "close": "Close"
+    "skipToContent": "Skip to content"
   },
   "cookie": {
     "banner": {
@@ -693,14 +571,395 @@
     "categories": {
       "essential": {
         "title": "Essential",
-        "description": "Required for core website functionality such as theme preference storage. These cannot be disabled.",
+        "description": "Required for core website functionality such as theme preference storage. These can't be disabled.",
         "alwaysActive": "Always active"
       },
       "analytics": {
         "title": "Analytics",
         "description": "Helps me understand how visitors interact with the website through a self-hosted analytics setup. Data is minimised and used only for private reporting."
       }
+    }
+  },
+  "calculator": {
+    "metaTitle": "Cost estimate",
+    "metaDescription": "Get an instant budget bracket and timeline estimate for your project, plus a downloadable PDF summary.",
+    "badge": "COST ESTIMATE",
+    "title": "What would your project cost?",
+    "subtitle": "A few quick questions and you get a realistic price range, a timeline, and a PDF you can keep.",
+    "stepOf": "Step {current} of {total}",
+    "back": "Back",
+    "next": "Next",
+    "scope": {
+      "title": "What does your project need?",
+      "description": "Select everything that applies.",
+      "options": {
+        "website": {
+          "label": "Website",
+          "description": "A new site for your business, hand-coded.",
+          "includes": [
+            "A site built by hand in React and Next.js, not a template",
+            "Works properly on phones, and fast enough to rank",
+            "Hosting, domain and SSL set up for you"
+          ]
+        },
+        "web_app": {
+          "label": "Web app",
+          "description": "Something with logins, data and an admin side.",
+          "includes": [
+            "An application with accounts and permissions",
+            "An admin area so you can manage it yourself",
+            "A database designed around the questions you ask"
+          ]
+        },
+        "api_integration": {
+          "label": "API Integration",
+          "description": "Connect payments, a CRM, or another service.",
+          "includes": [
+            "Third-party API integration (payments, CRM, etc.)",
+            "Error handling and retry logic",
+            "Integration tests against the real API"
+          ]
+        },
+        "automation": {
+          "label": "Automation",
+          "description": "Automate a manual workflow or task.",
+          "includes": [
+            "Workflow automation script or service",
+            "Scheduled jobs or webhook triggers",
+            "Monitoring and alerting on failures"
+          ]
+        }
+      },
+      "error": "Pick at least one option to continue."
     },
-    "settings": "Cookie settings"
+    "timeline": {
+      "title": "What's your timeline?",
+      "options": {
+        "asap": "As soon as possible",
+        "1-3m": "1-3 months",
+        "3-6m": "3-6 months",
+        "6m-plus": "6+ months",
+        "not-sure": "Not sure yet"
+      }
+    },
+    "result": {
+      "title": "Here's your estimate",
+      "budgetLabel": "Estimated budget",
+      "timelineLabel": "Estimated timeline",
+      "weeksLabel": "{min}-{max} weeks",
+      "includedTitle": "What's typically included",
+      "downloadPdf": "Download PDF summary",
+      "downloadingPdf": "Preparing PDF...",
+      "disclaimer": "This is a rough guide, not a quote. The real number depends on details we'd go through together.",
+      "rushNote": "You picked 'as soon as possible'. I study alongside this, so a tight deadline usually means cutting scope rather than working more hours. Worth saying up front, and there's no rush fee either way."
+    },
+    "lead": {
+      "title": "Get your estimate by email",
+      "subtitle": "I'll email you the summary and follow up personally within a day or two.",
+      "name": "Name",
+      "email": "Email",
+      "company": "Company (optional)",
+      "notes": "Anything else I should know? (optional)",
+      "submit": "Send me the estimate",
+      "sending": "Sending...",
+      "success": "Sent! Check your inbox for the PDF summary.",
+      "error": "Something went wrong. Please try again.",
+      "rateLimited": "You're submitting a bit fast. Please wait a few minutes and try again."
+    },
+    "pdf": {
+      "title": "Project estimate summary",
+      "preparedFor": "Prepared for {name} on {date}",
+      "budgetLabel": "Estimated budget",
+      "timelineLabel": "Estimated timeline",
+      "weeks": "{min}-{max} weeks",
+      "scopeLabel": "Scope selected",
+      "timelinePreferenceLabel": "Timeline preference",
+      "includedLabel": "What's included",
+      "footer": "This is a rough estimate, not a fixed quote. Get in touch at brent@brentweb.eu to talk through the details."
+    }
+  },
+  "work": {
+    "metaTitleList": "Case studies",
+    "metaDescriptionList": "In-depth case studies on real client and personal projects: the problem, the build, and what shipped.",
+    "listBadge": "CASE STUDIES",
+    "listTitle": "The work, opened up",
+    "listSubtitle": "Every project below has a full write-up: the problem, what was built, and what it actually changed.",
+    "readMore": "Read the full case study",
+    "comingSoon": "Full write-up coming soon. Here's the short version for now.",
+    "backToList": "← Back to case studies"
+  },
+  "lab": {
+    "metaTitle": "Developer lab",
+    "metaDescription": "Interactive widgets showing real systems concepts: rate limiting, auth flows and state machines, the same ideas running in production.",
+    "badge": "DEVELOPER LAB",
+    "title": "Systems, made visible",
+    "subtitle": "Rate limiting, auth flows and request lifecycles. The same ones running on this site, but as something you can click on.",
+    "rateLimit": {
+      "title": "Rate Limit Simulator",
+      "description": "The exact token-bucket algorithm protecting this site's contact form and calculator, animated. Capacity {capacity} requests, refilling one token roughly every {refillSeconds}s.",
+      "sendRequest": "Send request",
+      "allowed": "Allowed",
+      "blocked": "Blocked. Try again in {seconds}s",
+      "tokensLabel": "Tokens available"
+    },
+    "authFlow": {
+      "title": "Auth Flow Visualizer",
+      "description": "A step-through of a typical login sequence. Illustrative only, with no real backend and no real tokens.",
+      "steps": {
+        "idle": "Waiting for login",
+        "credentials": "Credentials submitted",
+        "verify": "Server verifies credentials",
+        "issueToken": "Session token issued",
+        "authenticated": "Authenticated"
+      },
+      "start": "Start login",
+      "restart": "Restart"
+    },
+    "stateMachine": {
+      "title": "Request Lifecycle Visualizer",
+      "description": "A small finite-state machine showing how a single request moves through validation and processing, or fails at any step along the way.",
+      "states": {
+        "idle": "Idle",
+        "validating": "Validating",
+        "processing": "Processing",
+        "success": "Success",
+        "failed": "Failed"
+      },
+      "trigger": "Fire request",
+      "triggerFailure": "Fire failing request"
+    }
+  },
+  "email": {
+    "confirmationSubject": "Thanks for reaching out, {name}",
+    "confirmationBodyContact": "I've received your message and will get back to you within 24 hours.",
+    "confirmationBodyCalculator": "I've received your project estimate request. Your estimate summary is attached as a PDF, and I'll follow up personally within 24 hours to talk through the details.",
+    "confirmationSignature": "Brent"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: {date}",
+    "backHome": "← Back to Home",
+    "sections": [
+      {
+        "title": "Introduction",
+        "paragraphs": [
+          "This Privacy Policy explains how Brent Schoenmakers (\"I\", \"me\", or \"my\") collects, uses, and protects your information when you visit this website (www.brentweb.eu)."
+        ]
+      },
+      {
+        "title": "Analytics Data",
+        "paragraphs": [
+          "This website uses a self-hosted analytics setup to collect limited, pseudonymised information about how visitors use the site. This includes:"
+        ],
+        "list": [
+          {
+            "text": "Pages visited and time spent on each page"
+          },
+          {
+            "text": "Browser type and version"
+          },
+          {
+            "text": "Device type and screen resolution"
+          },
+          {
+            "text": "Referral source (how you found this website)"
+          }
+        ],
+        "afterList": [
+          "Analytics are only recorded after you opt in via the cookie banner. The resulting reports are reviewed privately in Metabase and are not exposed on the public website."
+        ]
+      },
+      {
+        "title": "Contact Forms & Cost Estimator",
+        "paragraphs": [
+          "When you use the contact form or the project cost estimator on this website, I collect:"
+        ],
+        "list": [
+          {
+            "text": "Your name and email address"
+          },
+          {
+            "text": "Your message, and the project details you provide - budget range and timeline on the business contact form, or scope, timeline, optional company name and notes in the cost estimator"
+          }
+        ],
+        "afterList": [
+          "This information is used solely to respond to your inquiry, is sent via Resend (a transactional email provider) to my inbox and to yours as a confirmation, and is not shared with any other third party. Submissions are rate-limited by IP address to prevent abuse; that rate-limit counter is held only in server memory, is never written to disk, and is discarded automatically after a short period of inactivity. A hidden field on both forms helps detect automated spam submissions and contains no personal data."
+        ]
+      },
+      {
+        "title": "Cookies",
+        "paragraphs": [
+          "This website uses the following types of cookies:"
+        ],
+        "list": [
+          {
+            "label": "Essential Cookies:",
+            "text": "Required for the website to function properly (e.g. theme preferences)"
+          },
+          {
+            "label": "Preference Cookies:",
+            "text": "Two first-party cookies remember how you like to browse - bw-locale stores your chosen language and bw-path stores whether you entered via the business or engineering route, so returning visits skip the entry page. Neither contains personal data, neither is shared, and both expire after one year."
+          },
+          {
+            "label": "Analytics Cookies:",
+            "text": "Consent-gated first-party analytics requests used to understand website usage and improve the experience"
+          }
+        ],
+        "afterList": [
+          "You can control cookies through your browser settings. However, disabling cookies may affect website functionality."
+        ]
+      },
+      {
+        "title": "Data Security",
+        "paragraphs": [
+          "I implement security measures to protect your information, including:"
+        ],
+        "list": [
+          {
+            "text": "HTTPS encryption for all data transmission"
+          },
+          {
+            "text": "Strict Transport Security (HSTS) headers"
+          },
+          {
+            "text": "Rate limiting on every form that accepts input, to reduce abuse"
+          },
+          {
+            "text": "Regular security updates and monitoring"
+          }
+        ],
+        "afterList": [
+          "However, no method of transmission over the internet is 100% secure, and I cannot guarantee absolute security."
+        ]
+      },
+      {
+        "title": "Third-Party Services",
+        "paragraphs": [
+          "This website uses the following third-party services:"
+        ],
+        "list": [
+          {
+            "label": "Resend:",
+            "text": "Used to deliver contact form and cost estimator emails, including the PDF estimate summary you request"
+          },
+          {
+            "label": "Metabase:",
+            "text": "Used privately to visualise aggregated website analytics stored in PostgreSQL"
+          }
+        ]
+      },
+      {
+        "title": "Your Rights",
+        "paragraphs": [
+          "You have the right to:"
+        ],
+        "list": [
+          {
+            "text": "Access the personal information I hold about you"
+          },
+          {
+            "text": "Request correction of inaccurate information"
+          },
+          {
+            "text": "Request deletion of your information"
+          },
+          {
+            "text": "Opt out of analytics tracking"
+          }
+        ],
+        "afterList": [
+          "To exercise these rights, please contact me at brent@brentweb.eu"
+        ]
+      },
+      {
+        "title": "Children's Privacy",
+        "paragraphs": [
+          "This website is not intended for children under 13 years of age. I do not knowingly collect personal information from children."
+        ]
+      },
+      {
+        "title": "Changes to This Policy",
+        "paragraphs": [
+          "I may update this Privacy Policy from time to time. The updated version will be indicated by an updated \"Last updated\" date at the top of this page."
+        ]
+      },
+      {
+        "title": "Contact",
+        "paragraphs": [
+          "If you have questions about this Privacy Policy, please contact me at brent@brentweb.eu"
+        ]
+      }
+    ],
+    "lastUpdatedDate": "2026-08-10"
+  },
+  "errors": {
+    "title": "Something broke.",
+    "description": "That one's on me, not you. The error has been logged. Try again, or head back to the start.",
+    "retry": "Try again",
+    "backHome": "Back to start",
+    "notFoundTitle": "That page doesn't exist.",
+    "notFoundDescription": "The link may be out of date, or the address may have a typo."
+  },
+  "pain": {
+    "badge": "SOUND FAMILIAR?",
+    "title": "What people usually call me about",
+    "subtitle": "You don't need to know what to ask for. If one of these sounds like your week, I can probably help.",
+    "fixLabel": "What I'd build instead",
+    "items": {
+      "1": {
+        "problem": "The same order gets typed in twice",
+        "body": "An order comes in one way and someone types it in again somewhere else. Every time that happens there's a chance to get it wrong, and it costs someone about an hour a day.",
+        "fix": "One system where it only gets entered once."
+      },
+      "2": {
+        "problem": "The site looks fine, but nobody calls",
+        "body": "It shows up when someone searches your company name, and nowhere else. The people looking for what you actually do never find it.",
+        "fix": "A site people can actually find, judged on how many of them get in touch."
+      },
+      "3": {
+        "problem": "A spreadsheet is running the business",
+        "body": "It works fine until two people open it at once, or until the one person who understands it goes on holiday.",
+        "fix": "A proper application with one login for everyone."
+      }
+    }
+  },
+  "pricing": {
+    "badge": "PRICES",
+    "title": "What things cost",
+    "subtitle": "These are the real ranges I work with. You get a fixed price in writing before I start building.",
+    "rangeLabel": "Typical range",
+    "durationLabel": "Usually takes",
+    "weeks": "{min}-{max} weeks",
+    "ctaTitle": "Not sure which one you need?",
+    "ctaBody": "Answer three questions and you'll get a range and a rough timeline for your project, plus a PDF you can keep.",
+    "cta": "Estimate my project",
+    "note": "These are ranges, not quotes. The final number depends on details we'd go through together, and once we agree on it, it doesn't move."
+  },
+  "faq": {
+    "badge": "QUESTIONS",
+    "title": "Before you email me",
+    "subtitle": "The things people usually ask me first.",
+    "items": {
+      "1": {
+        "q": "What if I don't know what I need?",
+        "a": "That's how most projects start, so it's not a problem. Tell me what's slowing you down in normal language and I'll tell you what it would take. Sometimes the honest answer is that you don't need me, and I'll say that too."
+      },
+      "2": {
+        "q": "Do I own what you build?",
+        "a": "Yes. The code, the domain and the hosting account are all in your name. If you ever want to hand it to another developer, nothing is locked and there's nothing to buy back."
+      },
+      "3": {
+        "q": "What happens if something breaks?",
+        "a": "If something I built breaks, I fix it. That's not a new project and I don't bill it as one. Most people keep me on for small changes afterwards anyway."
+      },
+      "4": {
+        "q": "Why is this cheaper than an agency?",
+        "a": "There's no sales team, no project manager and no office to pay for. You're paying for the work itself instead of the overhead around it."
+      },
+      "5": {
+        "q": "How quickly will you reply?",
+        "a": "Within a day or two. I'd rather tell you that honestly than promise an instant reply and then miss it."
+      }
+    }
   }
 }

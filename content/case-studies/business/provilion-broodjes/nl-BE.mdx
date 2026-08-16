@@ -1,0 +1,35 @@
+---
+title: "Provilion Broodjes: cash en papier vervangen door één bestelplatform"
+slug: "provilion-broodjes"
+audience: "business"
+locale: "nl-BE"
+publishedAt: "2023-09-01"
+summary: "Een bestelsysteem voor schoolmaaltijden dat manuele kasverwerking vervangt door een selfservice-platform. Leerlingen bestellen, ouders beheren tegoeden, personeel werkt vanuit één dashboard."
+---
+
+## Het probleem
+
+Een school die een dagelijkse broodjesdienst runde, deed dit zoals de meeste scholen: cash aan de toog, papieren bestellijsten, en veel manueel afstemmen op het einde van de dag. Het werkte, in de zin dat de broodjes gemaakt werden. Maar elk onderdeel kostte personeelstijd die elders had moeten gaan, en fouten (foute bestellingen, verloren cash, onduidelijke saldi) waren een kwestie van wanneer, niet of.
+
+## De aanpak
+
+De oplossing was geen iets nettere versie van het papieren proces. Het was de manuele stappen volledig weghalen en het systeem de bron van waarheid laten zijn voor bestellingen, saldi en dagelijkse voorbereiding.
+
+<Callout>
+De belangrijkste ontwerpbeperking: betalingsbevestiging moest alles aansturen. Een tegoedsaldo verandert enkel wanneer Stripe een betaling bevestigt. Nooit optimistisch, nooit op basis van een aanvraag die nog kan mislukken.
+</Callout>
+
+- Leerlingen bestellen zelf; ouders laden online een prepaid tegoedsaldo op
+- Stripe verwerkt betalingen, en webhooks sturen aan wat er echt met een saldo gebeurt, niet clientaanvragen
+- Rolgebaseerde toegang scheidt wat een leerling, een ouder en een beheerder elk kunnen doen
+- Één live operationeel dashboard zet de bestellingen van de dag rechtstreeks om in een voorbereidingslijst voor de keuken
+
+## Het resultaat
+
+<MetricGrid metrics={[
+  { value: "100%", label: "Cashless transacties" },
+  { value: "3", label: "Gebruikersrollen, één platform" },
+  { value: "Live", label: "Bestelstatus-updates" },
+]} />
+
+Kasverwerking en dagelijkse afstemming zijn verdwenen. Ouders beheren uitgaven rechtstreeks via het tegoedsysteem in plaats van cash met hun kinderen mee te geven, en de keuken werkt vanuit één, steeds actuele lijst in plaats van papieren bestellingen samen te puzzelen. Met een betaalflow die nooit stilletjes kan afwijken van wat er echt aangerekend werd.

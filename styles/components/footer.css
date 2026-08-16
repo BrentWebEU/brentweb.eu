@@ -195,17 +195,7 @@
   color: hsl(var(--primary) / 0.8);
 }
 
-/* Console hint */
-.footer__console-hint {
-  font-size: var(--text-xs);
-  color: var(--color-muted-foreground);
-  font-family: var(--font-mono);
-  margin-top: var(--space-2);
-  text-align: center;
-  font-style: italic;
-}
-
-/* Handwritten annotation */
+/* Handwritten annotation — engineering path only */
 .footer__annotation {
   font-family: var(--font-handwritten);
   font-size: var(--text-sm);
@@ -215,4 +205,9 @@
   transform: rotate(-2deg);
   display: inline-block;
   margin-top: var(--space-1);
+}
+
+/* Relocated from the deleted utilities.css — see the note in card.css. */
+.footer__back-to-top:hover {
+  border-color: hsl(var(--primary) / 0.5);
 }

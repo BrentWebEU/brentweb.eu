@@ -1,0 +1,65 @@
+.privacy {
+  padding-block: var(--section-py);
+}
+
+.privacy__container {
+  max-width: 42rem;
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+.privacy__title {
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-2);
+  line-height: 1.2;
+}
+
+.privacy__updated {
+  font-size: var(--text-sm);
+  color: var(--color-muted-foreground);
+  margin-bottom: var(--space-8);
+}
+
+.privacy__section {
+  margin-top: var(--space-8);
+}
+
+.privacy__section-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-3);
+}
+
+.privacy__p {
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-foreground);
+  margin-bottom: var(--space-3);
+}
+
+.privacy__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-left: var(--space-6);
+  list-style: disc;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  margin-bottom: var(--space-3);
+}
+
+.privacy__back {
+  margin-top: var(--space-12);
+  text-align: center;
+}
+
+.privacy__back a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: var(--text-sm);
+}
+
+.privacy__back a:hover {
+  text-decoration: underline;
+}

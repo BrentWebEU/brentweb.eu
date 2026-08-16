@@ -1,0 +1,76 @@
+/* Ambient background texture — engineering path only.
+ *
+ * Deliberately scoped to the tech audience shell: the business path and the
+ * gateway read as a calm, static canvas, while /tech keeps a subtle terminal
+ * texture as audience signalling.
+ *
+ * ⚠ These are `position: fixed` pseudo-elements on `.audience-shell`, which is
+ * a bare <div> today. If anyone ever adds `transform`, `filter`, `perspective`,
+ * `backdrop-filter`, `contain: paint`, `isolation`, or `opacity < 1` to
+ * `.audience-shell`, it becomes a containing block and a stacking context —
+ * the overlays would then size to the shell instead of the viewport and the
+ * z-index below would stop competing with the nav (50) and cookie banner.
+ */
+
+/* Page-level animated background */
+.audience-shell[data-audience='tech']::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, hsl(var(--primary) / 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+  animation: background-pulse 25s ease-in-out infinite;
+}
+
+@keyframes background-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Subtle scan line sweeping the viewport */
+.audience-shell[data-audience='tech']::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, hsl(var(--primary) / 0.3), transparent);
+  pointer-events: none;
+  z-index: 9999;
+  animation: scan-line 8s linear infinite;
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  2% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Must live here, not in global-animations.css: that file's reduced-motion
+ * block names body::before/body::after and would silently stop matching. */
+@media (prefers-reduced-motion: reduce) {
+  .audience-shell[data-audience='tech']::before,
+  .audience-shell[data-audience='tech']::after {
+    animation: none !important;
+  }
+}

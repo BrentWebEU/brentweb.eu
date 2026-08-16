@@ -27,8 +27,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  transform: rotate(-0.1deg);
-  transition: transform var(--duration-normal) var(--ease-out);
+  transition: opacity var(--duration-normal) var(--ease-out);
 }
 
 .nav__logo:hover {
@@ -55,13 +54,11 @@
 .nav__link {
   font-size: var(--text-sm);
   color: var(--color-muted-foreground);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-weight: var(--font-weight-medium);
   transition: color var(--duration-normal) var(--ease-out);
   text-decoration: none;
   position: relative;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .nav__link:hover {
@@ -87,12 +84,12 @@
   color: var(--color-primary-foreground);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-semibold);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   border: 1px solid var(--color-primary);
-  transition: all var(--duration-normal) var(--ease-out);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--duration-normal) var(--ease-out);
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .nav__contact-link:hover {
@@ -151,12 +148,11 @@
 .nav__mobile-link {
   font-size: 1.5rem;
   font-weight: var(--font-weight-semibold);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   color: var(--color-foreground);
   transition: color var(--duration-normal) var(--ease-out);
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.01em;
 }
 
 .nav__mobile-link:hover {

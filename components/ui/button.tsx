@@ -1,22 +1,23 @@
 'use client';
 
-import * as React from "react";
-import Link from "next/link";
+import * as React from 'react';
+import Link from 'next/link';
+import { type VariantProps } from 'class-variance-authority';
 
-import { cn } from "@/lib/utils";
+import { buttonVariants } from './button-variants';
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+import { cn } from '@/lib/utils';
+
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
   href?: string;
-  variant?: "default" | "cta" | "destructive" | "outline" | "secondary" | "ghost" | "link";
-  size?: "default" | "sm" | "lg" | "icon";
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "default", size = "default", href, children, ...props }, ref) => {
-    const variantClass = variant === "cta" ? "btn-cta" : `btn-${variant}`;
-    const sizeClass = `btn-${size}`;
-
-    const buttonClass = cn("btn", variantClass, sizeClass, className);
+  ({ className, variant, size, href, children, ...props }, ref) => {
+    const buttonClass = cn(buttonVariants({ variant, size }), className);
 
     if (href) {
       return (
@@ -27,16 +28,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     }
 
     return (
-      <button
-        className={buttonClass}
-        ref={ref}
-        {...props}
-      >
+      <button className={buttonClass} ref={ref} {...props}>
         {children}
       </button>
     );
-  }
+  },
 );
-Button.displayName = "Button";
+Button.displayName = 'Button';
 
-export { Button };
+export { Button, buttonVariants };

@@ -1,58 +1,91 @@
 'use client';
 
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-const logo = "/logo.svg";
-import { ThemeToggle } from "./ThemeToggle";
-import { LanguageSwitcher } from "./LanguageSwitcher";
-import { RollingLink } from "./RollingLink";
-import { useTranslations } from "@/hooks/useTranslations";
+import { useState } from 'react';
+import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
+import type { Locale, Messages } from '@/i18n';
+import type { Audience } from '@/lib/audience';
+import { routes } from '@/lib/routes';
+import { ThemeToggle } from './ThemeToggle';
+import { LanguageSwitcher } from './LanguageSwitcher';
+import { RollingLink } from './RollingLink';
+import { Logo } from './Logo';
+import { AudienceLink } from './AudienceLink';
 
-export const Navigation = () => {
+/**
+ * Section anchors differ per path: the business page has no experience
+ * section, the engineering page has no services section. Linking to an
+ * anchor that isn't rendered is a dead link, so each path gets its own set.
+ */
+export const SECTIONS: Record<Audience, ReadonlyArray<keyof Messages['nav']>> = {
+  business: ['services', 'projects', 'process', 'contact'],
+  tech: ['projects', 'experience', 'about', 'contact'],
+};
+
+export const ANCHORS: Partial<Record<keyof Messages['nav'], string>> = {
+  about: '#about',
+  experience: '#experience',
+  services: '#services',
+  projects: '#projects',
+  process: '#process',
+  contact: '#contact',
+};
+
+export const Navigation = ({
+  locale,
+  audience,
+  nav,
+}: {
+  locale: Locale;
+  audience: Audience;
+  nav: Messages['nav'];
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { t } = useTranslations();
 
   const navLinks = [
-    { name: t('nav.about'), href: "#about" },
-    { name: t('nav.experience'), href: "#experience" },
-    { name: t('nav.services'), href: "#services" },
-    { name: t('nav.projects'), href: "#projects" },
-    { name: t('nav.blog'), href: "https://blog.brentweb.eu/" },
-    { name: t('nav.contact'), href: "#contact" },
+    ...SECTIONS[audience].map((key) => ({
+      name: nav[key],
+      href: ANCHORS[key] ?? '#',
+      external: false,
+    })),
+    // The case-study index used to be reachable only from inside the project
+    // dialog, which meant /tech/work had no entry point at all. Both paths now
+    // link to it directly.
+    { name: nav.work, href: routes.work(locale, audience), external: false },
+    ...(audience === 'tech' ? [{ name: nav.lab, href: routes.lab(locale), external: false }] : []),
+    { name: nav.blog, href: 'https://blog.brentweb.eu/', external: true },
   ];
 
   return (
     <>
       <nav className="nav">
         <div className="nav__container">
-          <a 
-            href="#hero" 
+          <Link
+            href={routes.home(locale)}
             className="nav__logo"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
+            aria-label={nav.backToGateway}
           >
-            <img
-              src={logo}
-              alt="Brent Schoenmakers"
-              className="nav__logo-img"
-            />
-          </a>
+            {/* Inline rather than next/image: the mark has to follow the theme
+                via currentColor, and an <img> is a closed shadow world that no
+                page CSS can reach into. */}
+            <Logo className="h-8 w-auto text-foreground" />
+          </Link>
 
           <div className="nav__links">
             {navLinks.map((link) => (
-              <RollingLink
-                key={link.name}
-                href={link.href}
-                className="nav__link"
-              >
+              <RollingLink key={link.name} href={link.href} className="nav__link">
                 {link.name}
               </RollingLink>
             ))}
           </div>
 
           <div className="nav__right">
+            {audience === 'business' && (
+              <Link href={routes.pricing(locale)} className="nav__contact-link">
+                {nav.getQuote}
+              </Link>
+            )}
+            <AudienceLink locale={locale} current={audience} nav={nav} />
             <LanguageSwitcher />
             <ThemeToggle />
           </div>
@@ -61,6 +94,8 @@ export const Navigation = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="nav__mobile-toggle"
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
+            type="button"
           >
             {isOpen ? (
               <X className="nav__mobile-icon" />
@@ -84,7 +119,17 @@ export const Navigation = () => {
                 {link.name}
               </a>
             ))}
+            {audience === 'business' && (
+              <Link
+                href={routes.pricing(locale)}
+                onClick={() => setIsOpen(false)}
+                className="nav__contact-link"
+              >
+                {nav.getQuote}
+              </Link>
+            )}
             <div className="nav__mobile-actions">
+              <AudienceLink locale={locale} current={audience} nav={nav} />
               <LanguageSwitcher />
               <ThemeToggle />
             </div>

@@ -1,0 +1,51 @@
+---
+title: "Gedistribueerd IDPS: fail-open door ontwerp"
+slug: "idps"
+audience: "tech"
+locale: "nl-BE"
+publishedAt: "2024-11-15"
+summary: "Een Rust-captureagent draait inline op een Raspberry Pi, streamt paketdata naar een VPS voor Suricata-gebaseerde analyse, en past beslissingen lokaal toe zodat het kritieke pad nooit wacht op een retourtje over het netwerk."
+---
+
+## Architectuur
+
+Het systeem is gesplitst in twee helften die met elkaar praten maar nooit op elkaar wachten: een inline captureagent, en een externe analyseserver.
+
+```
+[ Netwerkverkeer ] → [ Raspberry Pi: Rust captureagent ] → [ VPS: Suricata + analyse ]
+                              ↓ (lokale handhaving, geen retourtje)
+                        [ Toelaten / Blokkeren beslissing ]
+```
+
+## Waarom Rust op de rand
+
+De captureagent draait inline, wat betekent dat elk pakket op het netwerk er fysiek doorheen gaat. Dat is de enige plek in het systeem waar een fout catastrofaal is. Een crash daar legt het netwerk plat, niet enkel de beveiligingsfunctie.
+
+<Callout>
+Memory-safe pakketverwerking en geen GC-pauzes waren niet onderhandelbaar voor de inline component. Een garbage-collection-pauze op het kritieke pad is een netwerkhaperinkje dat bij elke gebruiker voelt als "het internet is traag".
+</Callout>
+
+```rust
+// Vereenvoudigde vorm van de capture-lus. De echte beperking is dat deze
+// functie nooit mag alloceren op een manier die onvoorspelbaar kan pauzeren.
+loop {
+    let packet = capture_next()?;
+    let verdict = local_ruleset.evaluate(&packet);
+    match verdict {
+        Verdict::Allow => forward(packet),
+        Verdict::Block => drop(packet),
+    }
+    stream_to_analysis(packet); // fire-and-forget, nooit inline afgewacht
+}
+```
+
+## Fail-open, niet fail-closed
+
+Capture en handhaving zijn bewust losgekoppeld van de externe analyse. Als de VPS onbereikbaar is, blijft de lokale ruleset zelfstandig beslissingen nemen. Het systeem degradeert naar "minder slim" in plaats van "netwerk ligt plat".
+
+## Beslissingen die telden
+
+- Rust op de rand voor memory safety en voorspelbare latentie, zonder garbage-collection-pauzes op het kritieke pad
+- Capture/handhaving losgekoppeld van analyse. Het netwerk blijft functioneren zelfs als de analyseserver onbereikbaar is
+- De server-side pijplijn draait in Docker voor reproduceerbare deploys, want een beveiligingstool die moeilijk consistent te herdeployen is, is zelf een risico
+- Suricata's rule engine stuurt detectie aan; een dunne, aangepaste laag erboven handhaaft beslissingen specifiek voor deze deployment

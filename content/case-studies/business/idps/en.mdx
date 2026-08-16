@@ -1,0 +1,37 @@
+---
+title: "Enterprise-grade network protection, on a Raspberry Pi"
+slug: "idps"
+audience: "business"
+locale: "en"
+publishedAt: "2024-11-15"
+summary: "Schools get real-time threat detection and blocking without a security team on site, running on commodity hardware with zero per-seat licensing."
+---
+
+## The problem
+
+Educational networks are an attractive, under-defended target: hundreds of devices, limited IT budget, and no dedicated security staff watching traffic around the clock. Commercial intrusion detection appliances exist, but they're priced and licensed for enterprises, not schools.
+
+The gap wasn't a lack of good ideas about security. It was that every practical option assumed a budget and a team this environment didn't have.
+
+## The approach
+
+The solution splits the problem in two: a small, cheap device that watches traffic where it enters the network, and a separate server that does the heavy analytical thinking. Without ever making the network wait on it.
+
+<Callout>
+The one non-negotiable requirement was that security monitoring could never become the reason the network felt slow. If protecting the network made it worse to use, staff would eventually just unplug it.
+</Callout>
+
+- A Raspberry Pi sits inline, watching every packet as it passes
+- Traffic is streamed to a remote server for deeper analysis and threat detection
+- Verdicts (block or allow) are enforced locally on the Pi. No waiting on a round trip
+- One live dashboard gives staff a single place to see what's happening, with no specialist required
+
+## The outcome
+
+<MetricGrid metrics={[
+  { value: "<1ms", label: "Added inline latency" },
+  { value: "24/7", label: "Autonomous monitoring" },
+  { value: "€0", label: "Per-seat licensing cost" },
+]} />
+
+The network gets continuous, real-time threat detection and automatic blocking, staff get one dashboard instead of a pile of logs to interpret, and the entire system runs on hardware that costs less than a single seat of most commercial alternatives. With nothing recurring to license.

@@ -1,0 +1,35 @@
+---
+title: "Provilion Broodjes: replacing cash and paper with one ordering platform"
+slug: "provilion-broodjes"
+audience: "business"
+locale: "en"
+publishedAt: "2023-09-01"
+summary: "A school lunch ordering system that replaced manual cash handling with a self-service platform. Students order, parents manage credits, staff work from one dashboard."
+---
+
+## The problem
+
+A school running a daily sandwich service was doing it the way most schools do: cash at the counter, paper order lists, and a lot of manual reconciliation at the end of the day. It worked, in the sense that lunches got made. But every part of it consumed staff time that should have gone elsewhere, and mistakes (wrong orders, lost cash, unclear balances) were a matter of when, not if.
+
+## The approach
+
+The fix wasn't a slightly nicer version of the paper process. It was removing the manual steps entirely and letting the system be the source of truth for orders, balances, and daily prep.
+
+<Callout>
+The design constraint that mattered most: payment confirmation had to drive everything. A credit balance changes only when Stripe confirms a payment. Never optimistically, never based on a request that might still fail.
+</Callout>
+
+- Students place orders themselves; parents top up a prepaid credit balance online
+- Stripe handles payment processing, and webhooks rather than client requests drive what actually happens to a balance
+- Role-based access separates what a student, a parent, and an administrator can each do
+- One live operations dashboard turns the day's orders directly into a kitchen prep list
+
+## The outcome
+
+<MetricGrid metrics={[
+  { value: "100%", label: "Cashless transactions" },
+  { value: "3", label: "User roles, one platform" },
+  { value: "Live", label: "Order status updates" },
+]} />
+
+Cash handling and end-of-day reconciliation are gone. Parents control spending directly through the credit system instead of sending cash in with their kids, and the kitchen works from a single, always-current list instead of piecing together paper orders. With a payment flow that can't silently drift out of sync with what was actually charged.

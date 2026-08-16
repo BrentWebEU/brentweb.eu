@@ -1,0 +1,36 @@
+---
+title: "Het Smaakpand: online fast and affordably, retired cleanly"
+slug: "het-smaakpand"
+audience: "business"
+locale: "en"
+publishedAt: "2022-03-01"
+updatedAt: "2024-08-01"
+summary: "A small sandwich shop needed to be findable online without taking on ongoing complexity or cost, and when the business closed, the site was retired just as cleanly."
+---
+
+## The problem
+
+Not every business needs a platform. A small local sandwich shop needed exactly one thing from a website: let people find the menu and opening hours from their phone before walking in. Anything beyond that, a CMS to log into, a stack that needs patching, a monthly hosting bill that outlives its usefulness. Would have been overhead with no return.
+
+## The approach
+
+The discipline here was saying no to complexity the business didn't need, not adding features because they were available.
+
+<Callout>
+The real design decision was scope, not technology: build the smallest thing that does the one job well, and resist the pull to add a dashboard or a CMS "just in case."
+</Callout>
+
+- Static-first delivery. No server-side runtime to patch, monitor, or eventually forget about
+- Hand-tuned CSS instead of a framework, since a single-page site doesn't need one
+- Sub-second load times as the explicit target, not an afterthought
+- A menu and hours that were trivial to update by hand, since they changed rarely
+
+## The outcome
+
+<MetricGrid metrics={[
+  { value: "Days", label: "Concept to launch" },
+  { value: "Low", label: "Total cost of ownership" },
+  { value: "Zero", label: "Maintenance incidents" },
+]} />
+
+The shop got online in days, not weeks, at a cost that made sense for its size, and ran without a single maintenance incident for its entire lifetime. When the business closed, the site was decommissioned cleanly: no orphaned server, no lingering subscription, nothing left running that someone would eventually have to notice and turn off.

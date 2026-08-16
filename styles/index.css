@@ -1,42 +1,148 @@
-/* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+/* ─────────────────────────────────────────────────────────────────────────
+ * Tailwind CSS v4 entrypoint.
+ *
+ * Order is load-bearing. `@import 'tailwindcss'` must come first: it expands
+ * to theme + preflight + utilities and emits `@layer theme, base, components,
+ * utilities;`, which establishes the layer order everything below relies on.
+ * ───────────────────────────────────────────────────────────────────────── */
+@import 'tailwindcss';
 
-/* Import Styles */
+/* Explicit source roots. Auto-detection would find these anyway (it walks up to
+ * the git root and honours .gitignore), but pinning them keeps the scan cheap
+ * and makes the contract obvious to the next reader. `content` is included
+ * because MDX case studies can carry className strings. */
+@source '../app';
+@source '../components';
+@source '../content';
+
+/* Tailwind v4 defaults `dark:` to `@media (prefers-color-scheme: dark)`, but
+ * next-themes is configured with attribute="class". Redefining the variant is
+ * mandatory or every `dark:` utility silently ignores the theme toggle.
+ *
+ * `:where()` holds specificity at zero, so `dark:bg-card` and `bg-card` stay
+ * specificity-tied and resolve by source order inside @layer utilities — the
+ * same as every other variant. The shorter `.dark &` would add (0,1,0) and let
+ * dark: variants outrank later non-dark utilities.
+ *
+ * The `.dark, .dark *` pair matters because next-themes puts the class on
+ * <html> itself: `.dark *` covers descendants, bare `.dark` covers a utility
+ * applied directly to <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Token declarations. Deliberately UNLAYERED so they outrank Tailwind's
+ * @layer theme. This file remains the single declaration site for every
+ * custom property; the @theme block below only maps, never declares. */
 @import './variables.css';
-@import './reset.css';
-@import './base.css';
-@import './layout.css';
-@import './animations.css';
-@import './utilities.css';
 
-/* Component styles */
-@import './components/button.css';
-@import './components/dialog.css';
-@import './components/hero.css';
-@import './components/nav.css';
-@import './components/rolling-link.css';
-@import './components/cursor.css';
-@import './components/marquee.css';
-@import './components/card.css';
-@import './components/project-dialog.css';
-@import './components/strategy-map.css';
-@import './components/about.css';
-@import './components/experience.css';
-@import './components/form.css';
-@import './components/footer.css';
-@import './components/console.css';
-@import './components/network-monitor.css';
-@import './components/toaster.css';
-@import './components/intro.css';
-@import './components/exploration-map.css';
-@import './components/section.css';
-@import './components/theme-toggle.css';
-@import './components/language-switcher.css';
-@import './components/blog.css';
-@import './components/admin.css';
-@import './components/cookie-consent.css';
-@import './global-animations.css';
+/* ─────────────────────────────────────────────────────────────────────────
+ * Tailwind theme mapping.
+ *
+ * `inline` is doing real work here, and swapping it for a plain `@theme`
+ * would break two things:
+ *
+ *   1. Non-inline @theme *declares* these on :root. Custom properties resolve
+ *      at computed-value time on the element that declares them, so
+ *      `--color-primary: hsl(var(--primary))` would freeze to the :root
+ *      resolution and inherit down as a fixed colour — breaking any subtree
+ *      that scopes its own --primary. `inline` substitutes the expression
+ *      into the utility body instead, so --primary resolves at the *consuming*
+ *      element. That is what makes .dark work unconditionally.
+ *
+ *   2. Non-inline @theme variables are tree-shaken — only emitted to :root if
+ *      a generated utility uses them. The 40 legacy `var(--font-mono)` /
+ *      `var(--font-handwritten)` references in styles/components/*.css would
+ *      break the moment their matching utility went unused. `inline` emits
+ *      nothing, so variables.css keeps sole ownership and cannot drift.
+ *
+ * Net effect: `bg-primary`, `bg-primary/30`, and hand-written
+ * `hsl(var(--primary) / 0.3)` all work off one set of HSL triplets.
+ * ───────────────────────────────────────────────────────────────────────── */
+@theme inline {
+  /* Colours — namespace --color-* */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-success: hsl(var(--success));
+  --color-warning: hsl(var(--warning));
+
+  /* Fonts — namespace --font-*. Values come from next/font via app/fonts.ts. */
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-handwritten: var(--font-caveat), ui-rounded, cursive;
+
+  /* Shadows — namespace --shadow-*. The source tokens carry a `-token` suffix
+   * in variables.css: `--shadow-card: var(--shadow-card)` would be a
+   * self-reference and a build error. */
+  --shadow-card: var(--shadow-card-token);
+  --shadow-card-hover: var(--shadow-card-hover-token);
+  --shadow-dialog: var(--shadow-dialog-token);
+
+  /* Easing — namespace --ease-*.
+   * NOTE: this intentionally OVERRIDES Tailwind's built-in `ease-out`
+   * (cubic-bezier(0,0,.2,1) → cubic-bezier(.25,.1,.25,1)) so every `ease-out`
+   * utility gets the project curve. --ease-in-out is byte-identical to
+   * Tailwind's and is declared only for symmetry. */
+  --ease-out: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Deliberately NOT mapped into @theme, because Tailwind v4's defaults are
+ * byte-identical and re-declaring them adds churn for zero gain:
+ *   --space-1..16   → the 0.25rem spacing scale (p-4, gap-6, …)
+ *   --text-xs..4xl  → text-xs … text-4xl
+ *   --radius-sm/md/lg → rounded-sm/md/lg
+ *   640/768/1024px  → sm: / md: / lg:
+ *   --duration-*    → v4 has no --duration-* namespace; duration-150/300/500
+ * They stay declared in variables.css for the legacy component CSS to read. */
+
+/* Element defaults Preflight does not cover, plus the rules rescued from the
+ * deleted reset.css and animations.css. */
+@import './base.css' layer(base);
+
+/* ─────────────────────────────────────────────────────────────────────────
+ * Component styles.
+ *
+ * ⚠ `layer(components)` on EVERY line is what makes a hybrid BEM/utility state
+ * work at all. Unlayered CSS beats every cascade layer regardless of
+ * specificity — without this, `<div className="card p-6">` would have .card's
+ * padding win over p-6, and Tailwind utilities would appear in the DOM and in
+ * the stylesheet while having no visible effect.
+ *
+ * With it, these BEM rules degrade into overridable defaults, and files can be
+ * converted to utilities one at a time.
+ * ───────────────────────────────────────────────────────────────────────── */
+@import './components/preloader.css' layer(components);
+@import './components/nav.css' layer(components);
+@import './components/rolling-link.css' layer(components);
+@import './components/form.css' layer(components);
+@import './components/footer.css' layer(components);
+@import './components/section.css' layer(components);
+@import './components/theme-toggle.css' layer(components);
+@import './components/language-switcher.css' layer(components);
+@import './components/cookie-consent.css' layer(components);
+@import './components/route-error.css' layer(components);
+@import './components/estimator.css' layer(components);
+@import './components/case-study.css' layer(components);
+@import './components/lab.css' layer(components);
+@import './components/privacy.css' layer(components);
+@import './components/tech-ambience.css' layer(components);
+
+/* Last, so its section[data-in-view] rules win within the layer. */
+@import './global-animations.css' layer(components);

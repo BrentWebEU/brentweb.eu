@@ -9,9 +9,13 @@ import {
   Mail,
   Instagram as InstagramIcon,
 } from "lucide-react";
+import type { Locale } from "@/i18n";
+import type { Audience } from "@/lib/audience";
+import { routes } from "@/lib/routes";
 import { useTranslations } from "@/hooks/useTranslations";
 import { CONSENT_EVENT } from "@/hooks/useConsent";
-const logo = "/logo.svg";
+import { SECTIONS, ANCHORS } from "./Navigation";
+import { Logo } from "./Logo";
 
 const socialLinks = [
   { icon: GithubIcon, href: "https://github.com/BrentWebEU", label: "GitHub" },
@@ -28,7 +32,7 @@ const socialLinks = [
   { icon: Mail, href: "mailto:brent@brentweb.eu", label: "Email" },
 ];
 
-export const Footer = memo(() => {
+export const Footer = memo(({ locale, audience }: { locale: Locale; audience: Audience }) => {
   const { t } = useTranslations();
   const scrollToTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -39,38 +43,38 @@ export const Footer = memo(() => {
   const totalNodes = getTotalCount();
   const nodesProgress = (nodesCount / totalNodes) * 100;
 
-  const navLinks = [
-    t('nav.about'),
-    t('nav.experience'),
-    t('nav.services'),
-    t('nav.projects'),
-    t('nav.contact')
-  ];
+  // Anchors come from the same source as the nav, keyed by section id rather
+  // than by the translated label — deriving `#${label.toLowerCase()}` produced
+  // dead links on the Dutch site (#overmij) and linked business visitors to
+  // #experience, which only the engineering path renders.
+  const navLinks = SECTIONS[audience].map((key) => ({
+    key,
+    label: t(`nav.${key}`),
+    href: ANCHORS[key] ?? '#',
+  }));
 
   return (
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__top">
-          <img
-            src={logo}
-            alt="Brent Schoenmakers"
-            className="footer__logo"
-          />
+          <Logo className="footer__logo text-foreground" />
         </div>
 
-        <div className="footer__nodes">
-          <div className="footer__nodes-label">{t('footer.nodesDiscovered')}</div>
-          <div className="footer__nodes-count">
-            {nodesCount}/{totalNodes}
+        {audience === 'tech' && (
+          <div className="footer__nodes">
+            <div className="footer__nodes-label">{t('footer.nodesDiscovered')}</div>
+            <div className="footer__nodes-count">
+              {nodesCount}/{totalNodes}
+            </div>
+            <div className="footer__nodes-progress">
+              <div
+                className="footer__nodes-progress-bar"
+                style={{ width: `${nodesProgress}%` }}
+              />
+            </div>
+            <p className="footer__annotation">{t('footer.annotation')}</p>
           </div>
-          <div className="footer__nodes-progress">
-            <div 
-              className="footer__nodes-progress-bar"
-              style={{ width: `${nodesProgress}%` }}
-            />
-          </div>
-          <p className="footer__annotation">{t('footer.annotation')}</p>
-        </div>
+        )}
 
         <div className="footer__socials">
           {socialLinks.map((social) => (
@@ -93,15 +97,11 @@ export const Footer = memo(() => {
 
           <div className="footer__links">
             {navLinks.map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase().replace(/\s+/g, '')}`}
-                className="footer__link"
-              >
-                {link}
+              <a key={link.key} href={link.href} className="footer__link">
+                {link.label}
               </a>
             ))}
-            <a href="/privacy" className="footer__link">
+            <a href={routes.privacy(locale)} className="footer__link">
               {t('footer.privacy')}
             </a>
             <button
@@ -123,7 +123,12 @@ export const Footer = memo(() => {
 
         <p className="footer__status">
           {t('footer.lastUpdated', {
-            date: '16 March 2026',
+            // Stamped by next.config.js at build time rather than typed by
+            // hand, so it cannot drift out of date on its own.
+            date: new Date(process.env.NEXT_PUBLIC_BUILD_DATE ?? Date.now()).toLocaleDateString(
+              locale,
+              { year: 'numeric', month: 'long', day: 'numeric' },
+            ),
           })}
         </p>
       </div>

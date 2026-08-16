@@ -1,0 +1,53 @@
+---
+title: "Carrosserie Kris: performance and spam-hardening on a small stack"
+slug: "carrosserie-kris"
+audience: "tech"
+locale: "en"
+publishedAt: "2024-06-01"
+updatedAt: "2026-01-10"
+summary: "React frontend, Node.js backend, deliberately boring. Optimized for Core Web Vitals and kept evergreen through small, continuous updates rather than periodic rewrites."
+---
+
+## Stack and constraints
+
+React on the frontend, a Node.js backend, Tailwind for styling. Nothing exotic. The interesting decisions here are about discipline, not architecture novelty.
+
+The site is mobile-first by traffic reality, not by trend: most visitors land from a Google search on their phone, so every performance decision was made with that as the primary target, desktop as the secondary one.
+
+## Performance work
+
+Largest Contentful Paint was the metric that mattered, since it correlates directly with whether a mobile visitor bounces before the page is even usable.
+
+<Callout>
+Animations were deliberately kept off the critical rendering path. If a `framer-motion` entrance animation delays when the hero image is visually complete, it's a net loss for LCP even if it looks nice in a demo.
+</Callout>
+
+```ts
+// Simplified image loading strategy: above-the-fold images get priority,
+// everything else defers until it's actually near the viewport.
+<Image
+  src={heroImage}
+  alt="Carrosserie Kris"
+  priority
+  sizes="(min-width: 768px) 50vw, 100vw"
+/>
+```
+
+## Form hardening without hurting conversion
+
+A contact form that's "secure" but annoying to fill out is a worse business outcome than one with slightly weaker anti-spam. The constraint was: harden against spam without adding friction a real visitor notices.
+
+```ts
+// Honeypot field: invisible to real users, irresistible to bots that
+// fill every input they can find in the DOM.
+if (formData.honeypot) {
+  return { ok: true }; // pretend success, send nothing, log server-side
+}
+```
+
+## Decisions that mattered
+
+- Mobile-first layout system, with desktop treated as a progressive enhancement rather than the baseline
+- Image and asset pipeline tuned specifically for LCP, not generic "optimization"
+- Spam hardening implemented as a honeypot rather than a CAPTCHA, trading a small amount of bot-resistance for zero added friction
+- A small, boring stack chosen deliberately. The client relationship is the long-term asset, and a stack nobody has to relearn every two years protects that

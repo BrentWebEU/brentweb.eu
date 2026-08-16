@@ -1,0 +1,34 @@
+---
+title: "Het Smaakpand: de discipline om geen platform te bouwen"
+slug: "het-smaakpand"
+audience: "tech"
+locale: "nl-BE"
+publishedAt: "2022-03-01"
+updatedAt: "2024-08-01"
+summary: "Static-first levering met een bewust minimale voetafdruk. Geen framework waar er geen nodig was, bijna nul aanvalsoppervlak, en een nette afbraak toen de zaak sloot."
+---
+
+## De verleiding om te overbouwen
+
+Elk instinct bij een ontwikkelaar getraind op frameworks zegt "voeg een CMS toe, voeg een componentbibliotheek toe, voeg een buildstap toe." Voor een single-pagesite die twee keer per jaar verandert, is elk van die toevoegingen aanvalsoppervlak en onderhoudslast zonder overeenkomstig voordeel.
+
+<Callout>
+De engineeringbeslissing hier was niet welk framework te gebruiken. Het was beslissen er géén te gebruiken, en die keuze kunnen verdedigen in plaats van standaard voor de vertrouwde stack te gaan uit gewoonte.
+</Callout>
+
+## Wat "static-first" écht opleverde
+
+```html
+<!-- Het volledige interactieve oppervlak van de site: geen. -->
+<!-- Geen client-side router, geen hydration, geen JS-bundel te
+     versturen buiten wat de browser nodig heeft voor basis paginagedrag. -->
+```
+
+- Geen server-runtime. Niets om te patchen, niets dat uitgebuit kan worden via een verouderde dependency, niets om wakker te houden
+- Handgetunede CSS in plaats van een framework, passend voor een enkele pagina waar de abstractiekost van een utility-framework niet opweegt tegen het voordeel
+- Laadtijden onder de seconde op mobiele netwerken als het echte doel, geen extraatje
+- Triviale, voorspelbare hosting zonder bewegende delen om te monitoren
+
+## Netjes uit dienst nemen
+
+Toen de zaak sloot, was afbraak een non-event: geen database te migreren of archiveren, geen server om uit dienst te nemen, geen abonnement dat stilletjes bleef verlengen voor een site die niemand ooit nog zou bekijken. De afwezigheid van infrastructuur is zelf een engineeringbeslissing. Één die zich precies uitbetaalt op het moment waarop de meeste projecten een lelijk, vergeten spoor van half afgesloten diensten achterlaten.

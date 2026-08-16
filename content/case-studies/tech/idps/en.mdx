@@ -1,0 +1,51 @@
+---
+title: "Distributed IDPS: fail-open by design"
+slug: "idps"
+audience: "tech"
+locale: "en"
+publishedAt: "2024-11-15"
+summary: "A Rust capture agent runs inline on a Raspberry Pi, streams packet data to a VPS for Suricata-based analysis, and applies verdicts locally so the hot path never blocks on a network round-trip."
+---
+
+## Architecture
+
+The system is split into two halves that talk to each other but never block on each other: an inline capture agent, and a remote analysis server.
+
+```
+[ Network traffic ] → [ Raspberry Pi: Rust capture agent ] → [ VPS: Suricata + analysis ]
+                              ↓ (local enforcement, no round-trip)
+                        [ Allow / Block decision ]
+```
+
+## Why Rust on the edge
+
+The capture agent runs inline, meaning every packet on the network physically passes through it. That's the one place in the system where a mistake is catastrophic, a crash there takes the network down, not just the security feature.
+
+<Callout>
+Memory-safe packet handling and no GC pauses were non-negotiable for the inline component. A garbage-collection pause on the hot path is a network hiccup that shows up as "the internet is slow" to every user on it.
+</Callout>
+
+```rust
+// Simplified capture loop shape. The real constraint is that this
+// function must never allocate in a way that can pause unpredictably.
+loop {
+    let packet = capture_next()?;
+    let verdict = local_ruleset.evaluate(&packet);
+    match verdict {
+        Verdict::Allow => forward(packet),
+        Verdict::Block => drop(packet),
+    }
+    stream_to_analysis(packet); // fire-and-forget, never awaited inline
+}
+```
+
+## Fail-open, not fail-closed
+
+Capture and enforcement are deliberately decoupled from the remote analysis. If the VPS is unreachable, the local ruleset keeps making decisions on its own. The system degrades to "less smart" rather than "network is down."
+
+## Decisions that mattered
+
+- Rust on the edge for memory safety and predictable latency, with zero garbage-collection pauses on the hot path
+- Capture/enforcement decoupled from analysis. The network keeps functioning even if the analysis server is unreachable
+- The server-side pipeline runs in Docker for reproducible deploys, since a security tool that's hard to redeploy consistently is itself a risk
+- Suricata's rule engine drives detection; a thin custom layer on top of it handles enforcement decisions specific to this deployment

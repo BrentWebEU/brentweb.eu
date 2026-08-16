@@ -23,13 +23,20 @@ export function getTranslations(locale: Locale = defaultLocale) {
       value = value?.[k];
     }
     
-    if (typeof value !== 'string') {
-      // Fallback to English if translation not found
+    // Fall back only when the key is genuinely missing.
+    //
+    // This used to test `typeof value !== 'string'`, which treated every array
+    // and object as a missing translation and returned the English copy — in
+    // every locale. Callers legitimately read non-strings through t():
+    // `experience.items.work` is an array of timeline entries, and
+    // `calculator.scope.options.<key>.includes` is an array of bullets. Both
+    // silently rendered in English to Dutch visitors.
+    if (value === undefined || value === null) {
       let fallback: any = messages[defaultLocale];
       for (const k of keys) {
         fallback = fallback?.[k];
       }
-      value = fallback || key;
+      value = fallback ?? key;
     }
     
     // Replace placeholders
