@@ -208,12 +208,7 @@
     "readCaseStudy": "Lees de case study",
     "testimonialsTitle": "Wat zij zeiden",
     "_testimonialsComment": "Alleen echte, toewijsbare citaten. Vorm: { quote, name, role, company }. De sectie verbergt zichzelf zolang deze lijst leeg is - vul nooit met verzonnen tekst.",
-    "testimonialsTest": [{
-      "quote": "Brent is een zeer bekwame ontwikkelaar die in staat is om complexe problemen op te lossen. Hij heeft een scherp oog voor detail en levert altijd werk van hoge kwaliteit.",
-      "name": "Kris",
-      "role": "Eigenaar",
-      "company": "Carrosserie Kris"
-    }],
+    "testimonials": [],
     "clientsLabel": "Voor wie ik bouwde"
   },
   "projects": {
