@@ -929,14 +929,14 @@
   "pricing": {
     "badge": "PRIJZEN",
     "title": "Wat het kost",
-    "subtitle": "Dit zijn de echte prijsvorken waarmee ik werk. U krijgt een vaste prijs op papier voor ik begin te bouwen.",
+    "subtitle": "Dit zijn de echte richtprijzen waarmee ik werk. U krijgt een vaste prijs op papier voor ik begin te bouwen.",
     "rangeLabel": "Gebruikelijke offerte",
     "durationLabel": "Duurt meestal",
     "weeks": "{min}-{max} weken",
     "ctaTitle": "Niet zeker wat u nodig hebt?",
-    "ctaBody": "Beantwoord drie vragen en u krijgt een prijsvork en een ruwe timing voor uw project, plus een pdf die u kunt bijhouden.",
+    "ctaBody": "Beantwoord drie vragen en u krijgt een ruwe prijs en timing voor uw project, plus een pdf die u kunt bijhouden.",
     "cta": "Schat mijn project in",
-    "note": "Dit zijn vorken, geen offertes. Het eindbedrag hangt af van details die we samen doornemen, en zodra we het eens zijn, verandert het niet meer."
+    "note": "Het eindbedrag hangt af van details die we samen doornemen, en zodra we het eens zijn, verandert het niet meer."
   },
   "faq": {
     "badge": "VRAGEN",
