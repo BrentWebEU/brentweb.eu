@@ -28,7 +28,7 @@ services:
     environment:
       NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: "${NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}"
       NEXT_PUBLIC_GA_ID: "${NEXT_PUBLIC_GA_ID}"
-      NEXTAUTH_URL: https://brentweb.eu
+      NEXTAUTH_URL: https://brentweb.be
       UPLOAD_DIR: ./public/uploads
       SECRET_ENV_MAPPINGS: NEXTAUTH_SECRET=/run/secrets/nextauth_secret,JWT_SECRET=/run/secrets/jwt_secret,DATABASE_URL=/run/secrets/database_url,RESEND_API_KEY=/run/secrets/resend_api_key
     volumes:
@@ -41,7 +41,7 @@ services:
       - ./secrets/resend_api_key:/run/secrets/resend_api_key:ro
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.brentweb.rule=Host(`brentweb.eu`) || Host(`www.brentweb.eu`)"
+      - "traefik.http.routers.brentweb.rule=Host(`brentweb.be`) || Host(`www.brentweb.be`)"
       - "traefik.http.routers.brentweb.entrypoints=websecure"
       - "traefik.http.routers.brentweb.tls=true"
       - "traefik.http.routers.brentweb.tls.certresolver=letsencrypt"
