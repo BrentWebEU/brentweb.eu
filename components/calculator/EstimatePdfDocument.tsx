@@ -107,7 +107,7 @@ export function EstimatePdfDocument({
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        <Text style={styles.brand}>brentweb.eu</Text>
+        <Text style={styles.brand}>brentweb.be</Text>
         <Text style={styles.title}>{pdf.title}</Text>
         <Text style={styles.meta}>{fill(pdf.preparedFor, { name, date: generatedAt })}</Text>
 

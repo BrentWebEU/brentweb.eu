@@ -53,7 +53,7 @@ export const Navigation = ({
     // link to it directly.
     { name: nav.work, href: routes.work(locale, audience), external: false },
     ...(audience === 'tech' ? [{ name: nav.lab, href: routes.lab(locale), external: false }] : []),
-    { name: nav.blog, href: 'https://blog.brentweb.eu/', external: true },
+    { name: nav.blog, href: 'https://blog.brentweb.be/', external: true },
   ];
 
   return (

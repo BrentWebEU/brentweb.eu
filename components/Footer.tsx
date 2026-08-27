@@ -26,7 +26,7 @@ const socialLinks = [
   },
   {
     icon: InstagramIcon,
-    href: "https://www.instagram.com/brentweb.eu/",
+    href: "https://www.instagram.com/brentweb.be/",
     label: "Instagram",
   },
   { icon: Mail, href: "mailto:brent@brentweb.eu", label: "Email" },

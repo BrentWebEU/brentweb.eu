@@ -30,7 +30,7 @@ export default function DevToolsEasterEgg() {
     );
 
     console.log(
-      '%c  Brent Schoenmakers  |  brentweb.eu',
+      '%c  Brent Schoenmakers  |  brentweb.be',
       `color: ${BRAND_COLORS.mutedForeground}; ${mono} font-size: 11px; font-style: italic;`
     );
   }, []);

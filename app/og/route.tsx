@@ -31,7 +31,7 @@ export async function GET(request: Request) {
             textTransform: 'uppercase',
           }}
         >
-          {`brentweb.eu${audience ? `, ${audience}` : ''}`}
+          {`brentweb.be${audience ? `, ${audience}` : ''}`}
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>

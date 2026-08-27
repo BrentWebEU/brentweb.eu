@@ -29,7 +29,7 @@ export function buildPersonSchema(locale: Locale) {
     sameAs: [
       'https://github.com/BrentWebEU',
       'https://www.linkedin.com/in/brent-schoenmakers-3793a8262/',
-      'https://www.instagram.com/brentweb.eu/',
+      'https://www.instagram.com/brentweb.be/',
     ],
     knowsAbout: [
       'Web development',
