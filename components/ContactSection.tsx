@@ -37,7 +37,7 @@ const googleMapsApiKey =
     : null;
 
 const socialLinks = [
-  { icon: GithubIcon, label: "GitHub", href: "https://github.com/BrentWebEU" },
+  { icon: GithubIcon, label: "GitHub", href: "https://github.com/BrentWebBE" },
   {
     icon: LinkedinIcon,
     label: "LinkedIn",
@@ -46,7 +46,7 @@ const socialLinks = [
   {
     icon: InstagramIcon,
     label: "Instagram",
-    href: "https://www.instagram.com/brentweb.eu/",
+    href: "https://www.instagram.com/brentweb.be/",
   },
 ];
 
